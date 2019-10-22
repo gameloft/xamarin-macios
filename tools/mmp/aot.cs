@@ -221,15 +221,6 @@ namespace Xamarin.Bundler {
 						throw ErrorHelper.CreateError (3001, Errors.MX3001, "strip", file);
 				});
 			}
-
-			if (IsRelease) {
-				// mono --aot creates .dll.dylib.dSYM directories for each assembly AOTed
-				// There isn't an easy was to disable this behavior, so clean up under release
-				Parallel.ForEach (filesToAOT, ParallelOptions, file => {
-					if (RunCommand (DeleteDebugSymbolCommand, new [] { "-r", file + ".dylib.dSYM/" }, monoEnv) != 0)
-						throw ErrorHelper.CreateError (3001, Errors.MX3001, "delete debug info from", file);
-				});
-			}
 		}
 
 		List<string> GetFilesToAOT (IFileEnumerator files)
