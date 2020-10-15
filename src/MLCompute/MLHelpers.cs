@@ -7,7 +7,7 @@ using ObjCRuntime;
 
 namespace MLCompute {
 
-	[iOS (14,0)][TV (14,0)][Mac (10,16)]
+	[iOS (14,0)][TV (14,0)][NoMac]
 	[NoWatch]
 	public static class MLCActivationTypeExtensions {
 
@@ -20,7 +20,7 @@ namespace MLCompute {
 		}
 	}
 
-	[iOS (14,0)][TV (14,0)][Mac (10,16)]
+	[iOS (14,0)][TV (14,0)][NoMac]
 	[NoWatch]
 	public static class MLCArithmeticOperationExtensions {
 
@@ -33,7 +33,7 @@ namespace MLCompute {
 		}
 	}
 
-	[iOS (14,0)][TV (14,0)][Mac (10,16)]
+	[iOS (14,0)][TV (14,0)][NoMac]
 	[NoWatch]
 	public static class MLCPaddingPolicyExtensions {
 
@@ -46,7 +46,7 @@ namespace MLCompute {
 		}
 	}
 
-	[iOS (14,0)][TV (14,0)][Mac (10,16)]
+	[iOS (14,0)][TV (14,0)][NoMac]
 	[NoWatch]
 	public static class MLCLossTypeExtensions {
 
@@ -59,7 +59,7 @@ namespace MLCompute {
 		}
 	}
 
-	[iOS (14,0)][TV (14,0)][Mac (10,16)]
+	[iOS (14,0)][TV (14,0)][NoMac]
 	[NoWatch]
 	public static class MLCReductionTypeExtensions {
 
@@ -72,7 +72,7 @@ namespace MLCompute {
 		}
 	}
 
-	[iOS (14,0)][TV (14,0)][Mac (10,16)]
+	[iOS (14,0)][TV (14,0)][NoMac]
 	[NoWatch]
 	public static class MLCPaddingTypeExtensions {
 
@@ -85,7 +85,7 @@ namespace MLCompute {
 		}
 	}
 
-	[iOS (14,0)][TV (14,0)][Mac (10,16)]
+	[iOS (14,0)][TV (14,0)][NoMac]
 	[NoWatch]
 	public static class MLCConvolutionTypeExtensions {
 
@@ -98,7 +98,7 @@ namespace MLCompute {
 		}
 	}
 
-	[iOS (14,0)][TV (14,0)][Mac (10,16)]
+	[iOS (14,0)][TV (14,0)][NoMac]
 	[NoWatch]
 	public static class MLCPoolingTypeExtensions {
 
@@ -111,7 +111,7 @@ namespace MLCompute {
 		}
 	}
 
-	[iOS (14,0)][TV (14,0)][Mac (10,16)]
+	[iOS (14,0)][TV (14,0)][NoMac]
 	[NoWatch]
 	public static class MLCSoftmaxOperationExtensions {
 
@@ -124,7 +124,7 @@ namespace MLCompute {
 		}
 	}
 
-	[iOS (14,0)][TV (14,0)][Mac (10,16)]
+	[iOS (14,0)][TV (14,0)][NoMac]
 	[NoWatch]
 	public static class MLCSampleModeExtensions {
 
@@ -137,7 +137,7 @@ namespace MLCompute {
 		}
 	}
 
-	[iOS (14,0)][TV (14,0)][Mac (10,16)]
+	[iOS (14,0)][TV (14,0)][NoMac]
 	[NoWatch]
 	public static class MLCLstmResultModeExtensions {
 

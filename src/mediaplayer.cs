@@ -471,7 +471,7 @@ namespace MediaPlayer {
 		string CloudGlobalId { get; }
 	}
 
-	[Mac (10,16)]
+	[NoMac]
 	[Watch (5,0)]
 	[Static]
 	interface MPMediaPlaylistProperty {

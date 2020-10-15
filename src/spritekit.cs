@@ -1524,7 +1524,7 @@ namespace SpriteKit {
 		[NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
 		ISKViewDelegate Delegate { get; set; }
 
-		[iOS (14,0)][TV (14,0)][Mac (10,16)]
+		[iOS (14,0)][TV (14,0)][NoMac]
 		[Export ("disableDepthStencilBuffer")]
 		bool DisableDepthStencilBuffer { get; set; }
 	}

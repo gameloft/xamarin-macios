@@ -1077,7 +1077,7 @@ namespace CloudKit {
 		[NullAllowed, Export ("subtitleLocalizationArgs", ArgumentSemantic.Copy)]
 		string[] SubtitleLocalizationArgs { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (10, 16), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[NullAllowed, Export ("subscriptionOwnerUserRecordID", ArgumentSemantic.Copy)]
 		CKRecordID SubscriptionOwnerUserRecordId { get; }
 	}
