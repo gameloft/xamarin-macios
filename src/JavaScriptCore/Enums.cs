@@ -7,6 +7,7 @@
 // Copyright 2013-2014 Xamarin Inc.
 
 using System;
+using ObjCRuntime;
 
 namespace JavaScriptCore {
 	// untyped enum -> JSValueRef.h
