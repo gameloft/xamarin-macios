@@ -77,11 +77,11 @@ namespace CoreGraphics {
 		[Internal][Field ("kCGPDFContextAccessPermissions")]
 		IntPtr kCGPDFContextAccessPermissions { get; }
 
-		[Mac (11,0)][iOS (14,0)][TV (14,0)][Watch (7,0)]
+		[NoMac][iOS (14,0)][TV (14,0)][Watch (7,0)]
 		[Internal][Field ("kCGPDFContextCreateLinearizedPDF")]
 		IntPtr kCGPDFContextCreateLinearizedPDF { get; }
 
-		[Mac (11,0)][iOS (14,0)][TV (14,0)][Watch (7,0)]
+		[NoMac][iOS (14,0)][TV (14,0)][Watch (7,0)]
 		[Internal][Field ("kCGPDFContextCreatePDFA")]
 		IntPtr kCGPDFContextCreatePDFA { get; }
 	}
@@ -257,11 +257,11 @@ namespace CoreGraphics {
 		[Field ("kCGColorSpaceITUR_2020_HLG")]
 		NSString Itur_2020_Hlg { get; }
 
-		[iOS (14,0)][TV (14,0)][Watch (7,0)][Mac (11,0)]
+		[iOS (14,0)][TV (14,0)][Watch (7,0)][NoMac]
 		[Field ("kCGColorSpaceITUR_2100_HLG")]
 		NSString Itur_2100_Hlg { get; }
 
-		[iOS (14,0)][TV (14,0)][Watch (7,0)][Mac (11,0)]
+		[iOS (14,0)][TV (14,0)][Watch (7,0)][NoMac]
 		[Field ("kCGColorSpaceITUR_2100_PQ")]
 		NSString Itur_2100_PQ { get; }
 	}

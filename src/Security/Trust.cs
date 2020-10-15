@@ -187,14 +187,14 @@ namespace Security {
 		[iOS (14,0)]
 		[TV (14,0)]
 		[Watch (7,0)]
-		[Mac (11,0)]
+		[NoMac]
 		[DllImport (Constants.SecurityLibrary)]
 		extern static IntPtr /* SecKeyRef */ SecTrustCopyKey (IntPtr /* SecTrustRef */ trust);
 
 		[iOS (14,0)]
 		[TV (14,0)]
 		[Watch (7,0)]
-		[Mac (11,0)]
+		[NoMac]
 		public SecKey GetKey ()
 		{
 			if (handle == IntPtr.Zero)

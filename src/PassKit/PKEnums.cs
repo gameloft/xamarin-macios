@@ -18,7 +18,7 @@ namespace PassKit {
 	}
 
 	// NSInteger -> PKPass.h
-	[Mac (11,0)]
+	[NoMac]
 	[ErrorDomain ("PKPassKitErrorDomain")]
 	[Native]
 	public enum PKPassKitErrorCode : long {
@@ -33,7 +33,7 @@ namespace PassKit {
 
 	// NSInteger -> PKPassLibrary.h
 	[iOS (7,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Native]
 	public enum PKPassLibraryAddPassesStatus : long {
 		DidAddPasses,
@@ -41,7 +41,7 @@ namespace PassKit {
 		DidCancelAddPasses
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Native]
 	public enum PKPassType : ulong {
 		Barcode,
@@ -53,7 +53,7 @@ namespace PassKit {
 		Any = ulong.MaxValue,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Watch (3,0)]
 	[Native]
 	public enum PKPaymentAuthorizationStatus : long {
@@ -91,7 +91,7 @@ namespace PassKit {
 		Activated, RequiresActivation, Activating, Suspended, Deactivated
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Watch (6,2), iOS (13,4)]
 	[Native]
 	public enum PKSecureElementPassActivationState : long {
@@ -102,7 +102,7 @@ namespace PassKit {
 		Deactivated,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Watch (3,0)]
 	[Native]
 	public enum PKMerchantCapability : ulong {
@@ -128,7 +128,7 @@ namespace PassKit {
 		All = PostalAddress|Phone|Email|Name
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[NoWatch]
 	[iOS (8,3)]
 	[Native]
@@ -138,7 +138,7 @@ namespace PassKit {
 		Black,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[NoWatch]
 	[iOS (8,3)]
 	[Native]
@@ -153,7 +153,7 @@ namespace PassKit {
 		Donate,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Watch (3,0)]
 	[iOS (8,3)]
 	[Native]
@@ -166,7 +166,7 @@ namespace PassKit {
 
 	[Watch (6,0)]
 	[iOS (9,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Native]
 	public enum PKAddPaymentPassError : long
 	{
@@ -175,7 +175,7 @@ namespace PassKit {
 		SystemCancelled
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[NoWatch]
 	[iOS (9,0)]
 	[Native]
@@ -188,7 +188,7 @@ namespace PassKit {
 		Success
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Watch (3,0)]
 	[iOS (9,0)]
 	[Native]
@@ -201,7 +201,7 @@ namespace PassKit {
 		Store
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Watch (3,0)]
 	[iOS (9,0)]
 	[Native]
@@ -220,7 +220,7 @@ namespace PassKit {
 		Outline
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Watch (4,0)][iOS (11,0)]
 	[ErrorDomain ("PKPaymentErrorDomain")]
 	[Native]
@@ -232,7 +232,7 @@ namespace PassKit {
 	}
 
 	[iOS (12,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[NoWatch] // https://feedbackassistant.apple.com/feedback/6301809 https://github.com/xamarin/maccore/issues/1819
 	[Native]
 	public enum PKAddPaymentPassStyle : ulong {
@@ -241,7 +241,7 @@ namespace PassKit {
 	}
 
 	[Watch (6,2), iOS (13,4)]
-	[Mac (11,0)]
+	[NoMac]
 	[ErrorDomain ("PKAddSecureElementPassErrorDomain")]
 	[Native]
 	public enum PKAddSecureElementPassErrorCode : long {

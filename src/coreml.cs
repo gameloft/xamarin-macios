@@ -405,7 +405,7 @@ namespace CoreML {
 		[return: NullAllowed]
 		NSObject GetParameterValue (MLParameterKey key, [NullAllowed] out NSError error);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Async]
 		[Export ("loadContentsOfURL:configuration:completionHandler:")]
@@ -442,7 +442,7 @@ namespace CoreML {
 		[Wrap ("_Metadata")]
 		MLModelMetadata Metadata { get; }
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[NullAllowed, Export ("classLabels", ArgumentSemantic.Copy)]
 		NSObject[] ClassLabels { get; }
 
@@ -552,7 +552,7 @@ namespace CoreML {
 
 		// @interface Concatenating (MLMultiArray)
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Export ("multiArrayByConcatenatingMultiArrays:alongAxis:dataType:")]
 		MLMultiArray Concat (MLMultiArray[] multiArrays, nint axis, MLMultiArrayDataType dataType);
@@ -992,13 +992,13 @@ namespace CoreML {
 		[return: NullAllowed]
 		MLUpdateTask Create (NSUrl modelUrl, IMLBatchProvider trainingData, [NullAllowed] MLModelConfiguration configuration, MLUpdateProgressHandlers progressHandlers, [NullAllowed] out NSError error);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Export ("updateTaskForModelAtURL:trainingData:completionHandler:error:")]
 		[return: NullAllowed]
 		MLUpdateTask Create (NSUrl modelUrl, IMLBatchProvider trainingData, Action<MLUpdateContext> completionHandler, [NullAllowed] out NSError error);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Export ("updateTaskForModelAtURL:trainingData:progressHandlers:error:")]
 		[return: NullAllowed]
@@ -1019,7 +1019,7 @@ namespace CoreML {
 		bool Write (NSUrl url, [NullAllowed] out NSError error);
 	}
 
-	[Mac (11,0), iOS (14,0)]
+	[NoMac, iOS (14,0)]
 	[NoTV][NoWatch]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
@@ -1049,7 +1049,7 @@ namespace CoreML {
 		NSString DidChangeNotification { get; }
 	}
 
-	[Mac (11,0), iOS (14,0)]
+	[NoMac, iOS (14,0)]
 	[NoTV][NoWatch]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]

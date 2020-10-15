@@ -96,7 +96,7 @@ namespace QuickLookThumbnailing {
 		[Export ("representationTypes")]
 		QLThumbnailGenerationRequestRepresentationTypes RepresentationTypes { get; }
 
-		[Mac (11,0)][iOS (14,0)]
+		[NoMac][iOS (14,0)]
 		[NullAllowed, Export ("contentType", ArgumentSemantic.Copy)]
 		UTType ContentType { get; set; }
 	}

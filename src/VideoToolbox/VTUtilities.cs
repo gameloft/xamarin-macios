@@ -48,11 +48,11 @@ namespace VideoToolbox {
 		}
 
 #if MONOMAC
-		[NoWatch, NoTV, NoiOS, Mac (11,0)]
+		[NoWatch, NoTV, NoiOS, NoMac]
 		[DllImport (Constants.VideoToolboxLibrary)]
 		static extern void VTRegisterSupplementalVideoDecoderIfAvailable (uint codecType);
 
-		[NoWatch, NoTV, NoiOS, Mac (11,0)]
+		[NoWatch, NoTV, NoiOS, NoMac]
 		public static void RegisterSupplementalVideoDecoder (CMVideoCodecType codecType)
 			=> VTRegisterSupplementalVideoDecoderIfAvailable ((uint) codecType);
 #endif

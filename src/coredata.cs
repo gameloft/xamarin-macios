@@ -1138,17 +1138,17 @@ namespace CoreData
 		string TransactionAuthor { get; set; }
 
 		[Notification (typeof (NSManagedObjectsIdsChangedEventArgs))]
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Field ("NSManagedObjectContextDidMergeChangesObjectIDsNotification")]
 		NSString DidMergeChangesObjectIdsNotification { get; }
 
 		[Notification (typeof (NSManagedObjectsIdsChangedEventArgs))]
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Field ("NSManagedObjectContextDidSaveObjectIDsNotification")]
 		NSString DidSaveObjectIdsNotification { get; }
 	}
 
-	[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+	[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 	interface NSManagedObjectsIdsChangedEventArgs {
 		[Export ("NSDeletedObjectIDsKey")]
 		NSSet DeletedObjectIds { get; }
@@ -2539,19 +2539,19 @@ namespace CoreData
 		[Export ("init")]
 		IntPtr Constructor ();
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("initWithEntity:dictionaryHandler:")]
 		IntPtr Constructor (NSEntityDescription entity, NSBatchInsertRequestDictionaryHandler handler);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("initWithEntity:managedObjectHandler:")]
 		IntPtr Constructor (NSEntityDescription entity, NSBatchInsertRequestManagedObjectHandler handler);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("initWithEntityName:dictionaryHandler:")]
 		IntPtr Constructor (string entityName, NSBatchInsertRequestDictionaryHandler handler);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("initWithEntityName:managedObjectHandler:")]
 		IntPtr Constructor (string entityName, NSBatchInsertRequestManagedObjectHandler handler);
 
@@ -2587,12 +2587,12 @@ namespace CoreData
 		[NullAllowed, Export ("managedObjectHandler", ArgumentSemantic.Copy)]
 		NSBatchInsertRequestManagedObjectHandler ManagedObjectHandler { get; set; }
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Export ("batchInsertRequestWithEntityName:dictionaryHandler:")]
 		NSBatchInsertRequest CreateBatchInsertRequest (string entityName, NSBatchInsertRequestDictionaryHandler handler);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Export ("batchInsertRequestWithEntityName:managedObjectHandler:")]
 		NSBatchInsertRequest CreateBatchInsertRequest (string entityName, NSBatchInsertRequestManagedObjectHandler handler);
@@ -2641,15 +2641,15 @@ namespace CoreData
 		[Export ("recordIDsForManagedObjectIDs:")]
 		NSDictionary<NSManagedObjectID, CKRecordID> GetRecordIds (NSManagedObjectID[] managedObjectIds);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("canUpdateRecordForManagedObjectWithID:")]
 		bool CanUpdateRecord (NSManagedObjectID objectID);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("canDeleteRecordForManagedObjectWithID:")]
 		bool CanDeleteRecord (NSManagedObjectID objectID);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("canModifyManagedObjectsInStore:")]
 		bool CanModifyManagedObjects (NSPersistentStore store);
 	}
@@ -2670,7 +2670,7 @@ namespace CoreData
 		CKDatabaseScope DatabaseScope { get; set; }
 	}
 
-	[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+	[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface NSPersistentCloudKitContainerEvent : NSCopying {
@@ -2705,7 +2705,7 @@ namespace CoreData
 		NSString UserInfoKey { get; }
 	}
 
-	[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+	[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSPersistentStoreRequest))]
 	interface NSPersistentCloudKitContainerEventRequest {
 		[Export ("resultType", ArgumentSemantic.Assign)]
@@ -2728,7 +2728,7 @@ namespace CoreData
 		NSFetchRequest FetchRequest ();
 	}
 
-	[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+	[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof(NSPersistentStoreResult))]
 	[DisableDefaultCtor]
 	interface NSPersistentCloudKitContainerEventResult {

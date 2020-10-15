@@ -1003,7 +1003,7 @@ namespace Metal {
 	}
 
 	[Unavailable (PlatformName.MacCatalyst)]
-	[Flags, Mac (11,0), NoTV, iOS (13,0)]
+	[Flags, NoMac, NoTV, iOS (13,0)]
 	[Native, Advice ("This API is not available when using UIKit on macOS.")]
 	public enum MTLSparseTextureRegionAlignmentMode : ulong {
 		Outward = 0x0,
@@ -1011,7 +1011,7 @@ namespace Metal {
 	}
 
 	[Unavailable (PlatformName.MacCatalyst)]
-	[Flags, Mac (11,0), NoTV, iOS (13,0)]
+	[Flags, NoMac, NoTV, iOS (13,0)]
 	[Native, Advice ("This API is not available when using UIKit on macOS.")]
 	public enum MTLSparseTextureMappingMode : ulong {
 		Map = 0x0,
@@ -1144,7 +1144,7 @@ namespace Metal {
 		SetStatistic,
 	}
 
-	[Flags, Mac (11,0), iOS (14,0), TV (14,0)]
+	[Flags, NoMac, iOS (14,0), TV (14,0)]
 	public enum MTLAccelerationStructureInstanceOptions : uint {
 		None = 0x0,
 		DisableTriangleCulling = (1u << 0),
@@ -1153,7 +1153,7 @@ namespace Metal {
 		NonOpaque = (1u << 3),
 	}
 
-	[Mac (11,0), iOS (14,0), NoTV]
+	[NoMac, iOS (14,0), NoTV]
 	[Flags]
 	[Native]
 	public enum MTLAccelerationStructureUsage : ulong {
@@ -1162,7 +1162,7 @@ namespace Metal {
 		PreferFastBuild = (1uL << 1),
 	}
 
-	[Mac (11,0), iOS (14,0), TV (14,0)]
+	[NoMac, iOS (14,0), TV (14,0)]
 	[ErrorDomain ("MTLBinaryArchiveDomain")]
 	[Native]
 	public enum MTLBinaryArchiveError : ulong {
@@ -1172,7 +1172,7 @@ namespace Metal {
 		CompilationFailure = 3,
 	}
 
-	[Mac (11,0), iOS (14,0), TV (14,0)]
+	[NoMac, iOS (14,0), TV (14,0)]
 	[Flags]
 	[Native]
 	public enum MTLCommandBufferErrorOption : ulong {
@@ -1180,7 +1180,7 @@ namespace Metal {
 		EncoderExecutionStatus = 1uL << 0,
 	}
 
-	[Mac (11,0), iOS (14,0), TV (14,0)]
+	[NoMac, iOS (14,0), TV (14,0)]
 	[Native]
 	public enum MTLCommandEncoderErrorState : long {
 		Unknown = 0,
@@ -1190,7 +1190,7 @@ namespace Metal {
 		Faulted = 4,
 	}
 
-	[Mac (11,0), iOS (14,0), TV (14,0)]
+	[NoMac, iOS (14,0), TV (14,0)]
 	[Native]
 	public enum MTLCounterSamplingPoint : ulong {
 		StageBoundary,
@@ -1200,7 +1200,7 @@ namespace Metal {
 		BlitBoundary,
 	}
 
-	[Mac (11,0), iOS (14,0), TV (14,0)]
+	[NoMac, iOS (14,0), TV (14,0)]
 	[ErrorDomain ("MTLDynamicLibraryDomain")]
 	[Native]
 	public enum MTLDynamicLibraryError : ulong {
@@ -1212,21 +1212,21 @@ namespace Metal {
 		Unsupported = 5,
 	}
 
-	[Mac (11,0), iOS (14,0), TV (14,0)]
+	[NoMac, iOS (14,0), TV (14,0)]
 	[Native]
 	public enum MTLFunctionLogType : ulong
 	{
 		Validation = 0,
 	}
 
-	[Flags, Mac (11,0), iOS (14,0), TV (14,0)]
+	[Flags, NoMac, iOS (14,0), TV (14,0)]
 	[Native]
 	public enum MTLFunctionOptions : ulong {
 		None = 0x0,
 		CompileToBinary = 1uL << 0,
 	}
 
-	[Flags, Mac (11,0), iOS (14,0), NoTV]
+	[Flags, NoMac, iOS (14,0), NoTV]
 	[Native]
 	public enum MTLIntersectionFunctionSignature : ulong {
 		None = 0x0,
@@ -1235,7 +1235,7 @@ namespace Metal {
 		WorldSpaceData = (1uL << 2),
 	}
 
-	[Mac (11,0), iOS (14,0), TV (14,0)]
+	[NoMac, iOS (14,0), TV (14,0)]
 	[Native]
 	public enum MTLLibraryType : long {
 		Executable = 0,

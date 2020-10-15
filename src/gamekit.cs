@@ -415,13 +415,13 @@ namespace GameKit {
 		[Export ("loading")]
 		bool IsLoading { [Bind ("isLoading")] get; }
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Async]
 		[Export ("loadLeaderboardsWithIDs:completionHandler:")]
 		void LoadLeaderboards ([NullAllowed] string[] leaderboardIds, GKLeaderboardsHandler completionHandler);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Export ("submitScore:context:player:leaderboardIDs:completionHandler:")]
 		[Async]
@@ -496,7 +496,7 @@ namespace GameKit {
 		[Async]
 		void LoadLeaderboards ([NullAllowed] GKLeaderboardsHandler completionHandler);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("loadLeaderboardsWithHandler:")]
 		[Async]
 		void LoadLeaderboardsWithCompletionHandler (GKLeaderboardsHandler handler);
@@ -703,7 +703,7 @@ namespace GameKit {
 		void ReportScores (GKScore[] scores, [NullAllowed] GKChallenge[] challenges, [NullAllowed] Action<NSError> completionHandler);
 
 		[NoWatch]
-		[iOS (14,0)][Mac (11,0)][TV (14,0)]
+		[iOS (14,0)][NoMac][TV (14,0)]
 		[Static]
 		[Async]
 		[Export ("reportLeaderboardScores:withEligibleChallenges:withCompletionHandler:")]
@@ -944,7 +944,7 @@ namespace GameKit {
 		GKLocalPlayer Local { get; }
 
 		[NoWatch]
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Export ("personalizedCommunicationRestricted")]
 		bool PersonalizedCommunicationRestricted { [Bind ("isPersonalizedCommunicationRestricted")] get; }
 	}
@@ -1388,7 +1388,7 @@ namespace GameKit {
 		[Export ("setHostedPlayer:didConnect:")]
 		void SetHostedPlayerConnected (GKPlayer playerID, bool connected);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Export ("matchmakingMode", ArgumentSemantic.Assign)]
 		GKMatchmakingMode MatchmakingMode { get; set; }
 	}
@@ -1996,7 +1996,7 @@ namespace GameKit {
 		[Async]
 		void SendReminder (GKTurnBasedParticipant [] participants, string localizableMessage, NSObject [] arguments, [NullAllowed] Action<NSError> completionHandler);
 
-		[iOS (14,0)][Mac (11,0)][Watch (7,0)][TV (14,0)]
+		[iOS (14,0)][NoMac][Watch (7,0)][TV (14,0)]
 		[Export ("endMatchInTurnWithMatchData:leaderboardScores:achievements:completionHandler:")]
 		[Async]
 		void EndMatchInTurn (NSData matchData, GKLeaderboardScore[] scores, NSObject[] achievements, Action<NSError> completionHandler);
@@ -2145,19 +2145,19 @@ namespace GameKit {
 		[Export ("initWithNibName:bundle:")]
 		IntPtr Constructor ([NullAllowed] string nibNameOrNull, [NullAllowed] NSBundle nibBundleOrNull);
 
-		[TV (14,0), NoWatch, Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoWatch, NoMac, iOS (14,0)]
 		[Export ("initWithLeaderboardID:playerScope:timeScope:")]
 		IntPtr Constructor (string leaderboardId, GKLeaderboardPlayerScope playerScope, GKLeaderboardTimeScope timeScope);
 
-		[TV (14,0), NoWatch, Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoWatch, NoMac, iOS (14,0)]
 		[Export ("initWithLeaderboard:playerScope:")]
 		IntPtr Constructor (GKLeaderboard leaderboard, GKLeaderboardPlayerScope playerScope);
 
-		[TV (14,0), NoWatch, Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoWatch, NoMac, iOS (14,0)]
 		[Export ("initWithAchievementID:")]
 		IntPtr Constructor (string achievementId);
 
-		[TV (14,0), NoWatch, Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoWatch, NoMac, iOS (14,0)]
 		[Export ("initWithState:")]
 		IntPtr Constructor (GKGameCenterViewControllerState state);
 
@@ -2636,7 +2636,7 @@ namespace GameKit {
 		void FailedWithError (GKSession session, NSError error);
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[NoWatch]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
@@ -2678,7 +2678,7 @@ namespace GameKit {
 		void TriggerAccessPoint (GKGameCenterViewControllerState state, Action handler);
 	}
 
-	[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+	[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 	[DisableDefaultCtor]
 	[BaseType (typeof (NSObject))]
 	interface GKLeaderboardEntry
@@ -2710,7 +2710,7 @@ namespace GameKit {
 		UIViewController ChallengeComposeController ([NullAllowed] string message, [NullAllowed] GKPlayer[] players, [NullAllowed] GKChallengeComposeHandler completionHandler);
 	}
 
-	[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+	[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	interface GKLeaderboardScore
 	{

@@ -273,7 +273,7 @@ namespace NetworkExtension {
 		InactiveSession = 4,
 	}
 
-	[NoWatch, NoTV, Mac (11,0), iOS (14,0)]
+	[NoWatch, NoTV, NoMac, iOS (14,0)]
 	[Native]
 	public enum NEDnsProtocol : long {
 		Cleartext = 1,
@@ -281,7 +281,7 @@ namespace NetworkExtension {
 		Https = 3,
 	}
 
-	[NoWatch, NoTV, Mac (11,0), iOS (14,0)]
+	[NoWatch, NoTV, NoMac, iOS (14,0)]
 	[Native]
 	[ErrorDomain ("NEDNSSettingsErrorDomain")]
 	public enum NEDnsSettingsManagerError : long {

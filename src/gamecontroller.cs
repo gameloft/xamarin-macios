@@ -632,7 +632,7 @@ namespace GameController {
 		bool ControllerUserInteractionEnabled { get; set; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface GCColor : NSCopying, NSSecureCoding
@@ -652,7 +652,7 @@ namespace GameController {
 
 	delegate void GCControllerTouchpadHandler (GCControllerTouchpad touchpad, float xValue, float yValue, float buttonValue, bool buttonPressed);
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (GCControllerElement))]
 	interface GCControllerTouchpad
 	{
@@ -681,7 +681,7 @@ namespace GameController {
 		void SetValue (float xAxis, float yAxis, bool touchDown, float buttonValue);
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface GCDeviceBattery : NSSecureCoding, NSCoding
@@ -693,7 +693,7 @@ namespace GameController {
 		GCDeviceBatteryState BatteryState { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface GCDeviceHaptics
@@ -710,7 +710,7 @@ namespace GameController {
 		float HapticDurationInfinite { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[Static]
 	interface GCHapticsLocality {
 
@@ -739,7 +739,7 @@ namespace GameController {
 		NSString RightTrigger { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface GCDeviceLight: NSSecureCoding, NSCoding
@@ -748,7 +748,7 @@ namespace GameController {
 		GCColor Color { get; set; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (GCExtendedGamepad))]
 	interface GCDualShockGamepad: NSSecureCoding, NSCoding
 	{
@@ -782,7 +782,7 @@ namespace GameController {
 
 	delegate void GCKeyboardValueChangedHandler (GCKeyboardInput keyboard, GCControllerButtonInput key, nint keyCode, bool pressed);
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (GCPhysicalInputProfile))]
 	interface GCKeyboardInput
 	{
@@ -831,7 +831,7 @@ namespace GameController {
 	[BaseType (typeof (GCControllerDirectionPad))]
 	interface GCDeviceCursor {}
 
-	[Mac (11,0), iOS (14,0), TV (14,0)]
+	[NoMac, iOS (14,0), TV (14,0)]
 	[BaseType (typeof (GCPhysicalInputProfile))]
 	interface GCMouseInput
 	{
@@ -856,7 +856,7 @@ namespace GameController {
 
 	interface IGCDevice {}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[Protocol]
 	interface GCDevice
 	{
@@ -877,7 +877,7 @@ namespace GameController {
 		GCPhysicalInputProfile PhysicalInputProfile { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface GCPhysicalInputProfile
@@ -1002,7 +1002,7 @@ namespace GameController {
 		NSString DualShockTouchpadButton { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (GCExtendedGamepad))]
 	interface GCXboxGamepad: NSSecureCoding, NSCoding
 	{

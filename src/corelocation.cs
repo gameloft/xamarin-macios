@@ -198,22 +198,22 @@ namespace CoreLocation {
 		bool LocationServicesEnabled { get; }
 
 		[NoTV]
-		[Watch (6,0), Mac (11,0)]
+		[Watch (6,0), NoMac]
 		[Export ("headingFilter", ArgumentSemantic.Assign)]
 		double HeadingFilter { get; set;  }
 	
 		[NoTV]
-		[Watch (6,0), Mac (11,0)]
+		[Watch (6,0), NoMac]
 		[Export ("startUpdatingHeading")]
 		void StartUpdatingHeading ();
 	
 		[NoTV]
-		[Watch (6,0), Mac (11,0)]
+		[Watch (6,0), NoMac]
 		[Export ("stopUpdatingHeading")]
 		void StopUpdatingHeading ();
 	
 		[NoTV]
-		[Watch (6,0), Mac (11,0)]
+		[Watch (6,0), NoMac]
 		[Export ("dismissHeadingCalibrationDisplay")]
 		void DismissHeadingCalibrationDisplay ();
 	
@@ -225,7 +225,7 @@ namespace CoreLocation {
 		[NullAllowed, Export ("purpose")]
 		string Purpose { get; set; }
 
-		[NoTV][Mac (11,0)]
+		[NoTV][NoMac]
 		[Watch (6,0)]
 		[Export ("headingAvailable"), Static]
 		bool HeadingAvailable { get; }
@@ -247,12 +247,12 @@ namespace CoreLocation {
 		bool RegionMonitoringEnabled { get; }
 
 		[NoTV]
-		[Watch (6,0), Mac (11,0)]
+		[Watch (6,0), NoMac]
 		[Export ("headingOrientation", ArgumentSemantic.Assign)]
 		CLDeviceOrientation HeadingOrientation { get; set; }
 
 		[NoTV]
-		[Watch (6,0), Mac (11,0)]
+		[Watch (6,0), NoMac]
 		[NullAllowed, Export ("heading", ArgumentSemantic.Copy)]
 		CLHeading Heading { get; }
 
@@ -297,11 +297,11 @@ namespace CoreLocation {
 		void StartMonitoring (CLRegion region);
 
 		[NoTV]
-		[Watch (4,0), Mac (11,0)]
+		[Watch (4,0), NoMac]
 		[Export ("activityType", ArgumentSemantic.Assign)]
 		CLActivityType ActivityType  { get; set; }
 
-		[NoWatch][NoTV][Mac (11,0)]
+		[NoWatch][NoTV][NoMac]
 		[Export ("pausesLocationUpdatesAutomatically", ArgumentSemantic.Assign)]
 		bool PausesLocationUpdatesAutomatically { get; set; }
 
@@ -339,7 +339,7 @@ namespace CoreLocation {
 		[iOS (7,0), Export ("rangedRegions", ArgumentSemantic.Copy)]
 		NSSet RangedRegions { get; }
 
-		[NoWatch, NoTV, Mac (11,0), iOS (13,0)]
+		[NoWatch, NoTV, NoMac, iOS (13,0)]
 		[Export ("rangedBeaconConstraints", ArgumentSemantic.Copy)]
 		NSSet<CLBeaconIdentityConstraint> RangedBeaconConstraints { get; }
 
@@ -354,7 +354,7 @@ namespace CoreLocation {
 		[iOS (7,0), Export ("startRangingBeaconsInRegion:")]
 		void StartRangingBeacons (CLBeaconRegion region);
 
-		[NoWatch, NoTV, Mac (11,0), iOS (13,0)]
+		[NoWatch, NoTV, NoMac, iOS (13,0)]
 		[Export ("startRangingBeaconsSatisfyingConstraint:")]
 		void StartRangingBeacons (CLBeaconIdentityConstraint constraint);
 
@@ -364,17 +364,17 @@ namespace CoreLocation {
 		[iOS (7,0), Export ("stopRangingBeaconsInRegion:")]
 		void StopRangingBeacons (CLBeaconRegion region);
 
-		[NoWatch, NoTV, Mac (11,0), iOS (13,0)]
+		[NoWatch, NoTV, NoMac, iOS (13,0)]
 		[Export ("stopRangingBeaconsSatisfyingConstraint:")]
 		void StopRangingBeacons (CLBeaconIdentityConstraint constraint);
 
 		[NoWatch][NoTV]
-		[iOS (7,0), Mac (11,0)]
+		[iOS (7,0), NoMac]
 		[Static]
 		[Export ("isRangingAvailable")]
 		bool IsRangingAvailable { get; }
 
-		[iOS (8,0), Mac (11,0)]
+		[iOS (8,0), NoMac]
 		[Export ("requestWhenInUseAuthorization")]
 		void RequestWhenInUseAuthorization ();
 
@@ -385,21 +385,21 @@ namespace CoreLocation {
 		void RequestAlwaysAuthorization ();
 
 		[NoWatch][NoTV]
-		[iOS (8,0), Mac (11,0)]
+		[iOS (8,0), NoMac]
 		[Export ("startMonitoringVisits")]
 		void StartMonitoringVisits ();
 
 		[NoWatch][NoTV]
-		[iOS (8,0), Mac (11,0)]
+		[iOS (8,0), NoMac]
 		[Export ("stopMonitoringVisits")]
 		void StopMonitoringVisits ();
 
 		[NoTV]
-		[iOS (9,0), Watch (4,0), Mac (11,0)]
+		[iOS (9,0), Watch (4,0), NoMac]
 		[Export ("allowsBackgroundLocationUpdates")]
 		bool AllowsBackgroundLocationUpdates { get; set; }
 
-		[NoWatch, NoTV, Mac (11,0), iOS (11,0)]
+		[NoWatch, NoTV, NoMac, iOS (11,0)]
 		[Export ("showsBackgroundLocationIndicator")]
 		bool ShowsBackgroundLocationIndicator { get; set; }
 
@@ -438,7 +438,7 @@ namespace CoreLocation {
 		void UpdatedLocation (CLLocationManager  manager, CLLocation newLocation, CLLocation oldLocation);
 	
 		[NoTV]
-		[Watch (6,0), Mac (11,0)]
+		[Watch (6,0), NoMac]
 		[Export ("locationManager:didUpdateHeading:"), EventArgs ("CLHeadingUpdated")]
 		void UpdatedHeading (CLLocationManager  manager, CLHeading newHeading);
 	
@@ -479,7 +479,7 @@ namespace CoreLocation {
 		[iOS (7,0), Export ("locationManager:didRangeBeacons:inRegion:"), EventArgs ("CLRegionBeaconsRanged")]
 		void DidRangeBeacons (CLLocationManager manager, CLBeacon [] beacons, CLBeaconRegion region);
 
-		[NoWatch, NoTV, Mac (11,0), iOS (13,0)]
+		[NoWatch, NoTV, NoMac, iOS (13,0)]
 		[Export ("locationManager:didRangeBeacons:satisfyingConstraint:")]
 		[EventArgs ("CLRegionBeaconsConstraintRanged")]
 		void DidRangeBeaconsSatisfyingConstraint (CLLocationManager manager, CLBeacon[] beacons, CLBeaconIdentityConstraint beaconConstraint);
@@ -489,13 +489,13 @@ namespace CoreLocation {
 		[iOS (7,0), Export ("locationManager:rangingBeaconsDidFailForRegion:withError:"), EventArgs ("CLRegionBeaconsFailed")]
 		void RangingBeaconsDidFailForRegion (CLLocationManager manager, CLBeaconRegion region, NSError error);
 
-		[NoWatch, NoTV, Mac (11,0), iOS (13,0)]
+		[NoWatch, NoTV, NoMac, iOS (13,0)]
 		[Export ("locationManager:didFailRangingBeaconsForConstraint:error:")]
 		[EventArgs ("CLRegionBeaconsConstraintFailed")]
 		void DidFailRangingBeacons (CLLocationManager manager, CLBeaconIdentityConstraint beaconConstraint, NSError error);
 
 		[NoWatch][NoTV]
-		[iOS (8,0), Mac (11,0)]
+		[iOS (8,0), NoMac]
 		[Export ("locationManager:didVisit:"), EventArgs ("CLVisited")]
 		void DidVisit (CLLocationManager manager, CLVisit visit);
 
@@ -671,7 +671,7 @@ namespace CoreLocation {
 		bool ContainsCoordinate (CLLocationCoordinate2D coordinate);
 	}
 
-	[NoWatch][Mac (11,0)][NoTV]
+	[NoWatch][NoMac][NoTV]
 	[iOS (7,0), BaseType (typeof (CLRegion))]
 	[DisableDefaultCtor] // nil-Handle on iOS8 if 'init' is used
 	partial interface CLBeaconRegion {
@@ -737,7 +737,7 @@ namespace CoreLocation {
 		CLBeaconIdentityConstraint BeaconIdentityConstraint { get; }
 	}
 
-	[NoWatch][Mac (11,0)][NoTV]
+	[NoWatch][NoMac][NoTV]
 	[iOS (7,0), BaseType (typeof (NSObject))]
 	partial interface CLBeacon : NSCopying, NSSecureCoding {
 
@@ -823,7 +823,7 @@ namespace CoreLocation {
 	}
 
 	[NoWatch][NoTV]
-	[iOS (8,0), Mac (11,0)]
+	[iOS (8,0), NoMac]
 	[BaseType (typeof (NSObject))]
 	interface CLVisit : NSSecureCoding, NSCopying {
 
@@ -840,7 +840,7 @@ namespace CoreLocation {
 		double HorizontalAccuracy { get; }
 	}
 
-	[NoWatch, NoTV, Mac (11,0), iOS (13,0)]
+	[NoWatch, NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor] // NSInvalidArgumentException Reason: -[CLBeaconIdentityConstraint init]: unrecognized selector sent to instance 0x600001930300
 	interface CLBeaconIdentityConstraint : NSCopying, NSSecureCoding {

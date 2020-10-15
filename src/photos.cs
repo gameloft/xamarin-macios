@@ -1078,7 +1078,7 @@ namespace Photos
 		[Static, Export ("authorizationStatus")]
 		PHAuthorizationStatus AuthorizationStatus { get; }
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Export ("authorizationStatusForAccessLevel:")]
 		PHAuthorizationStatus GetAuthorizationStatus (PHAccessLevel accessLevel);
@@ -1090,7 +1090,7 @@ namespace Photos
 		[Async]
 		void RequestAuthorization (Action<PHAuthorizationStatus> handler);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Export ("requestAuthorizationForAccessLevel:handler:")]
 		[Async]

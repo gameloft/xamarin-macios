@@ -384,7 +384,7 @@ namespace AppKit {
 		[Export ("currentDrawingAppearance", ArgumentSemantic.Strong)]
 		NSAppearance CurrentDrawingAppearance { get; }
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("performAsCurrentDrawingAppearance:")]
 		void PerformAsCurrentDrawingAppearance (Action receiver);
 
@@ -2271,7 +2271,7 @@ namespace AppKit {
 		bool ImageHugsTitle { get; set; }
 
 		[NullAllowed]
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("symbolConfiguration", ArgumentSemantic.Copy)]
 		NSImageSymbolConfiguration SymbolConfiguration { get; set; }
 
@@ -6522,12 +6522,12 @@ namespace AppKit {
 		[Internal]
 		IntPtr _MonospacedSystemFont (nfloat fontSize, nfloat weight);
 		
-		[Mac (11,0)]
+		[NoMac]
 		[Static]
 		[Export ("preferredFontForTextStyle:options:")]
 		NSFont GetPreferredFont (string textStyle, NSDictionary options);
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("fontWithSize:")]
 		NSFont GetFont (nfloat fontSize);
 	}
@@ -6758,7 +6758,7 @@ namespace AppKit {
 		[return: NullAllowed]
 		NSFontDescriptor Create (NSFontDescriptorSystemDesign design);
 	
-		[Mac (11,0)]
+		[NoMac]
 		[Static]
 		[Export ("preferredFontDescriptorForTextStyle:options:")]
 		NSFontDescriptor GetPreferredFont (string textStyle, NSDictionary options);
@@ -9043,7 +9043,7 @@ namespace AppKit {
 		[Export ("outlineView:didRemoveRowView:forRow:")]
 		void DidRemoveRowView (NSOutlineView outlineView, NSTableRowView rowView, nint row);
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("outlineView:tintConfigurationForItem:")]
 		[return: NullAllowed]
 		NSTintConfiguration GetTintConfiguration (NSOutlineView outlineView, NSObject item);
@@ -9349,13 +9349,13 @@ namespace AppKit {
 		[Export ("layerContentsForContentsScale:")]
 		NSObject GetLayerContentsForContentsScale (nfloat layerContentsScale);
 
-		[Mac (11,0)]
+		[NoMac]
 		[Static]
 		[Export ("imageWithSystemSymbolName:accessibilityDescription:")]
 		[return: NullAllowed]
 		NSImage GetSystemSymbol (string symbolName, [NullAllowed] string accessibilityDescription);
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("imageWithSymbolConfiguration:")]
 		[return: NullAllowed]
 		NSImage GetImage (NSImageSymbolConfiguration configuration);
@@ -10170,7 +10170,7 @@ namespace AppKit {
 		NSColor ContentTintColor { get; set; }
 
 		[NullAllowed]
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("symbolConfiguration", ArgumentSemantic.Copy)]
 		NSImageSymbolConfiguration SymbolConfiguration { get; set; }
 	}
@@ -10593,15 +10593,15 @@ namespace AppKit {
 		[Export ("anchorWithOffsetToAnchor:")]
 		NSLayoutDimension GetAnchorWithOffset (NSLayoutXAxisAnchor otherAnchor);
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("constraintEqualToSystemSpacingAfterAnchor:multiplier:")]
 		NSLayoutConstraint ConstraintEqualToSystemSpacingAfterAnchor (NSLayoutXAxisAnchor anchor, nfloat multiplier);
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("constraintGreaterThanOrEqualToSystemSpacingAfterAnchor:multiplier:")]
 		NSLayoutConstraint ConstraintGreaterThanOrEqualToSystemSpacingAfterAnchor (NSLayoutXAxisAnchor anchor, nfloat multiplier);
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("constraintLessThanOrEqualToSystemSpacingAfterAnchor:multiplier:")]
 		NSLayoutConstraint ConstraintLessThanOrEqualToSystemSpacingAfterAnchor (NSLayoutXAxisAnchor anchor, nfloat multiplier);
 	}
@@ -10615,15 +10615,15 @@ namespace AppKit {
 		[Export ("anchorWithOffsetToAnchor:")]
 		NSLayoutDimension GetAnchorWithOffset (NSLayoutYAxisAnchor otherAnchor);
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("constraintEqualToSystemSpacingBelowAnchor:multiplier:")]
 		NSLayoutConstraint ConstraintEqualToSystemSpacingBelowAnchor (NSLayoutYAxisAnchor anchor, nfloat multiplier);
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("constraintGreaterThanOrEqualToSystemSpacingBelowAnchor:multiplier:")]
 		NSLayoutConstraint ConstraintGreaterThanOrEqualToSystemSpacingBelowAnchor (NSLayoutYAxisAnchor anchor, nfloat multiplier);
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("constraintLessThanOrEqualToSystemSpacingBelowAnchor:multiplier:")]
 		NSLayoutConstraint ConstraintLessThanOrEqualToSystemSpacingBelowAnchor (NSLayoutYAxisAnchor anchor, nfloat multiplier);
 	}
@@ -10933,7 +10933,7 @@ namespace AppKit {
 		[Export ("headerLevel")]
 		nint HeaderLevel { get; [NotImplemented] set; }
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("lineBreakStrategy")]
 		NSLineBreakStrategy LineBreakStrategy { get; [NotImplemented] set; }
 
@@ -10979,7 +10979,7 @@ namespace AppKit {
 		[Override]
 		nint HeaderLevel { get; set; }
 
-		[Mac (11,0)]
+		[NoMac]
 		[Override]
 		[Export ("lineBreakStrategy", ArgumentSemantic.Assign)]
 		NSLineBreakStrategy LineBreakStrategy { get; set; }
@@ -15041,7 +15041,7 @@ namespace AppKit {
 		[Field ("NSKernAttributeName")]
 		NSString KerningAdjustment { get; }
 
-		[Mac (11,0)]
+		[NoMac]
 		[Field ("NSTrackingAttributeName")]
 		NSString Tracking { get; }
 
@@ -21181,7 +21181,7 @@ namespace AppKit {
 		[Export ("hidden")]
 		bool IsHidden { [Bind ("isHidden")] get; set; }
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("automaticallyAdjustsSize")]
 		bool AutomaticallyAdjustsSize { get; set; }
 	}
@@ -21827,7 +21827,7 @@ namespace AppKit {
 		[Export ("openURLs:withApplicationAtURL:configuration:completionHandler:")]
 		void OpenUrls (NSUrl[] urls, NSUrl applicationUrl, NSWorkspaceOpenConfiguration configuration, [NullAllowed] Action<NSRunningApplication, NSError> completionHandler);
 
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("iconForContentType:")]
 		NSImage GetIcon (UTType contentType);
 	}
@@ -27930,7 +27930,7 @@ namespace AppKit {
 	}
 
 	[Unavailable (PlatformName.MacCatalyst)]
-	[Mac (11,0)]
+	[NoMac]
 	[BaseType (typeof(NSToolbarItem))]
 	[DisableDefaultCtor]
 	interface NSSearchToolbarItem
@@ -27959,7 +27959,7 @@ namespace AppKit {
 	delegate NSTableRowView NSTableViewDiffableDataSourceRowProvider (NSTableView tableView, nint row, NSObject identifier);
 	delegate NSView NSTableViewDiffableDataSourceSectionHeaderViewProvider (NSTableView tableView, nint row, NSObject sectionId);
 
-	[Mac (11,0)]
+	[NoMac]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface NSTableViewDiffableDataSource<SectionIdentifierType,ItemIdentifierType> : NSTableViewDataSource
@@ -28027,7 +28027,7 @@ namespace AppKit {
 		OneTimeCode,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface NSTintConfiguration : NSCopying, NSSecureCoding
@@ -28058,7 +28058,7 @@ namespace AppKit {
 		bool AdaptsToUserAccentColor { get; }
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[BaseType (typeof(NSToolbarItem))]
 	[DisableDefaultCtor]
 	interface NSTrackingSeparatorToolbarItem
@@ -28078,7 +28078,7 @@ namespace AppKit {
 		nint DividerIndex { get; set; }
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface NSImageSymbolConfiguration : NSCopying

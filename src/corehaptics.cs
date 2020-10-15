@@ -140,7 +140,7 @@ namespace CoreHaptics {
 
 	interface ICHHapticDeviceCapability { } 
 
-	[iOS (13,0)][Mac (11,0), TV (14,0)]
+	[iOS (13,0)][NoMac, TV (14,0)]
 	[Protocol]
 	interface CHHapticDeviceCapability {
 		[Abstract]

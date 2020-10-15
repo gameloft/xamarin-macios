@@ -369,7 +369,7 @@ namespace StoreKit {
 		[Export ("paymentQueue:updatedDownloads:")]
 		void UpdatedDownloads (SKPaymentQueue queue, SKDownload [] downloads);
 
-		[iOS (11,0)][TV (11,0)][Mac (11,0)][NoWatch]
+		[iOS (11,0)][TV (11,0)][NoMac][NoWatch]
 		[Export ("paymentQueue:shouldAddStorePayment:forProduct:")]
 		bool ShouldAddStorePayment (SKPaymentQueue queue, SKPayment payment, SKProduct product);
 
@@ -379,7 +379,7 @@ namespace StoreKit {
 		[Export ("paymentQueueDidChangeStorefront:")]
 		void DidChangeStorefront (SKPaymentQueue queue);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("paymentQueue:didRevokeEntitlementsForProductIdentifiers:")]
 		void DidRevokeEntitlements (SKPaymentQueue queue, string[] productIdentifiers);
 	}
@@ -546,7 +546,7 @@ namespace StoreKit {
 		void LoadProduct (StoreProductParameters parameters, [NullAllowed] Action<bool,NSError> callback);
 	}
 
-	[Mac (11,0), NoTV, NoWatch]
+	[NoMac, NoTV, NoWatch]
 	[BaseType (typeof (NSObject))]
 	[Model]
 	[Protocol]
@@ -556,7 +556,7 @@ namespace StoreKit {
 	}
 
 	[NoWatch]
-	[Mac (11,0)]
+	[NoMac]
 	[StrongDictionary ("SKStoreProductParameterKey")]
 	interface StoreProductParameters {
 
@@ -598,7 +598,7 @@ namespace StoreKit {
 	}
 
 	[NoWatch]
-	[Mac (11,0)]
+	[NoMac]
 	[Static]
 	interface SKStoreProductParameterKey
 	{
@@ -755,7 +755,7 @@ namespace StoreKit {
 	}
 #endif
 
-	[Mac (11,0), Watch (7,0), iOS (9,3), TV (9,2)]
+	[NoMac, Watch (7,0), iOS (9,3), TV (9,2)]
 	[BaseType (typeof (NSObject))]
 #if XAMCORE_3_0 // Avoid breaking change in iOS
 	[DisableDefaultCtor]
@@ -811,7 +811,7 @@ namespace StoreKit {
 
 
 	[Introduced (PlatformName.MacCatalyst, 14, 0)]
-	[NoWatch, iOS (11,0), TV (11,0), Mac (11,0)]
+	[NoWatch, iOS (11,0), TV (11,0), NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor] // static Default property is the only documented way to get the controller
 	interface SKProductStorePromotionController {

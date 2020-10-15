@@ -163,7 +163,7 @@ namespace FileProvider {
 namespace FileProvider {
 
 	[iOS (11,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[ErrorDomain ("NSFileProviderErrorDomain")]
 	[Native]
@@ -192,7 +192,7 @@ namespace FileProvider {
 	}
 
 	[iOS (11,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[Static]
 	interface NSFileProviderErrorKeys {
@@ -211,7 +211,7 @@ namespace FileProvider {
 	}
 
 	[iOS (11,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[Static]
 	interface NSFileProviderFavoriteRank {
@@ -221,7 +221,7 @@ namespace FileProvider {
 	}
 
 	[iOS (11,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[Static]
 	interface NSFileProviderItemIdentifier {
@@ -255,7 +255,7 @@ namespace FileProvider {
 	}
 
 	[iOS (11,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[Static]
 	interface NSFileProviderPage {
@@ -278,7 +278,7 @@ namespace FileProvider {
 	}
 
 	[iOS (11,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[DisableDefaultCtor]
 	[BaseType (typeof (NSObject))]
@@ -334,7 +334,7 @@ namespace FileProvider {
 		[Export ("finishEnumeratingWithError:")]
 		void FinishEnumerating (NSError error);
 
-		[Mac (11,0)]
+		[NoMac]
 		[NoiOS]
 		[Export ("suggestedPageSize")]
 		nint GetSuggestedPageSize ();
@@ -364,7 +364,7 @@ namespace FileProvider {
 		[Export ("finishEnumeratingWithError:")]
 		void FinishEnumerating (NSError error);
 
-		[Mac (11,0)]
+		[NoMac]
 		[NoiOS]
 		[Export ("suggestedBatchSize")]
 		nint GetSuggestedBatchSize ();
@@ -423,7 +423,7 @@ namespace FileProvider {
 		string TypeIdentifier { get; }
 
 		[iOS (14,0)]
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("contentType", ArgumentSemantic.Copy)]
 		UTType GetContentType ();
 
@@ -534,7 +534,7 @@ namespace FileProvider {
 	}
 
 	[iOS (11,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
@@ -678,7 +678,7 @@ namespace FileProvider {
 	interface INSFileProviderServiceSource {}
 
 	[iOS (11,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[Protocol]
 	interface NSFileProviderServiceSource {
@@ -693,7 +693,7 @@ namespace FileProvider {
 		NSXpcListenerEndpoint MakeListenerEndpoint (out NSError error);
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[BaseType (typeof(NSObject))]
@@ -709,7 +709,7 @@ namespace FileProvider {
 		NSData MetadataVersion { get; }
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[Native][Flags]
@@ -718,7 +718,7 @@ namespace FileProvider {
 		MayAlreadyExist = 1,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[Native][Flags]
@@ -727,7 +727,7 @@ namespace FileProvider {
 		Recursive = 1,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[Native][Flags]
@@ -736,7 +736,7 @@ namespace FileProvider {
 		MayAlreadyExist = 1,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[Native][Flags]
@@ -753,7 +753,7 @@ namespace FileProvider {
 		ExtendedAttributes = 1uL << 9,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[Native][Flags]
@@ -762,7 +762,7 @@ namespace FileProvider {
 		Temporary = 1,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[Native][Flags]
@@ -775,7 +775,7 @@ namespace FileProvider {
 		PathExtensionHidden = 1uL << 4,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[BaseType (typeof (NSObject))]
@@ -795,7 +795,7 @@ namespace FileProvider {
 		NSUrl RequestingExecutable { get; }
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[Protocol]
@@ -808,7 +808,7 @@ namespace FileProvider {
 
 	interface INSFileProviderEnumerating {}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[Protocol]
@@ -820,7 +820,7 @@ namespace FileProvider {
 		INSFileProviderEnumerator GetEnumerator (string containerItemIdentifier, NSFileProviderRequest request, [NullAllowed] out NSError error);
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[Protocol]
@@ -831,7 +831,7 @@ namespace FileProvider {
 		NSProgress FetchContents (string itemIdentifier, [NullAllowed] NSFileProviderItemVersion requestedVersion, NSUrl existingContents, NSFileProviderItemVersion existingVersion, NSFileProviderRequest request, NSFileProviderFetchContentsCompletionHandler completionHandler);
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[Protocol]
@@ -842,7 +842,7 @@ namespace FileProvider {
 		NSProgress GetSupportedServiceSources (string itemIdentifier, Action<INSFileProviderServiceSource[], NSError> completionHandler);
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	[Protocol]
@@ -853,22 +853,22 @@ namespace FileProvider {
 		NSProgress FetchThumbnails (string[] itemIdentifiers, CGSize size, NSFileProviderPerThumbnailCompletionHandler perThumbnailCompletionHandler, Action<NSError> completionHandler);
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	delegate void NSFileProviderPerThumbnailCompletionHandler (NSString identifier, [NullAllowed] NSData imageData, [NullAllowed] NSError error);
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	delegate void NSFileProviderFetchContentsCompletionHandler ([NullAllowed] NSUrl fileContents, [NullAllowed] INSFileProviderItem item, [NullAllowed] NSError error);
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[NoiOS]
 	delegate void NSFileProviderCreateOrModifyItemCompletionHandler ([NullAllowed] INSFileProviderItem item, NSFileProviderItemFields stillPendingFields, bool shouldFetchContent, [NullAllowed] NSError error);
 
-	[Mac (11,0)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)]
 	[NoiOS]
 	[Protocol]

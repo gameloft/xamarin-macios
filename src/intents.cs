@@ -413,7 +413,7 @@ namespace Intents {
 
 	[iOS (10, 0)]
 	[Watch (3, 2)]
-	[NoTV, Mac (11,0)]
+	[NoTV, NoMac]
 	[Native]
 	public enum INPaymentMethodType : long {
 		Unknown = 0,
@@ -441,7 +441,7 @@ namespace Intents {
 		Unpaid
 	}
 
-	[Mac (11,0), NoTV]
+	[NoMac, NoTV]
 	[Native]
 	public enum INPersonSuggestionType : long {
 		[iOS (12,0), Mac (10,14), Watch (5,0)]
@@ -1735,7 +1735,7 @@ namespace Intents {
 		InApp,
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[Native]
 	public enum INGetReservationDetailsIntentResponseCode : long {
 		Unspecified = 0,
@@ -1822,14 +1822,14 @@ namespace Intents {
 		Later,
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[Native]
 	public enum INReservationActionType : long {
 		Unknown = 0,
 		CheckIn,
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[Native]
 	public enum INReservationStatus : long {
 		Unknown = 0,
@@ -1944,7 +1944,7 @@ namespace Intents {
 		ScheduledRecurring = (1uL << 2),
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[Native]
 	public enum INTicketedEventCategory : long {
 		Unknown = 0,
@@ -2194,7 +2194,7 @@ namespace Intents {
 		[Field ("INPersonHandleLabelOther")]
 		Other,
 
-		[Watch (7,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), NoMac, iOS (14,0)]
 		[Field ("INPersonHandleLabelSchool")]
 		School,
 	}
@@ -2361,7 +2361,7 @@ namespace Intents {
 
 	[iOS (10, 0)]
 	[Watch (3, 2)]
-	[Mac (11,0)]
+	[NoMac]
 	[NoTV]
 	[Internal]
 	[Category]
@@ -2464,7 +2464,7 @@ namespace Intents {
 
 	[iOS (10, 0)]
 	[Watch (3, 2)]
-	[Mac (11,0)]
+	[NoMac]
 	[TV (14,0)]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
@@ -3175,7 +3175,7 @@ namespace Intents {
 
 	[iOS (10, 0)]
 	[Watch (3, 2)]
-	[Mac (11,0), TV (14,0)]
+	[NoMac, TV (14,0)]
 	[Unavailable (PlatformName.MacOSX)]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
@@ -3222,7 +3222,7 @@ namespace Intents {
 
 	[iOS (10, 0)]
 	[Watch (3, 2)]
-	[Mac (11,0)]
+	[NoMac]
 	[NoTV]
 	[DisableDefaultCtor]
 	[BaseType (typeof (INIntentResolutionResult))]
@@ -3328,7 +3328,7 @@ namespace Intents {
 
 	[iOS (10, 0)]
 	[Watch (3, 2)]
-	[TV (14,0), Mac (11,0)]
+	[TV (14,0), NoMac]
 	[Protocol]
 	interface INIntentHandlerProviding {
 
@@ -3340,7 +3340,7 @@ namespace Intents {
 
 	[iOS (10, 0)]
 	[Watch (3, 2)]
-	[Mac (11,0), TV (14,0)]
+	[NoMac, TV (14,0)]
 	[BaseType (typeof (NSObject))]
 	interface INExtension : INIntentHandlerProviding {
 	}
@@ -3754,7 +3754,7 @@ namespace Intents {
 
 	[iOS (10, 0)]
 	[Watch (3, 2)]
-	[TV (14,0), Mac (11,0)]
+	[TV (14,0), NoMac]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
 	interface INIntegerResolutionResult {
@@ -3819,7 +3819,7 @@ namespace Intents {
 		[NullAllowed, Export ("intentDescription")]
 		string IntentDescription { get; }
 
-		[Watch (5,0), Mac (11,0), iOS (12,0)]
+		[Watch (5,0), NoMac, iOS (12,0)]
 		[NullAllowed, Export ("suggestedInvocationPhrase")]
 		string SuggestedInvocationPhrase { get; set; }
 
@@ -3868,12 +3868,12 @@ namespace Intents {
 		//[Export ("unsupported")]
 		//INIntentResolutionResult Unsupported { get; }
 
-		// [Watch (6,0), iOS (13,0), TV (14,0), Mac (11,0)]
+		// [Watch (6,0), iOS (13,0), TV (14,0), NoMac]
 		// [Static]
 		// [Export ("unsupportedWithReason:")]
 		// INIntentResolutionResult GetUnsupported (nint reason);
 
-		// [Watch (6,0), iOS (13,0), TV (14,0), Mac (11,0)]
+		// [Watch (6,0), iOS (13,0), TV (14,0), NoMac]
 		// [Static]
 		// [Export ("confirmationRequiredWithItemToConfirm:forReason:")]
 		// INIntentResolutionResult GetConfirmationRequired (NSObject itemToConfirm, nint reason);
@@ -4288,7 +4288,7 @@ namespace Intents {
 
 	[iOS (10, 0)]
 	[Watch (3, 2)]
-	[NoTV, Mac (11,0)]
+	[NoTV, NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INPaymentMethod : NSCopying, NSSecureCoding {
@@ -4362,7 +4362,7 @@ namespace Intents {
 		[Export ("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:")]
 		IntPtr Constructor (INPersonHandle personHandle, [NullAllowed] NSPersonNameComponents nameComponents, [NullAllowed] string displayName, [NullAllowed] INImage image, [NullAllowed] string contactIdentifier, [NullAllowed] string customIdentifier);
 
-		[Watch (7,0), iOS (14,0), Mac (11,0)]
+		[Watch (7,0), iOS (14,0), NoMac]
 		[Export ("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:relationship:")]
 		IntPtr Constructor (INPersonHandle personHandle, [NullAllowed] NSPersonNameComponents nameComponents, [NullAllowed] string displayName, [NullAllowed] INImage image, [NullAllowed] string contactIdentifier, [NullAllowed] string customIdentifier, [NullAllowed] string relationship);
 
@@ -7376,7 +7376,7 @@ namespace Intents {
 
 	[iOS (10, 0)]
 	[Watch (3, 2)]
-	[NoTV, Mac (11,0)]
+	[NoTV, NoMac]
 	[DisableDefaultCtor]
 	[BaseType (typeof (INIntentResolutionResult))]
 	interface INTemperatureResolutionResult {
@@ -10727,7 +10727,7 @@ namespace Intents {
 		string Artist { get; }
 	}
 
-	[Watch (5,0), NoTV, Mac (11,0), iOS (12,0)]
+	[Watch (5,0), NoTV, NoMac, iOS (12,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INObject : INSpeakable, NSCopying, NSSecureCoding {
@@ -10962,7 +10962,7 @@ namespace Intents {
 		void SetRelevantShortcuts (INRelevantShortcut [] shortcuts, [NullAllowed] Action<NSError> completionHandler);
 	}
 
-	[Watch (5,0), NoTV, Mac (11,0), iOS (12,0)]
+	[Watch (5,0), NoTV, NoMac, iOS (12,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INShortcut : NSSecureCoding, NSCopying {
@@ -11283,7 +11283,7 @@ namespace Intents {
 		INAddTasksTemporalEventTriggerResolutionResult GetConfirmationRequired (NSObject itemToConfirm, nint reason);
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INAirline : NSCopying, NSSecureCoding {
@@ -11302,7 +11302,7 @@ namespace Intents {
 		string IcaoCode { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INAirport : NSCopying, NSSecureCoding {
@@ -11321,7 +11321,7 @@ namespace Intents {
 		string IcaoCode { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface INAirportGate : NSCopying, NSSecureCoding {
@@ -11550,7 +11550,7 @@ namespace Intents {
 		INDeleteTasksTaskResolutionResult GetConfirmationRequired (NSObject itemToConfirm, nint reason);
 	}
 
-	[Watch (6,0), Mac (11,0), iOS (13,0), NoTV]
+	[Watch (6,0), NoMac, iOS (13,0), NoTV]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
 	interface INEnergyResolutionResult {
@@ -11596,7 +11596,7 @@ namespace Intents {
 		INEnergyResolutionResult GetConfirmationRequired (NSObject itemToConfirm, nint reason);
 	}
 
-	[Watch (6,0), Mac (11,0), iOS (13,0), NoTV]
+	[Watch (6,0), NoMac, iOS (13,0), NoTV]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
 	interface INEnumResolutionResult {
@@ -11638,7 +11638,7 @@ namespace Intents {
 		INEnumResolutionResult GetConfirmationRequired (NSObject itemToConfirm, nint reason);
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INFile : NSSecureCoding {
@@ -11664,7 +11664,7 @@ namespace Intents {
 		NSUrl FileUrl { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
 	interface INFileResolutionResult {
@@ -11710,7 +11710,7 @@ namespace Intents {
 		INFileResolutionResult GetConfirmationRequired (NSObject itemToConfirm, nint reason);
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INFlight : NSCopying, NSSecureCoding {
@@ -11738,7 +11738,7 @@ namespace Intents {
 		INAirportGate ArrivalAirportGate { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INReservation))]
 	[DisableDefaultCtor]
 	interface INFlightReservation : NSCopying, NSSecureCoding {
@@ -11758,7 +11758,7 @@ namespace Intents {
 		INFlight Flight { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INIntent))]
 	[DisableDefaultCtor]
 	interface INGetReservationDetailsIntent {
@@ -11774,7 +11774,7 @@ namespace Intents {
 		INSpeakableString[] ReservationItemReferences { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INIntentResponse))]
 	[DisableDefaultCtor]
 	interface INGetReservationDetailsIntentResponse {
@@ -11790,7 +11790,7 @@ namespace Intents {
 		INReservation[] Reservations { get; set; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
 	interface INLengthResolutionResult {
@@ -11836,7 +11836,7 @@ namespace Intents {
 		INLengthResolutionResult GetConfirmationRequired (NSObject itemToConfirm, nint reason);
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INReservation))]
 	[DisableDefaultCtor]
 	interface INLodgingReservation : NSCopying, NSSecureCoding {
@@ -11864,7 +11864,7 @@ namespace Intents {
 		NSNumber NumberOfChildren { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
 	interface INMassResolutionResult {
@@ -12120,7 +12120,7 @@ namespace Intents {
 		NSNumber NumberOfLibraryItems { get; set; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
 	interface INObjectResolutionResult {
@@ -12166,7 +12166,7 @@ namespace Intents {
 		INObjectResolutionResult GetConfirmationRequired (NSObject itemToConfirm, nint reason);
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
 	interface INPaymentMethodResolutionResult {
@@ -12410,7 +12410,7 @@ namespace Intents {
 		INPlaybackRepeatModeResolutionResult GetConfirmationRequired (NSObject itemToConfirm, nint reason);
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INRentalCar : NSCopying, NSSecureCoding {
@@ -12435,7 +12435,7 @@ namespace Intents {
 		string RentalCarDescription { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INReservation))]
 	[DisableDefaultCtor]
 	interface INRentalCarReservation : NSCopying, NSSecureCoding {
@@ -12461,7 +12461,7 @@ namespace Intents {
 		CLPlacemark DropOffLocation { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INReservation : NSCopying, NSSecureCoding {
@@ -12489,7 +12489,7 @@ namespace Intents {
 		NSUrl Url { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INReservationAction : NSCopying, NSSecureCoding {
@@ -12508,7 +12508,7 @@ namespace Intents {
 		NSUserActivity UserActivity { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INReservation))]
 	[DisableDefaultCtor]
 	interface INRestaurantReservation : NSCopying, NSSecureCoding {
@@ -12579,7 +12579,7 @@ namespace Intents {
 		INMediaItem[] MediaItems { get; set; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INSeat : NSCopying, NSSecureCoding {
@@ -12770,7 +12770,7 @@ namespace Intents {
 		INSnoozeTasksTaskResolutionResult GetConfirmationRequired (NSObject itemToConfirm, nint reason);
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
 	interface INSpeedResolutionResult {
@@ -13132,7 +13132,7 @@ namespace Intents {
 		INSeat ReservedSeat { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
 	interface INTimeIntervalResolutionResult {
@@ -13174,7 +13174,7 @@ namespace Intents {
 		INTimeIntervalResolutionResult GetConfirmationRequired (NSObject itemToConfirm, nint reason);
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INReservation))]
 	[DisableDefaultCtor]
 	interface INTrainReservation : NSCopying, NSSecureCoding {
@@ -13194,7 +13194,7 @@ namespace Intents {
 		INTrainTrip TrainTrip { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INTrainTrip : NSCopying, NSSecureCoding {
@@ -13228,7 +13228,7 @@ namespace Intents {
 		string ArrivalPlatform { get; }
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INIntentResolutionResult), Name = "INURLResolutionResult")]
 	[DisableDefaultCtor]
 	interface INUrlResolutionResult {
@@ -13396,7 +13396,7 @@ namespace Intents {
 		void BecomeCurrent ();
 	}
 
-	[Watch (6,0), NoTV, Mac (11,0), iOS (13,0)]
+	[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof (INIntentResolutionResult))]
 	[DisableDefaultCtor]
 	interface INVolumeResolutionResult {
@@ -13574,7 +13574,7 @@ namespace Intents {
 		INIntent GetIntent ();
 	}
 
-	[Watch (7,0), NoTV, Mac (11,0), iOS (14,0)]
+	[Watch (7,0), NoTV, NoMac, iOS (14,0)]
 	[BaseType (typeof (INReservation))]
 	[DisableDefaultCtor]
 	interface INBoatReservation : NSCopying, NSSecureCoding {
@@ -13590,7 +13590,7 @@ namespace Intents {
 		INBoatTrip BoatTrip { get; }
 	}
 
-	[Watch (7,0), NoTV, Mac (11,0), iOS (14,0)]
+	[Watch (7,0), NoTV, NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INBoatTrip : NSCopying, NSSecureCoding {
@@ -13618,7 +13618,7 @@ namespace Intents {
 		CLPlacemark ArrivalBoatTerminalLocation { get; }
 	}
 
-	[Watch (7,0), NoTV, Mac (11,0), iOS (14,0)]
+	[Watch (7,0), NoTV, NoMac, iOS (14,0)]
 	[BaseType (typeof (INReservation))]
 	[DisableDefaultCtor]
 	interface INBusReservation : NSCopying, NSSecureCoding {
@@ -13634,7 +13634,7 @@ namespace Intents {
 		INBusTrip BusTrip { get; }
 	}
 
-	[Watch (7,0), NoTV, Mac (11,0), iOS (14,0)]
+	[Watch (7,0), NoTV, NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INBusTrip : NSCopying, NSSecureCoding {
@@ -13827,7 +13827,7 @@ namespace Intents {
 		INCar [] Cars { get; set; }
 	}
 
-	[Watch (7,0), NoTV, Mac (11,0), iOS (14,0)]
+	[Watch (7,0), NoTV, NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INObjectCollection<ObjectType> : NSCopying, NSSecureCoding
@@ -13850,7 +13850,7 @@ namespace Intents {
 		IntPtr Constructor (ObjectType[] items);
 	}
 
-	[Watch (7,0), NoTV, Mac (11,0), iOS (14,0)]
+	[Watch (7,0), NoTV, NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface INObjectSection <ObjectType> : NSCopying, NSSecureCoding

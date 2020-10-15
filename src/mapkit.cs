@@ -1137,11 +1137,11 @@ namespace MapKit {
 		[Export ("getCoordinates:range:"), Internal]
 		void GetCoords (IntPtr dest, NSRange range);
 
-		[TV (14,0), NoWatch, Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoWatch, NoMac, iOS (14,0)]
 		[Export ("locationAtPointIndex:")]
 		nfloat GetLocation (nuint pointIndex);
 
-		[TV (14,0), NoWatch, Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoWatch, NoMac, iOS (14,0)]
 		[return: BindAs (typeof (nfloat []))]
 		[Export ("locationsAtPointIndexes:")]
 		NSNumber[] GetLocations (NSIndexSet indexes);
@@ -1201,7 +1201,7 @@ namespace MapKit {
 		[Export ("initWithRequest:")]
 		IntPtr Constructor (MKLocalSearchRequest request);
 
-		[TV (14,0), NoWatch, Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoWatch, NoMac, iOS (14,0)]
 		[Export ("initWithPointsOfInterestRequest:")]
 		[DesignatedInitializer]
 		IntPtr Constructor (MKLocalPointsOfInterestRequest request);

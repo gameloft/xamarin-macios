@@ -20,7 +20,7 @@ namespace ScreenTime {
 		bool EnforcesChildRestrictions { get; }
 	}
 
-	[Mac (11,0), iOS (14,0)]
+	[NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface STScreenTimeConfigurationObserver {

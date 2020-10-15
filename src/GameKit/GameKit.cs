@@ -301,7 +301,7 @@ namespace GameKit {
 		AuthKitInvocation = 2,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[NoWatch]
 	[Native]
 	public enum GKAccessPointLocation : long
@@ -312,7 +312,7 @@ namespace GameKit {
 		BottomTrailing,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0), Watch(7,0)]
+	[TV (14,0), NoMac, iOS (14,0), Watch(7,0)]
 	[Native]
 	public enum GKLeaderboardType : long
 	{
@@ -320,7 +320,7 @@ namespace GameKit {
 		Recurring,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[NoWatch]
 	[Native]
 	public enum GKMatchmakingMode : long

@@ -329,11 +329,11 @@ namespace AudioUnit
 			}
 		}
 
-		[NoWatch, TV (14,0), Mac (11,0), iOS (14,0)]
+		[NoWatch, TV (14,0), NoMac, iOS (14,0)]
 		[DllImport (Constants.AudioUnitLibrary)]
 		static extern unsafe IntPtr AudioComponentCopyIcon (IntPtr comp);
 
-		[NoWatch, TV (14,0), iOS (14,0), Mac (11,0)]
+		[NoWatch, TV (14,0), iOS (14,0), NoMac]
 		public UIImage CopyIcon ()
 		{
 			var ptr = AudioComponentCopyIcon (handle);

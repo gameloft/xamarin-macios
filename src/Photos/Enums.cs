@@ -386,7 +386,7 @@ namespace Photos
 		NetworkAccessRequired = 3164,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[Native]
 	public enum PHAccessLevel : long
 	{

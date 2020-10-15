@@ -244,7 +244,7 @@ namespace CoreMedia {
 		Mpeg4Video       = 0x6d703476,
 		Mpeg2Video       = 0x6d703276,
 		Mpeg1Video       = 0x6d703176,
-		[iOS (14,0), TV (14,0), Watch (7,0), Mac (11,0)]
+		[iOS (14,0), TV (14,0), Watch (7,0), NoMac]
 		VP9              = 0x76703039,
 		DvcNtsc          = 0x64766320,
 		DvcPal           = 0x64766370,

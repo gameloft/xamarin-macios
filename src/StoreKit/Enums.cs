@@ -79,7 +79,7 @@ namespace StoreKit {
 
 #if !XAMCORE_4_0
 
-	[iOS (11,0)][TV (11,0)][Mac (11,0)][NoWatch]
+	[iOS (11,0)][TV (11,0)][NoMac][NoWatch]
 	[Native]
 	public enum SKProductStorePromotionVisibility : long {
 		Default,

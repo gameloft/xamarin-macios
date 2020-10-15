@@ -26,7 +26,7 @@ namespace AuthenticationServices {
 	[Introduced (PlatformName.MacCatalyst, 14, 0)]
 	[NoTV][NoWatch]
 	[iOS (12,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Native]
 	[ErrorDomain ("ASCredentialIdentityStoreErrorDomain")]
 	public enum ASCredentialIdentityStoreErrorCode : long {
@@ -38,7 +38,7 @@ namespace AuthenticationServices {
 	[Introduced (PlatformName.MacCatalyst, 14, 0)]
 	[NoTV][NoWatch]
 	[iOS (12,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Native]
 	[ErrorDomain ("ASExtensionErrorDomain")]
 	public enum ASExtensionErrorCode : long {
@@ -59,7 +59,7 @@ namespace AuthenticationServices {
 	[Introduced (PlatformName.MacCatalyst, 14, 0)]
 	[NoTV][NoWatch]
 	[iOS (12,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[Native]
 	public enum ASCredentialServiceIdentifierType : long {
 		Domain,
@@ -84,7 +84,7 @@ namespace AuthenticationServices {
 	[Introduced (PlatformName.MacCatalyst, 14, 0)]
 	[NoTV][NoWatch]
 	[iOS (12,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface ASCredentialIdentityStore {
@@ -116,7 +116,7 @@ namespace AuthenticationServices {
 	[Introduced (PlatformName.MacCatalyst, 14, 0)]
 	[NoTV][NoWatch]
 	[iOS (12,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface ASCredentialIdentityStoreState {
@@ -132,7 +132,7 @@ namespace AuthenticationServices {
 	[Introduced (PlatformName.MacCatalyst, 14, 0)]
 	[NoTV][NoWatch]
 	[iOS (12,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[BaseType (typeof (NSExtensionContext))]
 	[DisableDefaultCtor]
 	interface ASCredentialProviderExtensionContext {
@@ -149,7 +149,7 @@ namespace AuthenticationServices {
 	[Introduced (PlatformName.MacCatalyst, 14, 0)]
 	[NoTV][NoWatch]
 	[iOS (12,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface ASCredentialServiceIdentifier : NSCopying, NSSecureCoding {
@@ -166,7 +166,7 @@ namespace AuthenticationServices {
 	[Introduced (PlatformName.MacCatalyst, 14, 0)]
 	[NoTV][NoWatch]
 	[iOS (12,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface ASPasswordCredentialIdentity : NSCopying, NSSecureCoding {
@@ -194,7 +194,7 @@ namespace AuthenticationServices {
 	[Introduced (PlatformName.MacCatalyst, 14, 0)]
 	[NoTV][NoWatch]
 	[iOS (12,0)]
-	[Mac (11,0)]
+	[NoMac]
 	[BaseType (typeof (UIViewController))]
 	interface ASCredentialProviderViewController {
 		[Export ("extensionContext", ArgumentSemantic.Strong)]
@@ -569,17 +569,17 @@ namespace AuthenticationServices {
 		NSDictionary AuthorizationOptions { get; }
 
 		[iOS (14,0)]
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("callerManaged")]
 		bool CallerManaged { [Bind ("isCallerManaged")] get; }
 
 		[iOS (14,0)]
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("callerTeamIdentifier")]
 		string CallerTeamIdentifier { get; }
 
 		[iOS (14,0)]
-		[Mac (11,0)]
+		[NoMac]
 		[Export ("localizedCallerDisplayName")]
 		string LocalizedCallerDisplayName { get; }
 	}

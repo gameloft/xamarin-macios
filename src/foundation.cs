@@ -1314,22 +1314,22 @@ namespace Foundation
 		[NullAllowed, Export ("error", ArgumentSemantic.Copy)]
 		NSError Error { get; }
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("decodeArrayOfObjectsOfClass:forKey:")]
 		[return: NullAllowed]
 		NSObject[] DecodeArrayOfObjects (Class @class, string key);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("decodeArrayOfObjectsOfClasses:forKey:")]
 		[return: NullAllowed]
 		NSObject[] DecodeArrayOfObjects (NSSet<Class> classes, string key);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("decodeDictionaryWithKeysOfClass:objectsOfClass:forKey:")]
 		[return: NullAllowed]
 		NSDictionary DecodeDictionary (Class keyClass, Class objectClass, string key);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("decodeDictionaryWithKeysOfClasses:objectsOfClasses:forKey:")]
 		[return: NullAllowed]
 		NSDictionary DecodeDictionary (NSSet<Class> keyClasses, NSSet<Class> objectClasses, string key);
@@ -2522,25 +2522,25 @@ namespace Foundation
 		bool GetRequiresSecureCoding ();
 
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Export ("unarchivedArrayOfObjectsOfClass:fromData:error:")]
 		[return: NullAllowed]
 		NSObject[] GetUnarchivedArray (Class @class, NSData data, [NullAllowed] out NSError error);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Export ("unarchivedArrayOfObjectsOfClasses:fromData:error:")]
 		[return: NullAllowed]
 		NSObject[] GetUnarchivedArray (NSSet<Class> classes, NSData data, [NullAllowed] out NSError error);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Export ("unarchivedDictionaryWithKeysOfClass:objectsOfClass:fromData:error:")]
 		[return: NullAllowed]
 		NSDictionary GetUnarchivedDictionary (Class keyClass, Class valueClass, NSData data, [NullAllowed] out NSError error);
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Static]
 		[Export ("unarchivedDictionaryWithKeysOfClasses:objectsOfClasses:fromData:error:")]
 		[return: NullAllowed]
@@ -4086,7 +4086,7 @@ namespace Foundation
 		NSError GetFileProviderError (string nonExistentItemIdentifier);
 
 		[NoiOS]
-		[Mac (11,0)]
+		[NoMac]
 		[Static]
 		[Export ("fileProviderErrorForRejectedDeletionOfItem:")]
 		NSError GetFileProviderErrorForRejectedDeletion (INSFileProviderItem updatedVersion);
@@ -6072,7 +6072,7 @@ namespace Foundation
 		[Field ("NSURLVolumeSupportsAccessPermissionsKey")]
 		NSString VolumeSupportsAccessPermissionsKey { get; }
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Field ("NSURLVolumeSupportsFileProtectionKey")]
 		NSString VolumeSupportsFileProtectionKey { get; }
 
@@ -6284,27 +6284,27 @@ namespace Foundation
 		[Field ("NSURLFileProtectionCompleteUntilFirstUserAuthentication")]
 		NSString FileProtectionCompleteUntilFirstUserAuthentication { get; }
 
-		[Watch (7,0)][TV (14,0)][Mac (11,0)][iOS (14,0)]
+		[Watch (7,0)][TV (14,0)][NoMac][iOS (14,0)]
 		[Field ("NSURLContentTypeKey")]
 		NSString ContentTypeKey { get; }
 
-		[Watch (7,0)][TV (14,0)][Mac (11,0)][iOS (14,0)]
+		[Watch (7,0)][TV (14,0)][NoMac][iOS (14,0)]
 		[Field ("NSURLFileContentIdentifierKey")]
 		NSString FileContentIdentifierKey { get; }
 
-		[Watch (7,0)][TV (14,0)][Mac (11,0)][iOS (14,0)]
+		[Watch (7,0)][TV (14,0)][NoMac][iOS (14,0)]
 		[Field ("NSURLIsPurgeableKey")]
 		NSString IsPurgeableKey { get; }
 
-		[Watch (7,0)][TV (14,0)][Mac (11,0)][iOS (14,0)]
+		[Watch (7,0)][TV (14,0)][NoMac][iOS (14,0)]
 		[Field ("NSURLIsSparseKey")]
 		NSString IsSparseKey { get; }
 
-		[Watch (7,0)][TV (14,0)][Mac (11,0)][iOS (14,0)]
+		[Watch (7,0)][TV (14,0)][NoMac][iOS (14,0)]
 		[Field ("NSURLMayHaveExtendedAttributesKey")]
 		NSString MayHaveExtendedAttributesKey { get; }
 
-		[Watch (7,0)][TV (14,0)][Mac (11,0)][iOS (14,0)]
+		[Watch (7,0)][TV (14,0)][NoMac][iOS (14,0)]
 		[Field ("NSURLMayShareFileContentKey")]
 		NSString MayShareFileContentKey { get; }
 
@@ -11837,7 +11837,7 @@ namespace Foundation
 		[Export ("macCatalystApp")]
 		bool IsMacCatalystApplication { [Bind ("isMacCatalystApp")] get; }
 
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		[Export ("iOSAppOnMac")]
 		bool IsiOSApplicationOnMac { [Bind ("isiOSAppOnMac")] get; }
 #endregion
@@ -12246,23 +12246,23 @@ namespace Foundation
 		[Field("NSFileBusy")]
 		NSString Busy { get; }
 
-		[Mac (11,0)]
+		[NoMac]
 		[Field ("NSFileProtectionKey")]
 		NSString FileProtectionKey { get; }
 
-		[Mac (11,0)]
+		[NoMac]
 		[Field ("NSFileProtectionNone")]
 		NSString FileProtectionNone { get; }
 
-		[Mac (11,0)]
+		[NoMac]
 		[Field ("NSFileProtectionComplete")]
 		NSString FileProtectionComplete { get; }
 
-		[Mac (11,0)]
+		[NoMac]
 		[Field ("NSFileProtectionCompleteUnlessOpen")]
 		NSString FileProtectionCompleteUnlessOpen { get; }
 
-		[Mac (11,0)]
+		[NoMac]
 		[Field ("NSFileProtectionCompleteUntilFirstUserAuthentication")]
 		NSString FileProtectionCompleteUntilFirstUserAuthentication  { get; }
 
@@ -16332,7 +16332,7 @@ namespace Foundation
 		bool ShouldDefer { get; }
 	}
 
-	[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+	[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 	[Native]
 	public enum NSUrlSessionTaskMetricsDomainResolutionProtocol : long {
 		Unknown,

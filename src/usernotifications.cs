@@ -146,9 +146,9 @@ namespace UserNotifications {
 		[Deprecated (PlatformName.WatchOS, 7,0, message: "Use 'List | Banner' instead.")]
 		[Deprecated (PlatformName.MacOSX, 11,0, message: "Use 'List | Banner' instead.")]
 		Alert = (1 << 2),
-		[iOS (14,0)][TV (14,0)][Watch (7,0)][Mac (11,0)]
+		[iOS (14,0)][TV (14,0)][Watch (7,0)][NoMac]
 		List = (1 << 3),
-		[iOS (14,0)][TV (14,0)][Watch (7,0)][Mac (11,0)]
+		[iOS (14,0)][TV (14,0)][Watch (7,0)][NoMac]
 		Banner = (1 << 4),
 	}
 

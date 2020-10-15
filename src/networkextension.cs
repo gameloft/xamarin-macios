@@ -328,7 +328,7 @@ namespace NetworkExtension {
 		[Export ("dnsProtocol")]
 		NEDnsProtocol DnsProtocol { get; }
 
-		[Mac (11,0), iOS (14,0), NoTV, NoWatch]
+		[NoMac, iOS (14,0), NoTV, NoWatch]
 		[Notification]
 		[Field ("NEDNSSettingsConfigurationDidChangeNotification")]
 		NSString ConfigurationDidChangeNotification { get; }
@@ -2211,7 +2211,7 @@ namespace NetworkExtension {
 		void HandleTimerEvent ();
 	}
 
-	[NoWatch, NoTV, Mac (11,0), iOS (14,0)]
+	[NoWatch, NoTV, NoMac, iOS (14,0)]
 	[BaseType (typeof (NEDnsSettings), Name = "NEDNSOverHTTPSSettings")]
 	interface NEDnsOverHttpsSettings {
 		[NullAllowed]
@@ -2219,7 +2219,7 @@ namespace NetworkExtension {
 		NSUrl ServerUrl { get; set; }
 	}
 
-	[NoWatch, NoTV, Mac (11,0), iOS (14,0)]
+	[NoWatch, NoTV, NoMac, iOS (14,0)]
 	[BaseType (typeof (NEDnsSettings), Name = "NEDNSOverTLSSettings")]
 	interface NEDnsOverTlsSettings {
 		[NullAllowed]
@@ -2227,7 +2227,7 @@ namespace NetworkExtension {
 		string ServerName { get; set; }
 	}
 
-	[NoWatch, NoTV, Mac (11,0), iOS (14,0)]
+	[NoWatch, NoTV, NoMac, iOS (14,0)]
 	[DisableDefaultCtor]
 	[BaseType (typeof (NSObject), Name = "NEDNSSettingsManager")]
 	interface NEDnsSettingsManager {

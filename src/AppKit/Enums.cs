@@ -330,7 +330,7 @@ namespace AppKit {
 		Regular = 0, 
 		Small = 1,
 		Mini = 2,
-		[Mac (11,0)]
+		[NoMac]
 		Large = 3,
 	}
 
@@ -3018,7 +3018,7 @@ namespace AppKit {
 		ReplaceFile,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Native]
 	public enum NSTableViewStyle : long
 	{
@@ -3028,7 +3028,7 @@ namespace AppKit {
 		SourceList,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Native]
 	public enum NSTitlebarSeparatorStyle : long
 	{
@@ -3038,7 +3038,7 @@ namespace AppKit {
 		Shadow,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Native]
 	public enum NSWindowToolbarStyle : long
 	{
@@ -3062,7 +3062,7 @@ namespace AppKit {
 		SlideRight = 0x40,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Native]
 	public enum NSImageSymbolScale : long
 	{
@@ -3071,7 +3071,7 @@ namespace AppKit {
 		Large = 3,
 	}
 
-	[Mac (11,0)]
+	[NoMac]
 	[Flags]
 	[Native]
 	public enum NSLineBreakStrategy : ulong

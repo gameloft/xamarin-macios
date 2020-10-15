@@ -56,7 +56,7 @@ namespace Foundation  {
 		PPC    = 0x00000012,
 		X86_64 = 0x01000007,
 		PPC64  = 0x01000012,
-		[Watch (7,0), TV (14,0), Mac (11,0), iOS (14,0)]
+		[Watch (7,0), TV (14,0), NoMac, iOS (14,0)]
 		ARM64  = 0x0100000c,
 	}
 #endif
@@ -218,15 +218,15 @@ namespace Foundation  {
 		Atomic = 1,
 
 		WithoutOverwriting  = 2,
-		[Mac (11,0)]
+		[NoMac]
 		FileProtectionNone = 0x10000000,
-		[Mac (11,0)]
+		[NoMac]
 		FileProtectionComplete = 0x20000000,
-		[Mac (11,0)]
+		[NoMac]
 		FileProtectionMask = 0xf0000000,
-		[Mac (11,0)]
+		[NoMac]
 		FileProtectionCompleteUnlessOpen = 0x30000000,
-		[Mac (11,0)]
+		[NoMac]
 		FileProtectionCompleteUntilFirstUserAuthentication = 0x40000000,
 	}
 	

@@ -270,7 +270,7 @@ namespace Vision {
 	enum VNDetectFaceCaptureQualityRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		Two = 2,
 	}
 
@@ -329,7 +329,7 @@ namespace Vision {
 	enum VNRecognizeTextRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		Two = 2,
 	}
 
@@ -341,35 +341,35 @@ namespace Vision {
 		Double = 2,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[Native]
 	enum VNDetectContourRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[Native]
 	enum VNDetectHumanBodyPoseRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[Native]
 	enum VNDetectHumanHandPoseRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[Native]
 	enum VNDetectTrajectoriesRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[Native]
 	public enum VNGenerateOpticalFlowRequestComputationAccuracy : ulong {
 		Low = 0,
@@ -378,21 +378,21 @@ namespace Vision {
 		VeryHigh,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[Native]
 	enum VNGenerateOpticalFlowRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[Native]
 	enum VNStatefulRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	enum VNHumanBodyPoseObservationJointName {
 		[DefaultEnumValue]
 		[Field (null)]
@@ -456,7 +456,7 @@ namespace Vision {
 		RightAnkle,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	enum VNHumanBodyPoseObservationJointsGroupName {
 		[DefaultEnumValue]
 		[Field (null)]
@@ -484,7 +484,7 @@ namespace Vision {
 		All,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	enum VNHumanHandPoseObservationJointName {
 		[DefaultEnumValue]
 		[Field (null)]
@@ -554,7 +554,7 @@ namespace Vision {
 		LittleTip,
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	enum VNHumanHandPoseObservationJointsGroupName {
 		[DefaultEnumValue]
 		[Field (null)]
@@ -1461,7 +1461,7 @@ namespace Vision {
 		[Export ("confidence")]
 		float Confidence { get; }
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Export ("timeRange", ArgumentSemantic.Assign)]
 		CMTimeRange TimeRange { get; }
 	}
@@ -1877,19 +1877,19 @@ namespace Vision {
 		[Wrap ("this (imageData, orientation, imageOptions.GetDictionary ()!)")]
 		IntPtr Constructor (NSData imageData, CGImagePropertyOrientation orientation, VNImageOptions imageOptions);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Export ("initWithCMSampleBuffer:options:")]
 		IntPtr Constructor (CMSampleBuffer sampleBuffer, NSDictionary options);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Wrap ("this (sampleBuffer, imageOptions.GetDictionary ()!)")]
 		IntPtr Constructor (CMSampleBuffer sampleBuffer, VNImageOptions imageOptions);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Export ("initWithCMSampleBuffer:orientation:options:")]
 		IntPtr Constructor (CMSampleBuffer sampleBuffer, CGImagePropertyOrientation orientation, NSDictionary options);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Wrap ("this (sampleBuffer, orientation, imageOptions.GetDictionary ()!)")]
 		IntPtr Constructor (CMSampleBuffer sampleBuffer, CGImagePropertyOrientation orientation, VNImageOptions imageOptions);
 
@@ -1936,11 +1936,11 @@ namespace Vision {
 		[Export ("performRequests:onImageData:orientation:error:")]
 		bool Perform (VNRequest [] requests, NSData imageData, CGImagePropertyOrientation orientation, out NSError error);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Export ("performRequests:onCMSampleBuffer:error:")]
 		bool Perform (VNRequest[] requests, CMSampleBuffer sampleBuffer, [NullAllowed] out NSError error);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Export ("performRequests:onCMSampleBuffer:orientation:error:")]
 		bool Perform (VNRequest[] requests, CMSampleBuffer sampleBuffer, CGImagePropertyOrientation orientation, [NullAllowed] out NSError error);
 	}
@@ -2071,35 +2071,35 @@ namespace Vision {
 		[Wrap ("this (imageData, orientation, options.GetDictionary ()!, completionHandler)")]
 		IntPtr Constructor (NSData imageData, CGImagePropertyOrientation orientation, VNImageOptions options, VNRequestCompletionHandler completionHandler);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Export ("initWithTargetedCMSampleBuffer:options:")]
 		IntPtr Constructor (CMSampleBuffer sampleBuffer, NSDictionary optionsDict);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Wrap ("this (sampleBuffer, options.GetDictionary ()!)")]
 		IntPtr Constructor (CMSampleBuffer sampleBuffer, VNImageOptions options);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Export ("initWithTargetedCMSampleBuffer:options:completionHandler:")]
 		IntPtr Constructor (CMSampleBuffer sampleBuffer, NSDictionary optionsDict, [NullAllowed] VNRequestCompletionHandler completionHandler);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Wrap ("this (sampleBuffer, options.GetDictionary ()!, completionHandler)")]
 		IntPtr Constructor (CMSampleBuffer sampleBuffer, VNImageOptions options, VNRequestCompletionHandler completionHandler);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Export ("initWithTargetedCMSampleBuffer:orientation:options:")]
 		IntPtr Constructor (CMSampleBuffer sampleBuffer, CGImagePropertyOrientation orientation, NSDictionary optionsDict);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Wrap ("this (sampleBuffer, orientation, options.GetDictionary ()!)")]
 		IntPtr Constructor (CMSampleBuffer sampleBuffer, CGImagePropertyOrientation orientation, VNImageOptions options);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Export ("initWithTargetedCMSampleBuffer:orientation:options:completionHandler:")]
 		IntPtr Constructor (CMSampleBuffer sampleBuffer, CGImagePropertyOrientation orientation, NSDictionary optionsDict, [NullAllowed] VNRequestCompletionHandler completionHandler);
 
-		[TV (14,0), Mac (11,0), iOS (14,0)]
+		[TV (14,0), NoMac, iOS (14,0)]
 		[Wrap ("this (sampleBuffer, orientation, options.GetDictionary ()!, completionHandler)")]
 		IntPtr Constructor (CMSampleBuffer sampleBuffer, CGImagePropertyOrientation orientation, VNImageOptions options, VNRequestCompletionHandler completionHandler);
 	}
@@ -2608,7 +2608,7 @@ namespace Vision {
 		bool Indeterminate { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNImageBasedRequest))]
 	[DisableDefaultCtor]
 	interface VNDetectContoursRequest {
@@ -2650,7 +2650,7 @@ namespace Vision {
 		VNDetectContourRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNRecognizedPointsObservation))]
 	[DisableDefaultCtor]
 	interface VNHumanBodyPoseObservation {
@@ -2672,7 +2672,7 @@ namespace Vision {
 		NSDictionary<NSString, VNRecognizedPoint> GetRecognizedPoints ([BindAs (typeof (VNHumanBodyPoseObservationJointsGroupName))] NSString jointsGroupName, [NullAllowed] out NSError error);
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNImageBasedRequest))]
 	[DisableDefaultCtor]
 	interface VNDetectHumanBodyPoseRequest {
@@ -2720,7 +2720,7 @@ namespace Vision {
 		VNDetectHumanBodyPoseRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNRecognizedPointsObservation))]
 	[DisableDefaultCtor]
 	interface VNHumanHandPoseObservation {
@@ -2742,7 +2742,7 @@ namespace Vision {
 		NSDictionary<NSString, VNRecognizedPoint> GetRecognizedPoints ([BindAs (typeof (VNHumanHandPoseObservationJointsGroupName))] NSString jointsGroupName, [NullAllowed] out NSError error);
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNImageBasedRequest))]
 	[DisableDefaultCtor]
 	interface VNDetectHumanHandPoseRequest {
@@ -2793,7 +2793,7 @@ namespace Vision {
 		VNDetectHumanHandPoseRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNStatefulRequest))]
 	[DisableDefaultCtor]
 	interface VNDetectTrajectoriesRequest {
@@ -2837,7 +2837,7 @@ namespace Vision {
 		VNDetectTrajectoriesRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface VNPoint : NSCopying, NSSecureCoding {
@@ -2870,7 +2870,7 @@ namespace Vision {
 		double Y { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface VNVector : NSCopying, NSSecureCoding {
@@ -2929,7 +2929,7 @@ namespace Vision {
 		double SquaredLength { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface VNCircle : NSCopying, NSSecureCoding {
@@ -2962,7 +2962,7 @@ namespace Vision {
 		double Diameter { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor] // Not meant to be created but obtained via VNContoursObservation
 	interface VNContour : NSCopying, VNRequestRevisionProviding {
@@ -3000,7 +3000,7 @@ namespace Vision {
 		VNContour GetPolygonApproximation (float epsilon, [NullAllowed] out NSError error);
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNPoint))]
 	[DisableDefaultCtor]
 	interface VNDetectedPoint {
@@ -3009,7 +3009,7 @@ namespace Vision {
 		float Confidence { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNDetectedPoint))]
 	[DisableDefaultCtor]
 	interface VNRecognizedPoint {
@@ -3019,7 +3019,7 @@ namespace Vision {
 		NSString Identifier { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface VNGeometryUtils {
@@ -3049,7 +3049,7 @@ namespace Vision {
 		bool CalculatePerimeter (out double perimeter, VNContour contour, [NullAllowed] out NSError error);
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNTargetedImageRequest))]
 	interface VNGenerateOpticalFlowRequest {
 
@@ -3210,7 +3210,7 @@ namespace Vision {
 		VNGenerateOpticalFlowRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNObservation))]
 	[DisableDefaultCtor]
 	interface VNTrajectoryObservation {
@@ -3228,7 +3228,7 @@ namespace Vision {
 		}
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNObservation))]
 	[DisableDefaultCtor]
 	interface VNContoursObservation {
@@ -3257,7 +3257,7 @@ namespace Vision {
 		CGPath NormalizedPath { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNObservation))]
 	[DisableDefaultCtor]
 	interface VNRecognizedPointsObservation {
@@ -3299,7 +3299,7 @@ namespace Vision {
 		MLMultiArray GetKeypoints (out NSError error);
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNImageBasedRequest))]
 	[DisableDefaultCtor]
 	interface VNStatefulRequest {
@@ -3337,7 +3337,7 @@ namespace Vision {
 		VNStatefulRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface VNVideoProcessor {
@@ -3358,14 +3358,14 @@ namespace Vision {
 		void Cancel ();
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface VNVideoProcessorCadence : NSCopying {
 
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNVideoProcessorCadence))]
 	[DisableDefaultCtor]
 	interface VNVideoProcessorFrameRateCadence {
@@ -3378,7 +3378,7 @@ namespace Vision {
 		nint FrameRate { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (VNVideoProcessorCadence))]
 	[DisableDefaultCtor]
 	interface VNVideoProcessorTimeIntervalCadence {
@@ -3391,7 +3391,7 @@ namespace Vision {
 		double TimeInterval { get; }
 	}
 
-	[TV (14,0), Mac (11,0), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	interface VNVideoProcessorRequestProcessingOptions : NSCopying {
 

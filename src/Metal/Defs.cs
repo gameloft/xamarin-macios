@@ -387,7 +387,7 @@ namespace Metal {
 #endif
 
 	[Introduced (PlatformName.MacCatalyst, 14, 0)]
-	[Mac (11,0), iOS (14,0), NoTV]
+	[NoMac, iOS (14,0), NoTV]
 	[StructLayout (LayoutKind.Sequential)]
 	public struct MTLAccelerationStructureSizes
 	{
