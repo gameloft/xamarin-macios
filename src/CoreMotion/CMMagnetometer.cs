@@ -7,6 +7,7 @@
 //   Miguel de Icaza 
 //
 using System.Runtime.InteropServices;
+using ObjCRuntime;
 
 namespace CoreMotion {
 
