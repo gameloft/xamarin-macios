@@ -427,43 +427,43 @@ namespace GameKit {
 		[Async]
 		void SubmitScore (nint score, nuint context, GKPlayer player, string[] leaderboardIds, Action<NSError> completionHandler);
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("baseLeaderboardID", ArgumentSemantic.Strong)]
 		string BaseLeaderboardId { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("duration")]
 		double Duration { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Async (ResultTypeName = "GKEntriesForPlayerScopeResult")]
 		[Export ("loadEntriesForPlayerScope:timeScope:range:completionHandler:")]
 		void LoadEntries (GKLeaderboardPlayerScope playerScope, GKLeaderboardTimeScope timeScope, NSRange range, [NullAllowed] GKEntriesForPlayerScopeHandler completionHandler);
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Async (ResultTypeName = "GKEntriesForPlayersResult")]
 		[Export ("loadEntriesForPlayers:timeScope:completionHandler:")]
 		void LoadEntries (GKPlayer[] players, GKLeaderboardTimeScope timeScope, [NullAllowed] GKEntriesForPlayersHandler completionHandler);
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("loadPreviousOccurrenceWithCompletionHandler:")]
 		[Async]
 		void LoadPreviousOccurrence (GKLeaderboardsHandler completionHandler);
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[NullAllowed, Export ("nextStartDate", ArgumentSemantic.Strong)]
 		NSDate NextStartDate { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[NullAllowed, Export ("startDate", ArgumentSemantic.Strong)]
 		NSDate StartDate { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("submitScore:context:player:completionHandler:")]
 		[Async]
 		void SubmitScore (nint score, nuint context, GKPlayer player, Action<NSError> completionHandler);
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("type")]
 		GKLeaderboardType Type { get; }
 	}
@@ -603,11 +603,11 @@ namespace GameKit {
 		[Export ("scopedIDsArePersistent")]
 		bool ScopedIdsArePersistent { get; }
 
-		[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[Field ("GKPlayerIDNoLongerAvailable")]
 		NSString IdNoLongerAvailable { get; }
 
-		[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[Export ("isInvitable")]
 		bool IsInvitable { get; }
 	}

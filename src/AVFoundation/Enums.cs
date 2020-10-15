@@ -1107,7 +1107,7 @@ namespace AVFoundation {
 
 	[Flags]
 	[Native]
-	[TV (14, 0), Watch (7, 0), Mac (11, 0), iOS (14, 0)]
+	[TV (14, 0), Watch (7, 0), NoMac, iOS (14, 0)]
 	public enum AVAudioSpatializationFormats : ulong {
 		None = 0,
 		MonoAndStereo = 3,
@@ -1116,7 +1116,7 @@ namespace AVFoundation {
 	}
 
 	[Native]
-	[TV (14, 0), Watch (7, 0), Mac (11, 0), iOS (14, 0)]
+	[TV (14, 0), Watch (7, 0), NoMac, iOS (14, 0)]
 	public enum AVAudioStereoOrientation : long {
 		None = 0,
 		Portrait = 1,
@@ -1125,7 +1125,7 @@ namespace AVFoundation {
 		LandscapeLeft = 4,
 	}
 
-	[TV (14, 0), Watch (7, 0), Mac (11, 0), iOS (14, 0)]
+	[TV (14, 0), Watch (7, 0), NoMac, iOS (14, 0)]
 	public enum AVFileTypeProfile {
 		[Field (null)]
 		None = 0,
@@ -1136,7 +1136,7 @@ namespace AVFoundation {
 	}
 
 	[Native]
-	[NoTV, NoWatch, Mac (11, 0), NoiOS]
+	[NoTV, NoWatch, NoMac, NoiOS]
 	public enum AVAudioRoutingArbitrationCategory : long {
 		Playback = 0,
 		PlayAndRecord = 1,

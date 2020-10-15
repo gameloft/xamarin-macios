@@ -49,9 +49,9 @@ namespace VideoToolbox {
 		ColorCorrectionImageRotationFailed        = -12219,
 		VideoDecoderRemoved                       = -17690,
 		SessionMalfunction                        = -17691,
-		[Mac (11, 0)]
+		[NoMac]
 		DecoderNeedsRosetta                       = -17692,
-		[Mac (11, 0)]
+		[NoMac]
 		EncoderNeedsRosetta	                      = -17693,
 	}
 
@@ -258,7 +258,7 @@ namespace VideoToolbox {
 		Average
 	}
 
-	[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+	[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 	public enum HdrMetadataInsertionMode {
 		[Field ("kVTHDRMetadataInsertionMode_None")]
 		None,

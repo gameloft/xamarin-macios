@@ -379,7 +379,7 @@ namespace AppKit {
 		[Deprecated (PlatformName.MacOSX, 10, 9, message: "Use 'CurrentDrawingAppearance' instead.")]
 		NSAppearance CurrentAppearance { get; [Bind("setCurrentAppearance:")] set; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Static]
 		[Export ("currentDrawingAppearance", ArgumentSemantic.Strong)]
 		NSAppearance CurrentDrawingAppearance { get; }
@@ -2286,7 +2286,7 @@ namespace AppKit {
 		[NullAllowed, Export ("contentTintColor", ArgumentSemantic.Copy)]
 		NSColor ContentTintColor { get; set; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("hasDestructiveAction")]
 		bool HasDestructiveAction { get; set; }
 	}
@@ -13037,7 +13037,7 @@ namespace AppKit {
 		[Export ("allowedFileTypes")]
 		string [] AllowedFileTypes { get; set; }
 	
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("allowedContentTypes", ArgumentSemantic.Copy)]
 		UTType[] AllowedContentTypes { get; set; }
 
@@ -13543,15 +13543,15 @@ namespace AppKit {
 		[Export ("centersPlaceholder")]
 		bool CentersPlaceholder { get; set; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("searchTextBounds")]
 		CGRect SearchTextBounds { get; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("searchButtonBounds")]
 		CGRect SearchButtonBounds { get; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("cancelButtonBounds")]
 		CGRect CancelButtonBounds { get; }
 	}
@@ -14686,11 +14686,11 @@ namespace AppKit {
 		[Field ("NSSplitViewItemUnspecifiedDimension")]
 		nfloat UnspecifiedDimension { get; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("allowsFullHeightLayout")]
 		bool AllowsFullHeightLayout { get; set; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("titlebarSeparatorStyle", ArgumentSemantic.Assign)]
 		NSTitlebarSeparatorStyle TitlebarSeparatorStyle { get; set; }
 	}
@@ -16344,23 +16344,23 @@ namespace AppKit {
 		[Export ("verticalContentSizeConstraintActive")]
 		bool VerticalContentSizeConstraintActive { [Bind ("isVerticalContentSizeConstraintActive")] get; set; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("safeAreaInsets")]
 		NSEdgeInsets SafeAreaInsets { get; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("additionalSafeAreaInsets", ArgumentSemantic.Assign)]
 		NSEdgeInsets AdditionalSafeAreaInsets { get; set; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("safeAreaLayoutGuide", ArgumentSemantic.Strong)]
 		NSLayoutGuide SafeAreaLayoutGuide { get; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("safeAreaRect")]
 		CGRect SafeAreaRect { get; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("layoutMarginsGuide", ArgumentSemantic.Strong)]
 		NSLayoutGuide LayoutMarginsGuide { get; }
 	}
@@ -17209,11 +17209,11 @@ namespace AppKit {
 		[Export ("usesAutomaticRowHeights")]
 		bool UsesAutomaticRowHeights { get; set; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("style", ArgumentSemantic.Assign)]
 		NSTableViewStyle Style { get; set; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("effectiveStyle")]
 		NSTableViewStyle EffectiveStyle { get; }
 	} 
@@ -18241,7 +18241,7 @@ namespace AppKit {
 		[Export ("textFieldWithString:")]
 		NSTextField CreateTextField ([NullAllowed] string stringValue);
 
-		[Mac (11, 0)]
+		[NoMac]
 		NSTextContentType ContentType {
 			[Wrap ("NSTextContentTypeExtensions.GetValue (GetContentType ()!)")]
 			get;
@@ -19426,7 +19426,7 @@ namespace AppKit {
 		[Export ("scrollablePlainDocumentContentTextView")]
 		NSScrollView CreateScrollablePlainDocumentContentTextView (); 
 
-		[Mac (11, 0)]
+		[NoMac]
 		NSTextContentType ContentType {
 			[Wrap ("NSTextContentTypeExtensions.GetValue (GetContentType ()!)")]
 			get;
@@ -19756,7 +19756,7 @@ namespace AppKit {
 		[NullAllowed, Export ("centeredItemIdentifier")]
 		string CenteredItemIdentifier { get; set; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Field ("NSToolbarSidebarTrackingSeparatorItemIdentifier")]
 		NSString NSToolbarSidebarTrackingSeparatorItemIdentifier { get; }
 	}
@@ -19876,7 +19876,7 @@ namespace AppKit {
 		[Export ("bordered")]
 		bool Bordered { [Bind ("isBordered")] get; set; }
 
-		[Mac (11, 0), iOS (14, 0)]
+		[NoMac, iOS (14, 0)]
 		[Export ("navigational")]
 		bool Navigational { [Bind ("isNavigational")] get; set; }
 	}
@@ -21140,15 +21140,15 @@ namespace AppKit {
 		[Export ("appearanceSource", ArgumentSemantic.Weak)]
 		INSAppearanceCustomization AppearanceSource { get; set; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("subtitle")]
 		string Subtitle { get; set; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("toolbarStyle", ArgumentSemantic.Assign)]
 		NSWindowToolbarStyle ToolbarStyle { get; set; }
 
-		[Mac (11, 0)]
+		[NoMac]
 		[Export ("titlebarSeparatorStyle", ArgumentSemantic.Assign)]
 		NSTitlebarSeparatorStyle TitlebarSeparatorStyle { get; set; }
 	}
@@ -27868,7 +27868,7 @@ namespace AppKit {
 		Rounded,
 	}
 
-	[Mac (11, 0)]
+	[NoMac]
 	public enum NSFontTextStyle
 	{
 		[Field ("NSFontTextStyleLargeTitle")]
@@ -28002,7 +28002,7 @@ namespace AppKit {
 		NSTableViewAnimationOptions DefaultRowAnimation { get; set; }
 	}
 
-	[Mac (11, 0)]
+	[NoMac]
 	[Protocol]
 	interface NSTextContent
 	{
@@ -28015,7 +28015,7 @@ namespace AppKit {
 		void SetContentType (NSString contentType);
 	}
 
-	[Mac (11, 0)]
+	[NoMac]
 	enum NSTextContentType {
 		[Field ("NSTextContentTypeUsername")]
 		Username,

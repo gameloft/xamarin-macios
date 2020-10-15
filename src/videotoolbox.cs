@@ -189,11 +189,11 @@ namespace VideoToolbox {
 		[Field ("kVTCompressionPropertyKey_UsingGPURegistryID")]
 		NSString UsingGpuRegistryId { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Field ("kVTCompressionPropertyKey_HDRMetadataInsertionMode")]
 		NSString HdrMetadataInsertionMode { get; }
 
-		[TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoMac, iOS (14, 0)]
 		[Field ("kVTCompressionPropertyKey_PrioritizeEncodingSpeedOverQuality")]
 		NSString PrioritizeEncodingSpeedOverQuality { get; }
 	}

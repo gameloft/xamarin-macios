@@ -324,7 +324,7 @@ namespace NetworkExtension {
 		[Export ("matchDomainsNoSearch")]
 		bool MatchDomainsNoSearch { get; set; }
 
-		[NoWatch, NoTV, Mac (11, 0), iOS (14, 0)]
+		[NoWatch, NoTV, NoMac, iOS (14, 0)]
 		[Export ("dnsProtocol")]
 		NEDnsProtocol DnsProtocol { get; }
 
@@ -1085,11 +1085,11 @@ namespace NetworkExtension {
 		NSString ErrorDomain { get; }
 #endif
 
-		[NoWatch, NoTV, NoiOS, Mac (11, 0)]
+		[NoWatch, NoTV, NoiOS, NoMac]
 		[Export ("excludedDomains", ArgumentSemantic.Copy)]
 		string[] ExcludedDomains { get; set; }
 
-		[NoWatch, NoTV, NoiOS, Mac (11, 0)]
+		[NoWatch, NoTV, NoiOS, NoMac]
 		[Export ("associatedDomains", ArgumentSemantic.Copy)]
 		string[] AssociatedDomains { get; set; }
 	}
@@ -1353,7 +1353,7 @@ namespace NetworkExtension {
 		[Export ("enableFallback")]
 		bool EnableFallback { get; set; }
 
-		[NoWatch, NoTV, Mac (11, 0), iOS (14, 0)]
+		[NoWatch, NoTV, NoMac, iOS (14, 0)]
 		[Export ("mtu")]
 		nuint Mtu { get; set; }
 	}
@@ -1487,7 +1487,7 @@ namespace NetworkExtension {
 		[Export ("isEqualToPath:")]
 		bool IsEqualToPath (NWPath path);
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("constrained")]
 		bool Constrained { [Bind ("isConstrained")] get; }
 	}
@@ -1680,7 +1680,7 @@ namespace NetworkExtension {
 		}
 
 		[NullAllowed]
-		[NoWatch, NoTV, Mac (11, 0), iOS (14, 0)]
+		[NoWatch, NoTV, NoMac, iOS (14, 0)]
 		[Export ("remoteHostname")]
 		string RemoteHostname { get; }
 	}

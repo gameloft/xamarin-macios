@@ -149,7 +149,7 @@ namespace CoreLocation {
 		[Field ("kCLLocationAccuracyThreeKilometers")]
 		double AccuracyThreeKilometers { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Field ("kCLLocationAccuracyReduced")]
 		double AccuracyReduced { get; }
 
@@ -281,7 +281,7 @@ namespace CoreLocation {
 		[Export ("stopMonitoringForRegion:")]
 		void StopMonitoring (CLRegion region);
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("authorizationStatus")]
 		CLAuthorizationStatus AuthorizationStatus { get; }
 
@@ -408,20 +408,20 @@ namespace CoreLocation {
 		[Export ("requestLocation")]
 		void RequestLocation ();
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("accuracyAuthorization")]
 		CLAccuracyAuthorization AccuracyAuthorization { get; }
 
 		[Async]
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("requestTemporaryFullAccuracyAuthorizationWithPurposeKey:completion:")]
 		void RequestTemporaryFullAccuracyAuthorization (string purposeKey, [NullAllowed] Action<NSError> completion);
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("requestTemporaryFullAccuracyAuthorizationWithPurposeKey:")]
 		void RequestTemporaryFullAccuracyAuthorization (string purposeKey);
 
-		[NoWatch, NoTV, Mac (11, 0), iOS (14, 0)]
+		[NoWatch, NoTV, NoMac, iOS (14, 0)]
 		[Export ("authorizedForWidgetUpdates")]
 		bool IsAuthorizedForWidgetUpdates { [Bind ("isAuthorizedForWidgetUpdates")] get; }
 
@@ -527,7 +527,7 @@ namespace CoreLocation {
 		[Export ("locationManager:didFinishDeferredUpdatesWithError:"), EventArgs ("NSError", true)]
 		void DeferredUpdatesFinished (CLLocationManager manager, [NullAllowed] NSError error);
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("locationManagerDidChangeAuthorization:")]
 		void DidChangeAuthorization (CLLocationManager manager);
 

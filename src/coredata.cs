@@ -2579,11 +2579,11 @@ namespace CoreData
 		[Export ("initWithEntity:objects:")]
 		IntPtr Constructor (NSEntityDescription entity, NSDictionary<NSString, NSObject>[] dictionaries);
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[NullAllowed, Export ("dictionaryHandler", ArgumentSemantic.Copy)]
 		NSBatchInsertRequestDictionaryHandler DictionaryHandler { get; set; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[NullAllowed, Export ("managedObjectHandler", ArgumentSemantic.Copy)]
 		NSBatchInsertRequestManagedObjectHandler ManagedObjectHandler { get; set; }
 
@@ -2665,7 +2665,7 @@ namespace CoreData
 		[DesignatedInitializer]
 		IntPtr Constructor (string containerIdentifier);
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("databaseScope", ArgumentSemantic.Assign)]
 		CKDatabaseScope DatabaseScope { get; set; }
 	}
@@ -2696,11 +2696,11 @@ namespace CoreData
 		NSError Error { get; }
 
 		[Notification]
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Field ("NSPersistentCloudKitContainerEventChangedNotification")]
 		NSString ChangedNotification { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Field ("NSPersistentCloudKitContainerEventUserInfoKey")]
 		NSString UserInfoKey { get; }
 	}

@@ -5370,12 +5370,12 @@ namespace Foundation
 		// From NSUserActivity (CLSDeepLinks)
 
 		[Introduced (PlatformName.MacCatalyst, 14, 0)]
-		[NoWatch, NoTV, Mac (11, 0), iOS (11,4)]
+		[NoWatch, NoTV, NoMac, iOS (11,4)]
 		[Export ("isClassKitDeepLink")]
 		bool IsClassKitDeepLink { get; }
 
 		[Introduced (PlatformName.MacCatalyst, 14, 0)]
-		[NoWatch, NoTV, Mac (11, 0), iOS (11,4)]
+		[NoWatch, NoTV, NoMac, iOS (11,4)]
 		[NullAllowed, Export ("contextIdentifierPath", ArgumentSemantic.Strong)]
 		string[] ContextIdentifierPath { get; }
 
@@ -14741,7 +14741,7 @@ namespace Foundation
 		[Export ("multipath")]
 		bool Multipath { [Bind ("isMultipath")] get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("domainResolutionProtocol")]
 		NSUrlSessionTaskMetricsDomainResolutionProtocol DomainResolutionProtocol { get; }
 	}

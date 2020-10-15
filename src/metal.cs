@@ -376,14 +376,14 @@ namespace Metal {
 		[NullAllowed, Export ("resourceStateCommandEncoder")]
 		IMTLResourceStateCommandEncoder ResourceStateCommandEncoder { get; }
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
 		[Export ("errorOptions")]
 		MTLCommandBufferErrorOption ErrorOptions { get; }
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
@@ -411,7 +411,7 @@ namespace Metal {
 		[Export ("resourceStateCommandEncoderWithDescriptor:")]
 		IMTLResourceStateCommandEncoder CreateResourceStateCommandEncoder (MTLResourceStatePassDescriptor resourceStatePassDescriptor);
 
-		[Mac (11, 0), iOS (14, 0), NoTV]
+		[NoMac, iOS (14, 0), NoTV]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
@@ -1506,28 +1506,28 @@ namespace Metal {
 		[Export ("locationNumber")]
 		nuint LocationNumber { get; }
 
-		[NoiOS, Mac (11, 0), NoTV]
+		[NoiOS, NoMac, NoTV]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
 		[Export ("supports32BitFloatFiltering")]
 		bool Supports32BitFloatFiltering { get; }
 
-		[NoiOS, Mac (11, 0), NoTV]
+		[NoiOS, NoMac, NoTV]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
 		[Export ("supports32BitMSAA")]
 		bool Supports32BitMsaa { get; }
 
-		[NoiOS, Mac (11, 0), NoTV]
+		[NoiOS, NoMac, NoTV]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
 		[Export ("supportsBCTextureCompression")]
 		bool SupportsBCTextureCompression { get; }
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
@@ -1541,7 +1541,7 @@ namespace Metal {
 		[Export ("supportsCounterSampling:")]
 		bool SupportsCounterSampling (MTLCounterSamplingPoint samplingPoint);
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
@@ -1572,7 +1572,7 @@ namespace Metal {
 		[return: NullAllowed]
 		IMTLBinaryArchive CreateBinaryArchive (MTLBinaryArchiveDescriptor descriptor, [NullAllowed] out NSError error);
 
-		[Mac (11, 0), iOS (14, 0), NoTV]
+		[NoMac, iOS (14, 0), NoTV]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
@@ -1602,14 +1602,14 @@ namespace Metal {
 		[return: NullAllowed]
 		IMTLAccelerationStructure CreateAccelerationStructure (MTLAccelerationStructureDescriptor descriptor);
 
-		[Mac (11, 0), iOS (14, 0), NoTV]
+		[NoMac, iOS (14, 0), NoTV]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
 		[Export ("supportsFunctionPointers")]
 		bool SupportsFunctionPointers { get; }
 
-		[NoiOS, Mac (11, 0), NoTV]
+		[NoiOS, NoMac, NoTV]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
@@ -2107,7 +2107,7 @@ namespace Metal {
 		[Export ("maxVertexAmplificationCount")]
 		nuint MaxVertexAmplificationCount { get; set; }
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 		[NullAllowed, Export ("binaryArchives", ArgumentSemantic.Copy)]
 		IMTLBinaryArchive[] BinaryArchives { get; set; }
 
@@ -2417,7 +2417,7 @@ namespace Metal {
 		[return: Release]
 		IMTLArgumentEncoder CreateArgumentEncoder (nuint bufferIndex, [NullAllowed] out MTLArgument reflection);
 
-		[Mac (11, 0), iOS (14, 0), NoTV]
+		[NoMac, iOS (14, 0), NoTV]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
@@ -2495,14 +2495,14 @@ namespace Metal {
 		[return: NullAllowed]
 		IMTLFunction CreateIntersectionFunction (MTLIntersectionFunctionDescriptor descriptor, [NullAllowed] out NSError error);
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
 		[Export ("type")]
 		MTLLibraryType Type { get; }
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
@@ -2529,20 +2529,20 @@ namespace Metal {
 		[Export ("languageVersion", ArgumentSemantic.Assign)]
 		MTLLanguageVersion LanguageVersion { get; set; }
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 		[Export ("libraryType", ArgumentSemantic.Assign)]
 		MTLLibraryType LibraryType { get; set; }
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 		[NullAllowed, Export ("installName")]
 		string InstallName { get; set; }
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 		[NullAllowed, Export ("libraries", ArgumentSemantic.Copy)]
 		IMTLDynamicLibrary[] Libraries { get; set; }
 
 		[Introduced (PlatformName.MacCatalyst, 14, 0)]
-		[Mac (11, 0), iOS (13, 0), TV (14,0)]
+		[NoMac, iOS (13, 0), TV (14,0)]
 		[Export ("preserveInvariance")]
 		bool PreserveInvariance { get; set; }
 	}
@@ -3412,7 +3412,7 @@ namespace Metal {
 		[NullAllowed, Export ("rasterizationRateMap", ArgumentSemantic.Strong)]
 		IMTLRasterizationRateMap RasterizationRateMap { get; set; }
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 		[Export ("sampleBufferAttachments")]
 		MTLRenderPassSampleBufferAttachmentDescriptorArray SampleBufferAttachments { get; }
 	}
@@ -3650,23 +3650,23 @@ namespace Metal {
 		[Export ("supportIndirectCommandBuffers")]
 		bool SupportIndirectCommandBuffers { get; set; }
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 		[NullAllowed, Export ("insertLibraries", ArgumentSemantic.Copy)]
 		IMTLDynamicLibrary[] InsertLibraries { get; set; }
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 		[NullAllowed, Export ("binaryArchives", ArgumentSemantic.Copy)]
 		IMTLBinaryArchive[] BinaryArchives { get; set; }
 
-		[Mac (11, 0), iOS (14, 0), TV (14,0)]
+		[NoMac, iOS (14, 0), TV (14,0)]
 		[NullAllowed, Export ("linkedFunctions", ArgumentSemantic.Copy)]
 		MTLLinkedFunctions LinkedFunctions { get; set; }
 
-		[Mac (11, 0), iOS (14, 0), NoTV]
+		[NoMac, iOS (14, 0), NoTV]
 		[Export ("supportAddingBinaryFunctions")]
 		bool SupportAddingBinaryFunctions { get; set; }
 
-		[Mac (11, 0), iOS (14, 0), NoTV]
+		[NoMac, iOS (14, 0), NoTV]
 		[Export ("maxCallStackDepth")]
 		nuint MaxCallStackDepth { get; set; }
 	}
@@ -4108,7 +4108,7 @@ namespace Metal {
 		[Export ("reset")]
 		void Reset ();
 
-		[Mac (11, 0), iOS (14,0)]
+		[NoMac, iOS (14,0)]
 		[NullAllowed, Export ("binaryArchives", ArgumentSemantic.Copy)]
 		IMTLBinaryArchive[] BinaryArchives { get; set; }
 	}

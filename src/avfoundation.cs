@@ -348,7 +348,7 @@ namespace AVFoundation {
 		[Field ("AVMediaCharacteristicIsOriginalContent")]
 		IsOriginalContent = 15,
 
-		[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[Field ("AVMediaCharacteristicContainsHDRVideo")]
 		ContainsHdrVideo = 16,
 
@@ -4074,15 +4074,15 @@ namespace AVFoundation {
 
 		// from category AVAssetWriterSegmentation (AVAssetWriter)
 
-		[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[Export ("preferredOutputSegmentInterval", ArgumentSemantic.Assign)]
 		CMTime PreferredOutputSegmentInterval { get; set; }
 
-		[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[Export ("initialSegmentStartTime", ArgumentSemantic.Assign)]
 		CMTime InitialSegmentStartTime { get; set; }
 
-		[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[Export ("outputFileTypeProfile")]
 		[NullAllowed]
 		[BindAs (typeof (AVFileTypeProfile))]
@@ -4091,7 +4091,7 @@ namespace AVFoundation {
 		[Wrap ("WeakDelegate")]
 		IAVAssetWriterDelegate Delegate { get; set; }
 
-		[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
 		NSObject WeakDelegate { get; set; }
 
@@ -4101,11 +4101,11 @@ namespace AVFoundation {
 
 		// from category AVAssetWriterFileTypeSpecificProperties (AVAssetWriter)
 
-		[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[Export ("initialMovieFragmentSequenceNumber")]
 		nint InitialMovieFragmentSequenceNumber { get; set; }
 
-		[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[Export ("producesCombinableFragments")]
 		bool ProducesCombinableFragments { get; set; }
 	}
@@ -4847,7 +4847,7 @@ namespace AVFoundation {
 		[Field ("AVMetadataCommonKeySoftware")]
 		NSString CommonKeySoftware { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Field ("AVMetadataCommonKeyAccessibilityDescription")]
 		NSString CommonKeyAccessibilityDescription { get; }
 
@@ -4974,7 +4974,7 @@ namespace AVFoundation {
 		[Field ("AVMetadataQuickTimeUserDataKeyTaggedCharacteristic")]
 		NSString QuickTimeUserDataKeyTaggedCharacteristic { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Field ("AVMetadataQuickTimeUserDataKeyAccessibilityDescription")]
 		NSString QuickTimeUserDataKeyAccessibilityDescription { get; }
 
@@ -5174,7 +5174,7 @@ namespace AVFoundation {
 		[Field ("AVMetadataQuickTimeMetadataKeyContentIdentifier")]
 		NSString QuickTimeMetadataKeyContentIdentifier { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Field ("AVMetadataQuickTimeMetadataKeyAccessibilityDescription")]
 		NSString QuickTimeMetadataKeyAccessibilityDescription { get; }
 		
@@ -5632,11 +5632,11 @@ namespace AVFoundation {
 		[Field ("AVMetadataISOUserDataKeyDate")]
 		NSString IsoUserDataKeyDate { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Field ("AVMetadataISOUserDataKeyAccessibilityDescription")]
 		NSString IsoUserDataKeyAccessibilityDescription { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Field ("AVMetadataIdentifierISOUserDataAccessibilityDescription")]
 		NSString IsoUserDataAccessibilityDescription { get; }
 
@@ -5760,7 +5760,7 @@ namespace AVFoundation {
 			[Field ("AVMetadataCommonIdentifierSoftware")]
 			NSString Software { get; }
 
-			[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+			[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 			[Field ("AVMetadataCommonIdentifierAccessibilityDescription")]
 			NSString AccessibilityDescription { get; }
 
@@ -5883,7 +5883,7 @@ namespace AVFoundation {
 			[Field ("AVMetadataIdentifierQuickTimeUserDataTaggedCharacteristic")]
 			NSString UserDataTaggedCharacteristic { get; }
 
-			[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+			[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 			[Field ("AVMetadataIdentifierQuickTimeUserDataAccessibilityDescription")]
 			NSString UserDataAccessibilityDescription { get; }
 		}
@@ -6128,11 +6128,11 @@ namespace AVFoundation {
 			[Field ("AVMetadataIdentifierQuickTimeMetadataAutoLivePhoto")]
 			NSString AutoLivePhoto { get; }
 
-			[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+			[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 			[Field ("AVMetadataIdentifierQuickTimeMetadataAccessibilityDescription")]
 			NSString AccessibilityDescription { get; }
 
-			[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+			[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 			[Field ("AVMetadataIdentifierQuickTimeMetadataLocationHorizontalAccuracyInMeters")]
 			NSString LocationHorizontalAccuracyInMeters { get; }
 		}
@@ -8109,7 +8109,7 @@ namespace AVFoundation {
 		[Export ("prerollForRenderingUsingHint:")]
 		void PrerollForRendering (AVVideoCompositionRenderHint renderHint);
 
-		[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[Export ("supportsHDRSourceFrames")]
 		bool SupportsHdrSourceFrames { get; }
 	}
@@ -10029,7 +10029,7 @@ namespace AVFoundation {
 		bool LensStabilizationDuringBracketedCaptureEnabled { [Bind ("isLensStabilizationDuringBracketedCaptureEnabled")] get; set; }
 #endif
 
-		[iOS (8,0), Mac (11, 0)]
+		[iOS (8,0), NoMac]
 		[Export ("highResolutionStillImageOutputEnabled")]
 		bool HighResolutionStillImageOutputEnabled { [Bind ("isHighResolutionStillImageOutputEnabled")] get; set; }
 	}
@@ -11506,11 +11506,11 @@ namespace AVFoundation {
 		[Export ("audioSpatializationAllowed")]
 		bool AudioSpatializationAllowed { [Bind ("isAudioSpatializationAllowed")] get; set; }
 
-		[NoWatch, NoTV, Mac (11, 0), iOS (14, 0)]
+		[NoWatch, NoTV, NoMac, iOS (14, 0)]
 		[Export ("allowedAudioSpatializationFormats", ArgumentSemantic.Assign)]
 		AVAudioSpatializationFormats AllowedAudioSpatializationFormats { get; set; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("startsOnFirstEligibleVariant")]
 		bool StartsOnFirstEligibleVariant { get; set; }
 	}
@@ -12408,11 +12408,11 @@ namespace AVFoundation {
 		[Export ("preventsDisplaySleepDuringVideoPlayback")]
 		bool PreventsDisplaySleepDuringVideoPlayback { get; set; }
 
-		[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[Export ("requiresFlushToResumeDecoding")]
 		bool RequiresFlushToResumeDecoding { get; }
 
-		[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[Field ("AVSampleBufferDisplayLayerRequiresFlushToResumeDecodingDidChangeNotification")]
 		[Notification]
 		NSString RequiresFlushToResumeDecodingDidChangeNotification { get; }
@@ -12542,7 +12542,7 @@ namespace AVFoundation {
 		[Field ("AVSpeechUtteranceDefaultSpeechRate")]
 		float DefaultSpeechRate { get; } // defined as 'float'
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("prefersAssistiveTechnologySettings")]
 		bool PrefersAssistiveTechnologySettings { get; set; }
 	}
@@ -13845,7 +13845,7 @@ namespace AVFoundation {
 		nint ObjectId { get; }
 	}
 
-	[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+	[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface AVAssetSegmentReport {
@@ -13856,7 +13856,7 @@ namespace AVFoundation {
 		AVAssetSegmentTrackReport[] TrackReports { get; }
 	}
 
-	[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+	[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface AVAssetSegmentReportSampleInformation {
@@ -13873,7 +13873,7 @@ namespace AVFoundation {
 		bool IsSyncSample { get; }
 	}
 
-	[TV (14, 0), NoWatch, Mac (11, 0), iOS (14, 0)]
+	[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface AVAssetSegmentTrackReport {

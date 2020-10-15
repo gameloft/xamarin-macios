@@ -14,7 +14,7 @@ namespace AudioToolbox {
 		UserInterfaceParameter = (1u << 3),
 	}
 
-	[NoWatch, TV (14, 0), Mac (11, 0), iOS (14, 0)]
+	[NoWatch, TV (14, 0), NoMac, iOS (14, 0)]
 	public enum AUSpatialMixerOutputType : uint
 	{
 		Headphones = 1,
@@ -22,14 +22,14 @@ namespace AudioToolbox {
 		ExternalSpeakers = 3,
 	}
 
-	[NoWatch, TV (14, 0), Mac (11, 0), iOS (14, 0)]
+	[NoWatch, TV (14, 0), NoMac, iOS (14, 0)]
 	public enum AUSpatialMixerPointSourceInHeadMode : uint
 	{
 		Mono = 0,
 		Bypass = 1,
 	}
 
-	[NoWatch, TV (14, 0), Mac (11, 0), iOS (14, 0)]
+	[NoWatch, TV (14, 0), NoMac, iOS (14, 0)]
 	public enum AUSpatialMixerSourceMode : uint
 	{
 		SpatializeIfMono = 0,

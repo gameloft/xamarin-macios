@@ -509,7 +509,7 @@ namespace AuthenticationServices {
 		[Field (null)]
 		None,
 
-		[Mac (11, 0), iOS (14, 0)]
+		[NoMac, iOS (14, 0)]
 		[Field ("ASAuthorizationProviderAuthorizationOperationConfigurationRemoved")]
 		ConfigurationRemoved,
 	}

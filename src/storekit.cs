@@ -255,7 +255,7 @@ namespace StoreKit {
 		[Export ("presentCodeRedemptionSheet")]
 		void PresentCodeRedemptionSheet ();
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("transactionObservers")]
 		ISKPaymentTransactionObserver[] TransactionObservers { get; }
 	}
@@ -341,7 +341,7 @@ namespace StoreKit {
 		[Export ("discounts")]
 		SKProductDiscount [] Discounts { get; }
 
-		[Watch (7, 0), TV (14, 0), Mac (11, 0), iOS (14, 0)]
+		[Watch (7, 0), TV (14, 0), NoMac, iOS (14, 0)]
 		[Export ("isFamilyShareable")]
 		bool IsFamilyShareable { get; }
 	}
@@ -518,7 +518,7 @@ namespace StoreKit {
 		void ReceivedResponse (SKProductsRequest request, SKProductsResponse response);
 	}
 
-	[Mac (11, 0), NoTV, NoWatch]
+	[NoMac, NoTV, NoWatch]
 	[BaseType (typeof (UIViewController),
 		   Delegates=new string [] { "WeakDelegate" },
 		   Events   =new Type   [] { typeof (SKStoreProductViewControllerDelegate) })]
