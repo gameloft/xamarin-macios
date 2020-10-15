@@ -258,7 +258,7 @@ namespace CoreVideo {
 		[Field ("kCVImageBufferContentLightLevelInfoKey")]
 		NSString ContentLightLevelInfoKey { get; }
 
-		[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 		[Field ("kCVImageBufferAlphaChannelModeKey")]
 		NSString AlphaChannelModeKey { get; }
 	}
@@ -503,7 +503,7 @@ namespace CoreVideo {
 		[Field ("kCVMetalTextureCacheMaximumTextureAgeKey")]
 		IntPtr MaxTextureAge { get; }
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Field ("kCVMetalTextureStorageMode")]
 		NSString StorageMode { get; }
 	}

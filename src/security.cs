@@ -721,7 +721,7 @@ namespace Security {
 		[Field ("kSecUseItemList")]
 		IntPtr UseItemList { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kSecUseDataProtectionKeychain")]
 		IntPtr UseDataProtectionKeychain { get; }
 

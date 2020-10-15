@@ -28,13 +28,13 @@ namespace Network {
 
 	// from System/Library/Frameworks/Network.framework/Headers/framer_options.h:
 	[Flags]
-	[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+	[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 	public enum NWFramerCreateFlags : uint {
 		Default = 0x00,
 	}
 
 	// from System/Library/Frameworks/Network.framework/Headers/framer_options.h:
-	[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+	[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 	public enum NWFramerStartResult {
 		Unknown = 0,
 		Ready = 1,
@@ -44,7 +44,7 @@ namespace Network {
 	public delegate nuint NWFramerParseCompletionDelegate (Memory<byte> buffer, bool isCompleted);
 	public delegate nuint NWFramerInputDelegate (NWFramer framer); 
 
-	[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+	[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 	public class NWFramer : NativeObject {
 		internal NWFramer (IntPtr handle, bool owns) : base (handle, owns) {}
 

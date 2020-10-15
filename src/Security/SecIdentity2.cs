@@ -70,7 +70,7 @@ namespace Security {
 			}
 		}
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[DllImport (Constants.SecurityLibrary)]
 		static extern bool sec_identity_access_certificates (IntPtr identity, ref BlockLiteral block);
 
@@ -85,7 +85,7 @@ namespace Security {
 				del (new SecCertificate2 (cert, false));
 		}
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		// no [Async] as it can be called multiple times
 		[BindingImpl (BindingImplOptions.Optimizable)]
 		public bool AccessCertificates (Action</* sec_identity_t */SecCertificate2> handler)

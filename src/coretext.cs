@@ -42,11 +42,11 @@ namespace CoreText {
 		[Field ("kCTFontFeatureSelectorSettingKey")]
 		NSString Setting { get; }
 
-		[iOS (13,0), Mac (10,15), TV (13,0), Watch (6,0)]
+		[iOS (13,0), NoMac, TV (13,0), Watch (6,0)]
 		[Field ("kCTFontFeatureSampleTextKey")]
 		NSString SampleText { get; }
 
-		[iOS (13,0), Mac (10,15), TV (13,0), Watch (6,0)]
+		[iOS (13,0), NoMac, TV (13,0), Watch (6,0)]
 		[Field ("kCTFontFeatureTooltipTextKey")]
 		NSString TooltipText { get; }
 	}
@@ -115,7 +115,7 @@ namespace CoreText {
 
 	[Static][Partial]
 	interface CTStringAttributeKey {
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Field ("kCTTrackingAttributeName")]
 		NSString TrackingAttributeName { get; }
 	}

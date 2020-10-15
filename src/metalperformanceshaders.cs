@@ -1664,7 +1664,7 @@ namespace MetalPerformanceShaders {
 		MTLTextureUsage Usage { get; }
 
 		[Introduced (PlatformName.MacCatalyst, 13, 0)]
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("featureChannelFormat")]
 		MPSImageFeatureChannelFormat FeatureChannelFormat { get; }
 
@@ -1718,7 +1718,7 @@ namespace MetalPerformanceShaders {
 		[Export ("writeBytes:dataLayout:bytesPerRow:region:featureChannelInfo:imageIndex:")]
 		void WriteBytes (IntPtr /* void* */ dataBytes, MPSDataLayout dataLayout, nuint bytesPerRow, MTLRegion region, MPSImageReadWriteParams featureChannelInfo, nuint imageIndex);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("writeBytes:dataLayout:bytesPerColumn:bytesPerRow:bytesPerImage:region:featureChannelInfo:imageIndex:")]
 		void WriteBytes (IntPtr /* void* */ dataBytes, MPSDataLayout dataLayout, nuint bytesPerColumn, nuint bytesPerRow, nuint bytesPerImage, MTLRegion region, MPSImageReadWriteParams featureChannelInfo, nuint imageIndex);
 
@@ -1780,7 +1780,7 @@ namespace MetalPerformanceShaders {
 	}
 
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	interface MPSPredicate
 	{
@@ -1819,7 +1819,7 @@ namespace MetalPerformanceShaders {
 	}
 
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface MPSCommandBuffer : MTLCommandBuffer
@@ -1973,7 +1973,7 @@ namespace MetalPerformanceShaders {
 		IntPtr Constructor (IMTLBuffer buffer, MPSMatrixDescriptor descriptor);
 
 		[Introduced (PlatformName.MacCatalyst, 13, 0)]
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("initWithBuffer:offset:descriptor:")]
 		IntPtr Constructor (IMTLBuffer buffer, nuint offset, MPSMatrixDescriptor descriptor);
 
@@ -2002,7 +2002,7 @@ namespace MetalPerformanceShaders {
 		[Export ("matrixBytes")]
 		nuint MatrixBytes { get; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 1)]
+		[TV (13, 0), NoMac, iOS (13, 1)]
 		[Export ("offset")]
 		nuint Offset { get; }
 	}
@@ -2193,7 +2193,7 @@ namespace MetalPerformanceShaders {
 		IntPtr Constructor (IMTLBuffer buffer, MPSVectorDescriptor descriptor);
 
 		[Introduced (PlatformName.MacCatalyst, 13, 0)]
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("initWithBuffer:offset:descriptor:")]
 		IntPtr Constructor (IMTLBuffer buffer, nuint offset, MPSVectorDescriptor descriptor);
 
@@ -2212,7 +2212,7 @@ namespace MetalPerformanceShaders {
 		[Export ("resourceSize")]
 		nuint ResourceSize { get; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 1)]
+		[TV (13, 0), NoMac, iOS (13, 1)]
 		[Export ("offset")]
 		nuint Offset { get; }
 	}
@@ -2478,7 +2478,7 @@ namespace MetalPerformanceShaders {
 	}
 
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	interface MPSMatrixRandomDistributionDescriptor : NSCopying
 	{
@@ -2508,7 +2508,7 @@ namespace MetalPerformanceShaders {
 
 	[DisableDefaultCtor]
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(MPSKernel))]
 	interface MPSMatrixRandom
 	{
@@ -2533,7 +2533,7 @@ namespace MetalPerformanceShaders {
 
 	[DisableDefaultCtor]
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (MPSMatrixRandom), Name = "MPSMatrixRandomMTGP32")]
 	interface MPSMatrixRandomMtgp32
 	{
@@ -2557,7 +2557,7 @@ namespace MetalPerformanceShaders {
 
 	[DisableDefaultCtor]
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(MPSMatrixRandom))]
 	interface MPSMatrixRandomPhilox
 	{
@@ -5308,7 +5308,7 @@ namespace MetalPerformanceShaders {
 
 	[DisableDefaultCtor]
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(MPSNNFilterNode))]
 	interface MPSNNForwardLossNode
 	{
@@ -5465,13 +5465,13 @@ namespace MetalPerformanceShaders {
 		// and there is an alternative Create method that accomplishes the same
 		// with a bool[]
 		// [Introduced (PlatformName.MacCatalyst, 13, 0)]
-		// [TV (13,0), Mac (10,15), iOS (13,0)]
+		// [TV (13,0), NoMac, iOS (13,0)]
 		// [Export ("initWithDevice:resultImages:resultsAreNeeded:")]
 		// [DesignatedInitializer]
 		// IntPtr Constructor (IMTLDevice device, MPSNNImageNode[] resultImages, IntPtr resultsAreNeeded);
 
 		[Introduced (PlatformName.MacCatalyst, 13, 0)]
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Static]
 		[Export ("graphWithDevice:resultImages:resultsAreNeeded:")]
 		[return: NullAllowed]
@@ -6245,7 +6245,7 @@ namespace MetalPerformanceShaders {
 	}
 
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface MPSNDArrayDescriptor
@@ -6304,7 +6304,7 @@ namespace MetalPerformanceShaders {
 	}
 
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface MPSNDArray
@@ -6375,7 +6375,7 @@ namespace MetalPerformanceShaders {
 
 	[DisableDefaultCtor]
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(MPSNDArray))]
 	interface MPSTemporaryNDArray
 	{

@@ -238,7 +238,7 @@ namespace FileProvider {
 	}
 
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[Native]
 	[Flags]
@@ -317,7 +317,7 @@ namespace FileProvider {
 	interface INSFileProviderEnumerationObserver { }
 
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[Protocol]
 	interface NSFileProviderEnumerationObserver {
@@ -343,7 +343,7 @@ namespace FileProvider {
 	interface INSFileProviderChangeObserver { }
 
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[Protocol]
 	interface NSFileProviderChangeObserver {
@@ -373,7 +373,7 @@ namespace FileProvider {
 	interface INSFileProviderEnumerator { }
 
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[Protocol]
 	interface NSFileProviderEnumerator {
@@ -396,7 +396,7 @@ namespace FileProvider {
 	interface INSFileProviderItem { }
 
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[Unavailable (PlatformName.MacCatalyst)][Advice ("This API is not available when using Catalyst on macOS.")]
 	[Protocol]
 	interface NSFileProviderItem {

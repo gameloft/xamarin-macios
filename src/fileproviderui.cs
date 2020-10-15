@@ -20,7 +20,7 @@ using FileProvider;
 namespace FileProviderUI {
 
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[ErrorDomain ("FPUIErrorDomain")]
 	[Native]
 	enum FPUIExtensionErrorCode : ulong {
@@ -29,7 +29,7 @@ namespace FileProviderUI {
 	}
 
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[DisableDefaultCtor]
 	[BaseType (typeof (NSExtensionContext))]
 	interface FPUIActionExtensionContext {
@@ -45,7 +45,7 @@ namespace FileProviderUI {
 	}
 
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 #if IOS
 	[BaseType (typeof (UIViewController))]
 #else

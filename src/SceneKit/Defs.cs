@@ -457,7 +457,7 @@ namespace SceneKit {
 		Focusable,
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	public enum SCNLightProbeType : long
 	{
@@ -465,7 +465,7 @@ namespace SceneKit {
 		Radiance = 1,
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	public enum SCNLightProbeUpdateType : long
 	{
@@ -473,7 +473,7 @@ namespace SceneKit {
 		Realtime = 1,
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	public enum SCNLightAreaType : long
 	{

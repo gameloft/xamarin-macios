@@ -315,7 +315,7 @@ namespace AVFoundation {
 
 #if MONOMAC
 
-	[Mac (10,15)]
+	[NoMac]
 	[StructLayout (LayoutKind.Sequential)]
 	public struct AVSampleCursorAudioDependencyInfo {
 		[MarshalAs (UnmanagedType.I1)]

@@ -268,32 +268,32 @@ namespace NaturalLanguage {
 		[Wrap ("GetModels (tagScheme.GetConstant ()!)")]
 		NLModel[] GetModels (NLTagScheme tagScheme);
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[EditorBrowsable (EditorBrowsableState.Advanced)]
 		[Export ("setGazetteers:forTagScheme:")]
 		void SetGazetteers (NLGazetteer[] gazetteers, NSString tagScheme);
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Wrap ("SetGazetteers (gazetteers, tagScheme.GetConstant ()!)")]
 		void SetGazetteers (NLGazetteer[] gazetteers, NLTagScheme tagScheme);
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[EditorBrowsable (EditorBrowsableState.Advanced)]
 		[Export ("gazetteersForTagScheme:")]
 		NLGazetteer[] GetGazetteers (NSString tagScheme);
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Wrap ("GetGazetteers (tagScheme.GetConstant ()!)")]
 		NLGazetteer[] GetGazetteers (NLTagScheme tagScheme);
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[EditorBrowsable (EditorBrowsableState.Advanced)]
 		[Static]
 		[Async]
 		[Export ("requestAssetsForLanguage:tagScheme:completionHandler:")]
 		void RequestAssets (NSString language, NSString tagScheme, Action<NLTaggerAssetsResult, NSError> completionHandler);
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Static]
 		[Async]
 		[Wrap ("RequestAssets (language.GetConstant ()!, tagScheme.GetConstant ()!, completionHandler)")]
@@ -388,13 +388,13 @@ namespace NaturalLanguage {
 		NSString OrganizationName { get; }
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum NLDistanceType : long {
 		Cosine,
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum NLTaggerAssetsResult : long {
 		Available,
@@ -402,10 +402,10 @@ namespace NaturalLanguage {
 		Error,
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	delegate void NLEnumerateNeighborsHandler (string neighbor, /* NLDistance */ double distance, ref bool stop);
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface NLEmbedding {
@@ -572,7 +572,7 @@ namespace NaturalLanguage {
 		NSIndexSet GetSupportedSentenceEmbeddingRevisions (NLLanguage language);
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface NLGazetteer {

@@ -57,7 +57,7 @@ namespace VideoToolbox {
 		[Field ("kVTCompressionPropertyKey_Quality")]
 		NSString Quality { get; }
 
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Field ("kVTCompressionPropertyKey_TargetQualityForAlpha")]
 		NSString TargetQualityForAlpha { get; }
 			
@@ -152,7 +152,7 @@ namespace VideoToolbox {
 
 		// AlphaChannelMode
 		
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Field ("kVTCompressionPropertyKey_AlphaChannelMode")]
 		NSString AlphaChannelMode { get; }
 
@@ -185,7 +185,7 @@ namespace VideoToolbox {
 		[Mac (10,13), iOS (11,0), TV (11,0)]
 		NSString EncoderId { get; }
 		
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Field ("kVTCompressionPropertyKey_UsingGPURegistryID")]
 		NSString UsingGpuRegistryId { get; }
 
@@ -198,7 +198,7 @@ namespace VideoToolbox {
 		NSString PrioritizeEncodingSpeedOverQuality { get; }
 	}
 
-	[Mac (10,15), iOS (13,0), TV (13,0)]
+	[NoMac, iOS (13,0), TV (13,0)]
 	enum VTAlphaChannelMode {
 		[Field ("kVTAlphaChannelMode_StraightAlpha")]
 		StraightAlpha,
@@ -314,7 +314,7 @@ namespace VideoToolbox {
 		[Export ("EncoderId")]
 		string EncoderId { get; set; }
 		
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Export ("TargetQualityForAlpha")]
 		float TargetQualityForAlpha { get; set; }
 		
@@ -322,7 +322,7 @@ namespace VideoToolbox {
 		[Export ("GammaLevel")]
 		double GammaLevel { get; set; }
 		
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Export ("UsingGpuRegistryId")]
 		uint UsingGpuRegistryId { get; }
 	}
@@ -536,11 +536,11 @@ namespace VideoToolbox {
 		[Export ("EncoderID")]
 		string EncoderID { get; set; }
 		
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Export ("RequiredEncoderGpuRegistryId")]
 		uint RequiredEncoderGpuRegistryId { get; set; }
 		
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Export ("PreferredEncoderGpuRegistryId")]
 		uint PreferredEncoderGpuRegistryId { get; set; }
 	}
@@ -704,7 +704,7 @@ namespace VideoToolbox {
 		[Field ("kVTDecompressionPropertyKey_PixelFormatsWithReducedResolutionSupport")]
 		NSString PixelFormatsWithReducedResolutionSupport { get; }
 		
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Field ("kVTDecompressionPropertyKey_UsingGPURegistryID")]
 		NSString UsingGpuRegistryId { get; }
 
@@ -790,7 +790,7 @@ namespace VideoToolbox {
 		[Export ("PixelTransferProperties")]
 		VTPixelTransferProperties PixelTransferSettings { get; set; }
 		
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Export ("UsingGpuRegistryId")]
 		uint UsingGpuRegistryId { get; }
 	}
@@ -995,7 +995,7 @@ namespace VideoToolbox {
 		[Export ("DestinationICCProfile")]
 		NSData DestinationICCProfile { get; set; }
 		
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Export ("RealTime")]
 		bool RealTime { get; set; }
 	}
@@ -1067,7 +1067,7 @@ namespace VideoToolbox {
 		[Field ("kVTPixelTransferPropertyKey_DestinationYCbCrMatrix")]
 		NSString DestinationYCbCrMatrix { get; }
 		
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Field ("kVTPixelTransferPropertyKey_RealTime")]
 		NSString RealTime { get; }
 	}

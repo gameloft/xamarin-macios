@@ -17,7 +17,7 @@ using NSImage = Foundation.NSObject;
 
 namespace QuickLookThumbnailing {
 
-	[Mac (10,15), iOS (13,0)]
+	[NoMac, iOS (13,0)]
 	[Native]
 	[ErrorDomain ("QLThumbnailErrorDomain")]
 	enum QLThumbnailError : long {
@@ -29,7 +29,7 @@ namespace QuickLookThumbnailing {
 		RequestCancelled,
 	}
 
-	[Mac (10,15), iOS (13,0)]
+	[NoMac, iOS (13,0)]
 	[Flags]
 	[Native]
 	enum QLThumbnailGenerationRequestRepresentationTypes : ulong {
@@ -40,7 +40,7 @@ namespace QuickLookThumbnailing {
 		All = UInt64.MaxValue,
 	}
 
-	[Mac (10,15), iOS (13,0)]
+	[NoMac, iOS (13,0)]
 	[Native]
 	public enum QLThumbnailRepresentationType : long {
 		Icon = 0,
@@ -48,7 +48,7 @@ namespace QuickLookThumbnailing {
 		Thumbnail = 2,
 	}
 
-	[Mac (10,15), iOS (13,0)]
+	[NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface QLThumbnailGenerator {
@@ -73,7 +73,7 @@ namespace QuickLookThumbnailing {
 		void SaveBestRepresentation (QLThumbnailGenerationRequest request, NSUrl fileUrl, string contentType, Action<NSError> completionHandler);
 	}
 
-	[Mac (10,15), iOS (13,0)]
+	[NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface QLThumbnailGenerationRequest : NSCopying, NSSecureCoding {
@@ -101,7 +101,7 @@ namespace QuickLookThumbnailing {
 		UTType ContentType { get; set; }
 	}
 
-	[Mac (10,15), iOS (13,0)]
+	[NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	interface QLThumbnailRepresentation {
 
@@ -127,7 +127,7 @@ namespace QuickLook {
 namespace QuickLookThumbnailing {
 #endif
 
-	[Mac (10,15)]
+	[NoMac]
 	[iOS (11,0)]
 	[BaseType (typeof (NSObject))]
 	interface QLThumbnailProvider {
@@ -137,7 +137,7 @@ namespace QuickLookThumbnailing {
 
 	[ThreadSafe] // Members get called inside 'QLThumbnailProvider.ProvideThumbnail' which runs on a background thread.
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface QLThumbnailReply {
@@ -156,7 +156,7 @@ namespace QuickLookThumbnailing {
 
 	[ThreadSafe]
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	interface QLFileThumbnailRequest {
 		[Export ("maximumSize")]

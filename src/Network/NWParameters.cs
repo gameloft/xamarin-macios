@@ -184,11 +184,11 @@ namespace Network {
 		}
 
 #if MONOMAC
-		[NoWatch, NoTV, NoiOS, Mac (10,15)]
+		[NoWatch, NoTV, NoiOS, NoMac]
 		[DllImport (Constants.NetworkLibrary)]
 		unsafe static extern IntPtr nw_parameters_create_custom_ip (byte custom_ip_protocol_number, BlockLiteral *configure_ip);
 
-		[NoWatch, NoTV, NoiOS, Mac (10,15)]
+		[NoWatch, NoTV, NoiOS, NoMac]
 		[BindingImpl (BindingImplOptions.Optimizable)]
 		public unsafe static NWParameters CreateCustomIP (byte protocolNumber, Action<NWProtocolOptions>? configureCustomIP = null)
 		{
@@ -484,16 +484,16 @@ namespace Network {
 			set => nw_parameters_set_include_peer_to_peer (GetCheckedHandle (), value);
 		}
 
-		[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+		[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 		[DllImport (Constants.NetworkLibrary)]
 		[return: MarshalAs (UnmanagedType.I1)]
 		static extern bool nw_parameters_get_prohibit_constrained (IntPtr parameters);
 
-		[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+		[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 		[DllImport (Constants.NetworkLibrary)]
 		static extern void nw_parameters_set_prohibit_constrained (IntPtr parameters, bool prohibit_constrained);
 
-		[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+		[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 		public bool ProhibitConstrained {
 			get => nw_parameters_get_prohibit_constrained (GetCheckedHandle ());
 			set => nw_parameters_set_prohibit_constrained (GetCheckedHandle (), value);

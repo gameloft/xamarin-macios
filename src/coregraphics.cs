@@ -230,7 +230,7 @@ namespace CoreGraphics {
 		[Field ("kCGColorSpaceITUR_2020_PQ")]
 		NSString Itur_2020_PQ { get; }
 
-		[Mac (10,15)][iOS (13,0)]
+		[NoMac][iOS (13,0)]
 		[TV (13,0)][Watch (6,0)]
 		[Deprecated (PlatformName.MacOSX, 10,15,4)]
 		[Deprecated (PlatformName.iOS, 13,4)]
@@ -243,12 +243,12 @@ namespace CoreGraphics {
 		[Field ("kCGColorSpaceDisplayP3_PQ")]
 		NSString DisplayP3_PQ { get; }
 
-		[Mac (10,15)][iOS (13,0)]
+		[NoMac][iOS (13,0)]
 		[TV (13,0)][Watch (6,0)]
 		[Field ("kCGColorSpaceDisplayP3_HLG")]
 		NSString DisplayP3_Hlg { get; }
 
-		[Mac (10,15)][iOS (13,0)]
+		[NoMac][iOS (13,0)]
 		[TV (13,0)][Watch (6,0)]
 		[Deprecated (PlatformName.MacOSX, 11,0, message: "Use 'Itur_2100_PQ' instead.")]
 		[Deprecated (PlatformName.iOS, 14,0, message: "Use 'Itur_2100_PQ' instead.")]
@@ -322,7 +322,7 @@ namespace CoreGraphics {
 		CGRect DestinationRect { get; set; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[iOS (13,0)]
 	[TV (13,0)]
 	[Watch (6,0)]
@@ -342,7 +342,7 @@ namespace CoreGraphics {
 		NSString LanguageTextKey { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[iOS (13,0)]
 	[TV (13,0)]
 	[Watch (6,0)]

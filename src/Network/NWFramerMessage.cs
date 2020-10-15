@@ -26,7 +26,7 @@ using OS_nw_parameters=System.IntPtr;
 
 namespace Network {
 
-	[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+	[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 	public class NWFramerMessage : NWProtocolMetadata {
 		internal NWFramerMessage (IntPtr handle, bool owns) : base (handle, owns) {}
 

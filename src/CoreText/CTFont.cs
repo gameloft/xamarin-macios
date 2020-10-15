@@ -1674,7 +1674,7 @@ namespace CoreText {
 				return CreateFont (CTFontCreateForString (handle, v.Handle, range));
 		}
 
-		[iOS (13,0), Mac (10,15), TV (13,0), Watch (6,0)]
+		[iOS (13,0), NoMac, TV (13,0), Watch (6,0)]
 		[DllImport (Constants.CoreTextLibrary)]
 		static extern /* CTFontRef */ IntPtr CTFontCreateForStringWithLanguage (
 			/* CTFontRef */ IntPtr currentFont,
@@ -1682,7 +1682,7 @@ namespace CoreText {
 			NSRange range,
 			/* CFStringRef _Nullable */ IntPtr language);
 
-		[iOS (13,0), Mac (10,15), TV (13,0), Watch (6,0)]
+		[iOS (13,0), NoMac, TV (13,0), Watch (6,0)]
 		public CTFont ForString (string value, NSRange range, string language)
 		{
 			if (value == null)

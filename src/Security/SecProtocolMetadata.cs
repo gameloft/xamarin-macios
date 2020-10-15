@@ -50,18 +50,18 @@ namespace Security {
 		[Deprecated(PlatformName.TvOS, 13, 0, message: "Use 'NegotiatedTlsProtocolVersion' instead.")]
 		public SslProtocol NegotiatedProtocolVersion => sec_protocol_metadata_get_negotiated_protocol_version (GetCheckedHandle ());
 
-		[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+		[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 		[DllImport (Constants.SecurityLibrary)]
 		static extern TlsProtocolVersion sec_protocol_metadata_get_negotiated_tls_protocol_version (IntPtr handle);
 
-		[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+		[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 		public TlsProtocolVersion NegotiatedTlsProtocolVersion => sec_protocol_metadata_get_negotiated_tls_protocol_version (GetCheckedHandle ());
 
-		[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+		[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 		[DllImport (Constants.SecurityLibrary)]
 		static extern TlsCipherSuite sec_protocol_metadata_get_negotiated_tls_ciphersuite (IntPtr handle);
 
-		[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+		[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 		public TlsCipherSuite NegotiatedTlsCipherSuite => sec_protocol_metadata_get_negotiated_tls_ciphersuite (GetCheckedHandle ());
 
 		[DllImport (Constants.SecurityLibrary)]
@@ -271,14 +271,14 @@ namespace Security {
 			return handle == IntPtr.Zero ? null : new DispatchData (handle, owns: true);
 		}
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[DllImport (Constants.SecurityLibrary)]
 		static extern /* const char* */ IntPtr sec_protocol_metadata_get_server_name (IntPtr /* sec_protocol_metadata_t */ handle);
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		public string ServerName => Marshal.PtrToStringAnsi (sec_protocol_metadata_get_server_name (GetCheckedHandle ()));
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[DllImport (Constants.SecurityLibrary)]
 		static extern bool sec_protocol_metadata_access_pre_shared_keys (IntPtr /* sec_protocol_metadata_t */ handle, ref BlockLiteral block);
 
@@ -295,7 +295,7 @@ namespace Security {
 				del (CreateDispatchData (psk), CreateDispatchData (psk_identity));
 		}
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		// no [Async] as it can be called multiple times
 		[BindingImpl (BindingImplOptions.Optimizable)]
 		public bool AccessPreSharedKeys (SecAccessPreSharedKeysHandler handler)

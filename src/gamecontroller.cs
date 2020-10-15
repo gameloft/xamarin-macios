@@ -86,7 +86,7 @@ namespace GameController {
 		[Export ("value")]
 		float Value {  /* float, not CGFloat */
 			get;
-			[Mac (10,15)][iOS (13,0)][TV (13,0)]
+			[NoMac][iOS (13,0)][TV (13,0)]
 			set;
 		}
 	}
@@ -112,7 +112,7 @@ namespace GameController {
 		[Export ("value")]
 		float Value {  /* float, not CGFloat */
 			get;
-			[Mac (10,15)][iOS (13,0)][TV (13,0)]
+			[NoMac][iOS (13,0)][TV (13,0)]
 			set;
 		}
 
@@ -170,7 +170,7 @@ namespace GameController {
 		[Export ("right")]
 		GCControllerButtonInput Right { get; }
 
-		[Mac (10,15), iOS (13,0)]
+		[NoMac, iOS (13,0)]
 		[TV (13,0)]
 		[Export ("setValueForXAxis:yAxis:")]
 		void SetValue (float xAxis, float yAxis);
@@ -300,15 +300,15 @@ namespace GameController {
 		[NullAllowed, Export ("rightThumbstickButton")]
 		GCControllerButtonInput RightThumbstickButton { get; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Export ("buttonMenu")]
 		GCControllerButtonInput ButtonMenu { get; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[NullAllowed, Export ("buttonOptions")]
 		GCControllerButtonInput ButtonOptions { get; }
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("setStateFromExtendedGamepad:")]
 		void SetState (GCExtendedGamepad extendedGamepad);
 
@@ -410,24 +410,24 @@ namespace GameController {
 		[Export ("handlerQueue", ArgumentSemantic.Retain)]
 		new DispatchQueue HandlerQueue { get; set; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Export ("productCategory")]
 		new string ProductCategory { get; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Export ("snapshot")]
 		bool Snapshot { [Bind ("isSnapshot")] get; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Export ("capture")]
 		GCController Capture ();
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Static]
 		[Export ("controllerWithMicroGamepad")]
 		GCController GetMicroGamepadController ();
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Static]
 		[Export ("controllerWithExtendedGamepad")]
 		GCController GetExtendedGamepadController ();
@@ -500,23 +500,23 @@ namespace GameController {
 		[Export ("hasAttitudeAndRotationRate")]
 		bool HasAttitudeAndRotationRate { get; }
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("setGravity:")]
 		void SetGravity (GCAcceleration gravity);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("setUserAcceleration:")]
 		void SetUserAcceleration (GCAcceleration userAcceleration);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("setAttitude:")]
 		void SetAttitude (GCQuaternion attitude);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("setRotationRate:")]
 		void SetRotationRate (GCRotationRate rotationRate);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("setStateFromMotion:")]
 		void SetState (GCMotion motion);
 
@@ -583,11 +583,11 @@ namespace GameController {
 		[Export ("allowsRotation")]
 		bool AllowsRotation { get; set; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Export ("buttonMenu")]
 		GCControllerButtonInput ButtonMenu { get; }
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("setStateFromMicroGamepad:")]
 		void SetState (GCMicroGamepad microGamepad);
 	}

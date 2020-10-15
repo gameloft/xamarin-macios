@@ -24,10 +24,10 @@ using OS_dispatch_data=System.IntPtr;
 
 namespace Network {
 
-	[NoWatch, NoTV, NoiOS, Mac (10,15)]
+	[NoWatch, NoTV, NoiOS, NoMac]
 	public delegate void NWEthernetChannelReceiveDelegate (DispatchData? content, ushort vlanTag, string? localAddress, string? remoteAddress);
 
-	[NoWatch, NoTV, NoiOS, Mac (10,15)]
+	[NoWatch, NoTV, NoiOS, NoMac]
 	public enum NWEthernetChannelState 
 	{
 		Invalid = 0,
@@ -38,7 +38,7 @@ namespace Network {
 		Cancelled = 5,
 	}
 
-	[NoWatch, NoTV, NoiOS, Mac (10,15)]
+	[NoWatch, NoTV, NoiOS, NoMac]
 	public class NWEthernetChannel : NativeObject {
 
 		internal NWEthernetChannel (IntPtr handle, bool owns) : base (handle, owns) {}

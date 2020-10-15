@@ -390,7 +390,7 @@ namespace UserNotifications {
 
 		[iOS (13,0)]
 		[TV (13,0)][Watch (6,0)] // no direct mention in headers
-		[Mac (10,15)]
+		[NoMac]
 		[NullAllowed, Export ("targetContentIdentifier")]
 		string TargetContentIdentifier { get; [NotImplemented] set; }
 	}
@@ -450,7 +450,7 @@ namespace UserNotifications {
 
 		[iOS (13,0)]
 		[TV (13,0)][Watch (6,0)] // no direct mention in headers
-		[Mac (10,15)]
+		[NoMac]
 		[NullAllowed, Export ("targetContentIdentifier")]
 		string TargetContentIdentifier { get; set; }
 	}

@@ -234,7 +234,7 @@ namespace EventKit {
 		[Export ("color", ArgumentSemantic.Copy)]
 		NSColor Color { get; set; }
 #endif
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("CGColor")]
 		CGColor CGColor { get; set; }
 		
@@ -505,11 +505,11 @@ namespace EventKit {
 		[Export ("defaultCalendarForNewEvents"), NullAllowed]
 		EKCalendar DefaultCalendarForNewEvents { get;  }
 		
-		[NoWatch, Mac (10,15)]
+		[NoWatch, NoMac]
 		[Export ("saveEvent:span:error:")]
 		bool SaveEvent (EKEvent theEvent, EKSpan span, out NSError error);
 
-		[NoWatch, Mac (10,15)]
+		[NoWatch, NoMac]
 		[Export ("removeEvent:span:error:")]
 		bool RemoveEvents (EKEvent theEvent, EKSpan span, out NSError error);
 

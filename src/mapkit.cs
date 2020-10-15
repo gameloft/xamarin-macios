@@ -386,7 +386,7 @@ namespace MapKit {
 		[Field ("MKMapItemTypeIdentifier")]
 		NSString TypeIdentifier { get; }
 
-		[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 		[NullAllowed, Export ("pointOfInterestCategory")]
 		string PointOfInterestCategory { get; set; }
 	}
@@ -636,23 +636,23 @@ namespace MapKit {
 		bool ShowsZoomControls { get; set; }
 #endif
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("setCameraZoomRange:animated:")]
 		void SetCameraZoomRange ([NullAllowed] MKMapCameraZoomRange cameraZoomRange, bool animated);
 
-		[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 		[Export ("cameraZoomRange", ArgumentSemantic.Copy)]
 		MKMapCameraZoomRange CameraZoomRange { get; set; }
 
-		[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 		[NullAllowed, Export ("cameraBoundary", ArgumentSemantic.Copy)]
 		MKMapCameraBoundary CameraBoundary { get; set; }
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("setCameraBoundary:animated:")]
 		void SetCameraBoundary ([NullAllowed] MKMapCameraBoundary cameraBoundary, bool animated);
 
-		[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 		[NullAllowed, Export ("pointOfInterestFilter", ArgumentSemantic.Copy)]
 		MKPointOfInterestFilter PointOfInterestFilter { get; set; }
 
@@ -1024,11 +1024,11 @@ namespace MapKit {
 	[DesignatedDefaultCtor]
 	[BaseType (typeof (MKShape))]
 	interface MKPointAnnotation : MKGeoJsonObject {
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("initWithCoordinate:")]
 		IntPtr Constructor (CLLocationCoordinate2D coordinate);
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("initWithCoordinate:title:subtitle:")]
 		IntPtr Constructor (CLLocationCoordinate2D coordinate, [NullAllowed] string title, [NullAllowed] string subtitle);
 
@@ -1229,11 +1229,11 @@ namespace MapKit {
 		[Export ("initWithCompletion:")]
 		IntPtr Constructor (MKLocalSearchCompletion completion);
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("initWithNaturalLanguageQuery:")]
 		IntPtr Constructor (string naturalLanguageQuery);
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("initWithNaturalLanguageQuery:region:")]
 		IntPtr Constructor (string naturalLanguageQuery, MKCoordinateRegion region);
 
@@ -1244,11 +1244,11 @@ namespace MapKit {
 		[Export ("region", ArgumentSemantic.Assign)]
 		MKCoordinateRegion Region { get; set; }
 
-		[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 		[Export ("resultTypes", ArgumentSemantic.Assign)]
 		MKLocalSearchResultType ResultTypes { get; set; }
 
-		[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 		[NullAllowed, Export ("pointOfInterestFilter", ArgumentSemantic.Copy)]
 		MKPointOfInterestFilter PointOfInterestFilter { get; set; }
 	}
@@ -1479,7 +1479,7 @@ namespace MapKit {
 		[Export ("cameraLookingAtCenterCoordinate:fromDistance:pitch:heading:")]
 		MKMapCamera CameraLookingAtCenterCoordinate (CLLocationCoordinate2D centerCoordinate, double locationDistance, nfloat pitch, double locationDirectionHeading);
 		
-		[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 		[Export ("centerCoordinateDistance")]
 		double CenterCoordinateDistance { get; set; }
 	}
@@ -1550,7 +1550,7 @@ namespace MapKit {
 		NSAppearance Appearance { get; set; }
 #endif
 
-		[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 		[NullAllowed, Export ("pointOfInterestFilter", ArgumentSemantic.Copy)]
 		MKPointOfInterestFilter PointOfInterestFilter { get; set; }
 
@@ -1643,7 +1643,7 @@ namespace MapKit {
 		[Export ("fillPath:inContext:")]
 		void FillPath (CGPath path, CGContext context);
 
-		[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 		[Export ("shouldRasterize")]
 		bool ShouldRasterize { get; set; }
 	}
@@ -1842,11 +1842,11 @@ namespace MapKit {
 		[Export ("cancel")]
 		void Cancel ();
 
-		[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 		[Export ("resultTypes", ArgumentSemantic.Assign)]
 		MKLocalSearchCompleterResultType ResultTypes { get; set; }
 
-		[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 		[NullAllowed, Export ("pointOfInterestFilter", ArgumentSemantic.Copy)]
 		MKPointOfInterestFilter PointOfInterestFilter { get; set; }
 	}
@@ -2005,7 +2005,7 @@ namespace MapKit {
 	interface MKPointOfInterestCategory {}
 #endif 
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	interface MKPointOfInterestFilter : NSSecureCoding, NSCopying
 	{
@@ -2032,13 +2032,13 @@ namespace MapKit {
 		bool ExcludesCategory ([BindAs (typeof (MKPointOfInterestCategory))] NSString category);
 	}
 
-	[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+	[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 	[Protocol (Name = "MKGeoJSONObject")]
 	interface MKGeoJsonObject {}
 
 	interface IMKGeoJsonObject {}
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject), Name = "MKGeoJSONDecoder")]
 	interface MKGeoJsonDecoder
 	{
@@ -2047,7 +2047,7 @@ namespace MapKit {
 		IMKGeoJsonObject[] GeoJsonObjects (NSData data, [NullAllowed] out NSError error);
 	}
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject), Name = "MKGeoJSONFeature")]
 	interface MKGeoJsonFeature : MKGeoJsonObject
 	{
@@ -2061,7 +2061,7 @@ namespace MapKit {
 		IMKGeoJsonObject[] Geometry { get; }
 	}
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	interface MKMapCameraZoomRange : NSSecureCoding, NSCopying
 	{
@@ -2087,7 +2087,7 @@ namespace MapKit {
 		double ZoomDefault { get; }
 	}
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	interface MKMapCameraBoundary : NSSecureCoding, NSCopying
 	{
@@ -2106,7 +2106,7 @@ namespace MapKit {
 		MKCoordinateRegion Region { get; }
 	}
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[BaseType (typeof(MKShape))]
 	interface MKMultiPolygon : MKOverlay, MKGeoJsonObject
 	{
@@ -2118,7 +2118,7 @@ namespace MapKit {
 		MKPolygon[] Polygons { get; }
 	}
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[BaseType (typeof(MKOverlayPathRenderer))]
 	interface MKMultiPolygonRenderer
 	{
@@ -2129,7 +2129,7 @@ namespace MapKit {
 		MKMultiPolygon MultiPolygon { get; }
 	}
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[BaseType (typeof(MKShape))]
 	interface MKMultiPolyline : MKOverlay, MKGeoJsonObject
 	{
@@ -2141,7 +2141,7 @@ namespace MapKit {
 		MKPolyline[] Polylines { get; }
 	}
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[BaseType (typeof(MKOverlayPathRenderer))]
 	interface MKMultiPolylineRenderer
 	{

@@ -18,7 +18,7 @@ namespace NetworkExtension {
 
 	[ErrorDomain ("NEDNSProxyErrorDomain")]
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	enum NEDnsProxyManagerError : long {
 		Invalid = 1,
@@ -28,7 +28,7 @@ namespace NetworkExtension {
 	}
 
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	enum NEFilterAction : long {
 		Invalid = 0,
@@ -97,14 +97,14 @@ namespace NetworkExtension {
 	}
 
 	[NoiOS]
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	enum NEFilterManagerGrade : long {
 		Firewall = 1,
 		Inspector = 2,
 	}
 
-	[Mac (10,15)][iOS (13,0)]
+	[NoMac][iOS (13,0)]
 	[Native]
 	enum NETrafficDirection : long {
 		Any = 0,
@@ -113,7 +113,7 @@ namespace NetworkExtension {
 	}
 
 	[NoiOS]
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	enum NENetworkRuleProtocol : long {
 		Any = 0,
@@ -122,7 +122,7 @@ namespace NetworkExtension {
 	}
 
 	[NoiOS]
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	enum NEFilterPacketProviderVerdict : long {
 		Allow = 0,
@@ -130,7 +130,7 @@ namespace NetworkExtension {
 		Delay = 2,
 	}
 
-	[Mac (10,15)][iOS (13,0)]
+	[NoMac][iOS (13,0)]
 	[Native]
 	enum NEFilterReportEvent : long {
 		NewFlow = 1,
@@ -218,7 +218,7 @@ namespace NetworkExtension {
 		[Export ("handleNewFlow:")]
 		bool HandleNewFlow (NEAppProxyFlow flow);
 
-		[Mac (10,15)][ iOS (13,0)]
+		[NoMac][ iOS (13,0)]
 		[Export ("handleNewUDPFlow:initialRemoteEndpoint:")]
 		bool HandleNewUdpFlow (NEAppProxyUdpFlow flow, NWEndpoint remoteEndpoint);
 	}
@@ -381,7 +381,7 @@ namespace NetworkExtension {
 	}
 
 	[iOS (9,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof(NEFilterProvider))]
 	[DisableDefaultCtor] // no valid handle when `init` is called
 	interface NEFilterDataProvider
@@ -424,7 +424,7 @@ namespace NetworkExtension {
 	}
 
 	[iOS (9,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof(NEFilterVerdict))]
 	interface NEFilterDataVerdict : NSSecureCoding, NSCopying
 	{
@@ -459,7 +459,7 @@ namespace NetworkExtension {
 	}
 		
 	[iOS (9,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof(NSObject))]
 	interface NEFilterFlow : NSSecureCoding, NSCopying
 	{
@@ -486,7 +486,7 @@ namespace NetworkExtension {
 		[NullAllowed, Export ("sourceAppAuditToken")]
 		NSData SourceAppAuditToken { get; }
 
-		[Mac (10, 15), iOS (13, 1)]
+		[NoMac, iOS (13, 1)]
 		[Export ("identifier")]
 		NSUuid Identifier { get; }
 	}
@@ -527,7 +527,7 @@ namespace NetworkExtension {
 		NSString ConfigurationDidChangeNotification { get; }
 
 		[NoiOS]
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("grade", ArgumentSemantic.Assign)]
 		NEFilterManagerGrade Grade { get; set; }
 
@@ -538,7 +538,7 @@ namespace NetworkExtension {
 	}
 
 	[iOS (9,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof(NEFilterVerdict))]
 	interface NEFilterNewFlowVerdict : NSSecureCoding, NSCopying
 	{
@@ -576,7 +576,7 @@ namespace NetworkExtension {
 		NEFilterDataVerdict PauseVerdict ();
 	}
 		
-	[Mac (10,15)]
+	[NoMac]
 	[iOS (9,0)]
 	[BaseType (typeof(NEProvider))]
 	[Abstract] // documented as such
@@ -634,17 +634,17 @@ namespace NetworkExtension {
 		NSData IdentityReference { get; set; }
 
 		[NoiOS]
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("filterPackets")]
 		bool FilterPackets { get; set; }
 
 		[NoiOS]
-		[Mac (10,15)]
+		[NoMac]
 		[NullAllowed, Export ("filterDataProviderBundleIdentifier")]
 		string FilterDataProviderBundleIdentifier { get; set; }
 
 		[NoiOS]
-		[Mac (10,15)]
+		[NoMac]
 		[NullAllowed, Export ("filterPacketProviderBundleIdentifier")]
 		string FilterPacketProviderBundleIdentifier { get; set; }
 	}
@@ -668,7 +668,7 @@ namespace NetworkExtension {
 	}
 
 	[iOS (9,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof(NSObject))]
 	interface NEFilterVerdict : NSSecureCoding, NSCopying
 	{
@@ -688,7 +688,7 @@ namespace NetworkExtension {
 		string SourceAppSigningIdentifier { get; }
 
 		[NoiOS]
-		[Mac (10,15)]
+		[NoMac]
 		[NullAllowed, Export ("sourceAppAuditToken")]
 		NSData SourceAppAuditToken { get; }
 
@@ -924,7 +924,7 @@ namespace NetworkExtension {
 		void DisplayMessage (string message, Action<bool> completionHandler);
 
 		[NoiOS]
-		[Mac (10,15)]
+		[NoMac]
 		[Static]
 		[Export ("startSystemExtensionMode")]
 		void StartSystemExtensionMode ();
@@ -1241,12 +1241,12 @@ namespace NetworkExtension {
 		[NullAllowed, Export ("proxySettings", ArgumentSemantic.Copy)]
 		NEProxySettings ProxySettings { get; set; }
 
-		[Mac (10,15), iOS (14,0)]
+		[NoMac, iOS (14,0)]
 		[Export ("includeAllNetworks")]
 		bool IncludeAllNetworks { get; set; }
 
 		[NoiOS]
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("excludeLocalNetworks")]
 		bool ExcludeLocalNetworks { get; set; }
 	}
@@ -1649,7 +1649,7 @@ namespace NetworkExtension {
 	}
 		
 	[iOS (9,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NEFilterFlow))]
 	interface NEFilterSocketFlow {
 		[NullAllowed]
@@ -1686,7 +1686,7 @@ namespace NetworkExtension {
 	}
 
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	interface NEFilterReport : NSSecureCoding, NSCopying {
 
@@ -1816,13 +1816,13 @@ namespace NetworkExtension {
 		NEFlowMetaData Metadata { get; }
 
 		[NoiOS]
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("direction")]
 		NETrafficDirection Direction { get; }
 	}
 
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[DisableDefaultCtor]
 	[BaseType (typeof (NSObject), Name = "NEDNSProxyManager")]
 	interface NEDnsProxyManager {
@@ -1858,7 +1858,7 @@ namespace NetworkExtension {
 	}
 
 	[iOS (11,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[DisableDefaultCtor]
 	[BaseType (typeof (NEProvider), Name = "NEDNSProxyProvider")]
 	interface NEDnsProxyProvider {
@@ -2026,7 +2026,7 @@ namespace NetworkExtension {
 	}
 
 	[NoiOS]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface NENetworkRule : NSSecureCoding, NSCopying {
@@ -2060,7 +2060,7 @@ namespace NetworkExtension {
 	}
 
 	[NoiOS]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface NEFilterRule : NSSecureCoding, NSCopying {
@@ -2076,7 +2076,7 @@ namespace NetworkExtension {
 	}
 
 	[NoiOS]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface NEFilterSettings : NSSecureCoding, NSCopying {
@@ -2092,17 +2092,17 @@ namespace NetworkExtension {
 	}
 
 	[NoiOS]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	interface NEFilterPacketContext {
 	}
 
 	[NoiOS]
-	[Mac (10,15)]
+	[NoMac]
 	delegate NEFilterPacketProviderVerdict NEFilterPacketHandler (NEFilterPacketContext context, IntPtr @interface, NETrafficDirection directiom, IntPtr packetBytes, nuint packetLength);
 
 	[NoiOS]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NEFilterProvider))]
 	[DisableDefaultCtor] // returns `nil`
 	interface NEFilterPacketProvider {
@@ -2117,7 +2117,7 @@ namespace NetworkExtension {
 	}
 
 	[NoiOS]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NEVpnManager))]
 	[DisableDefaultCtor]
 	interface NETransparentProxyManager {
@@ -2129,7 +2129,7 @@ namespace NetworkExtension {
 	}
 
 	[NoiOS]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NETunnelNetworkSettings))]
 	interface NETransparentProxyNetworkSettings {
 

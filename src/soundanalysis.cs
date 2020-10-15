@@ -23,7 +23,7 @@ using CoreMedia;
 namespace SoundAnalysis {
 
 	[ErrorDomain ("SNErrorDomain")]
-	[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+	[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 	[Native]
 	enum SNErrorCode : long {
 		UnknownError = 1,
@@ -33,7 +33,7 @@ namespace SoundAnalysis {
 		InvalidFile,
 	}
 
-	[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+	[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface SNAudioStreamAnalyzer {
@@ -60,7 +60,7 @@ namespace SoundAnalysis {
 
 	delegate void SNAudioFileAnalyzerAnalyzeHandler (bool didReachEndOfFile);
 
-	[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+	[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface SNAudioFileAnalyzer {
@@ -89,7 +89,7 @@ namespace SoundAnalysis {
 		void CancelAnalysis ();
 	}
 
-	[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+	[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface SNClassification {
@@ -101,7 +101,7 @@ namespace SoundAnalysis {
 		double Confidence { get; }
 	}
 
-	[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+	[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface SNClassificationResult : SNResult {
@@ -113,7 +113,7 @@ namespace SoundAnalysis {
 		CMTimeRange TimeRange { get; }
 	}
 
-	[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+	[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface SNClassifySoundRequest : SNRequest {
@@ -127,19 +127,19 @@ namespace SoundAnalysis {
 
 	interface ISNRequest {}
 
-	[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+	[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 	[Protocol]
 	interface SNRequest {}
 
 	interface ISNResult {}
 
-	[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+	[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 	[Protocol]
 	interface SNResult {}
 
 	interface ISNResultsObserving {}
 
-	[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+	[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 	[Protocol]
 	interface SNResultsObserving {
 

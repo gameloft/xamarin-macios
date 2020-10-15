@@ -260,14 +260,14 @@ namespace CoreGraphics {
 				CGPDFContextSetDestinationForRect (Handle, s.Handle, rect);
 		}
 
-		[Mac (10,15)]
+		[NoMac]
 		[iOS (13,0)]
 		[TV (13,0)]
 		[Watch (6,0)]
 		[DllImport (Constants.CoreGraphicsLibrary)]
 		static extern void CGPDFContextBeginTag (/* CGContextRef* */ IntPtr context, CGPdfTagType tagType, /* CFDictionaryRef* _Nullable */ IntPtr tagProperties);
 
-		[Mac (10,15)]
+		[NoMac]
 		[iOS (13,0)]
 		[TV (13,0)]
 		[Watch (6,0)]
@@ -276,7 +276,7 @@ namespace CoreGraphics {
 			CGPDFContextBeginTag (Handle, tagType, tagProperties.GetHandle ());
 		}
 
-		[Mac (10,15)]
+		[NoMac]
 		[iOS (13,0)]
 		[TV (13,0)]
 		[Watch (6,0)]
@@ -286,14 +286,14 @@ namespace CoreGraphics {
 			CGPDFContextBeginTag (Handle, tagType, d.GetHandle ());
 		}
 
-		[Mac (10,15)]
+		[NoMac]
 		[iOS (13,0)]
 		[TV (13,0)]
 		[Watch (6,0)]
 		[DllImport (Constants.CoreGraphicsLibrary)]
 		static extern void CGPDFContextEndTag (/* CGContextRef* */ IntPtr context);
 
-		[Mac (10,15)]
+		[NoMac]
 		[iOS (13,0)]
 		[TV (13,0)]
 		[Watch (6,0)]

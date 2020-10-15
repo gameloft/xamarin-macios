@@ -344,7 +344,7 @@ namespace AVFoundation {
 		[Field ("AVMediaCharacteristicVoiceOverTranslation")]
 		VoiceOverTranslation = 14,
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Field ("AVMediaCharacteristicIsOriginalContent")]
 		IsOriginalContent = 15,
 
@@ -409,11 +409,11 @@ namespace AVFoundation {
 		[Field ("AVMediaCharacteristicVoiceOverTranslation")]
 		NSString VoiceOverTranslation { get; }
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Field ("AVMediaCharacteristicIsOriginalContent")]
 		NSString IsOriginalContent { get; }
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Field ("AVMediaCharacteristicContainsAlphaChannel")]
 		NSString ContainsAlphaChannel { get; }
 	}
@@ -1035,7 +1035,7 @@ namespace AVFoundation {
 		[Export ("disconnectMIDIOutput:")]
 		void DisconnectMidiOutput (AVAudioNode node);
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("attachedNodes", ArgumentSemantic.Copy)]
 		NSSet<AVAudioNode> AttachedNodes { get; }
 	}
@@ -1078,7 +1078,7 @@ namespace AVFoundation {
 		[Export ("outputVolume")]
 		float OutputVolume { get; set; } /* float, not CGFloat */
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("outputType", ArgumentSemantic.Assign)]
 		AVAudioEnvironmentOutputType OutputType { get; set; }
 	}
@@ -1267,29 +1267,29 @@ namespace AVFoundation {
 
 #if XAMCORE_4_0
 		[Abstract]
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("sourceMode", ArgumentSemantic.Assign)]
 		AVAudio3DMixingSourceMode SourceMode { get; set; }
 
 		[Abstract]
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("pointSourceInHeadMode", ArgumentSemantic.Assign)]
 		AVAudio3DMixingPointSourceInHeadMode PointSourceInHeadMode { get; set; }
 	
 #else
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("sourceMode", ArgumentSemantic.Assign)]
 		AVAudio3DMixingSourceMode GetSourceMode ();
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("setSourceMode:")]
 		void SetSourceMode (AVAudio3DMixingSourceMode sourceMode);
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("pointSourceInHeadMode", ArgumentSemantic.Assign)]
 		AVAudio3DMixingPointSourceInHeadMode GetPointSourceInHeadMode ();
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("setPointSourceInHeadMode:")]
 		void SetPointSourceInHeadMode (AVAudio3DMixingPointSourceInHeadMode pointSourceInHeadMode);
 #endif
@@ -1405,11 +1405,11 @@ namespace AVFoundation {
 		[Export ("audioUnit"), NullAllowed]
 		global::AudioUnit.AudioUnit AudioUnit { get; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("voiceProcessingEnabled")]
 		bool VoiceProcessingEnabled { [Bind ("isVoiceProcessingEnabled")] get; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("setVoiceProcessingEnabled:error:")]
 		bool SetVoiceProcessingEnabled (bool enabled, out NSError outError);
 	}
@@ -1454,15 +1454,15 @@ namespace AVFoundation {
 		[Export ("setManualRenderingInputPCMFormat:inputBlock:")]
 		bool SetManualRenderingInputPcmFormat (AVAudioFormat format, AVAudioIONodeInputBlock block);
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("voiceProcessingBypassed")]
 		bool VoiceProcessingBypassed { [Bind ("isVoiceProcessingBypassed")] get; set; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("voiceProcessingAGCEnabled")]
 		bool VoiceProcessingAgcEnabled { [Bind ("isVoiceProcessingAGCEnabled")] get; set; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("voiceProcessingInputMuted")]
 		bool VoiceProcessingInputMuted { [Bind ("isVoiceProcessingInputMuted")] get; set; }
 
@@ -3081,7 +3081,7 @@ namespace AVFoundation {
 		[Export ("allMediaSelections")]
 		AVMediaSelection[] AllMediaSelections { get; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("minimumTimeOffsetFromLive")]
 		CMTime MinimumTimeOffsetFromLive { get; }
 	}
@@ -3884,7 +3884,7 @@ namespace AVFoundation {
 		[Export ("streamingContentKeyRequestDataForApp:contentIdentifier:options:error:")]
 		NSData GetStreamingContentKey (NSData appIdentifier, NSData contentIdentifier, [NullAllowed] NSDictionary options, out NSError error);
 
-		[iOS (9,0), Mac (10,15)]
+		[iOS (9,0), NoMac]
 		[Export ("persistentContentKeyFromKeyVendorResponse:options:error:")]
 		[return: NullAllowed]
 		NSData GetPersistentContentKey (NSData keyVendorResponse, [NullAllowed] NSDictionary<NSString,NSObject> options, out NSError error);
@@ -4418,7 +4418,7 @@ namespace AVFoundation {
 		[Export ("resourceLoader")]
 		AVAssetResourceLoader ResourceLoader { get;  }
 
-		[iOS (8,0), Mac (10,15)]
+		[iOS (8,0), NoMac]
 		[Field ("AVURLAssetHTTPCookiesKey")]
 		NSString HttpCookiesKey { get; }
 
@@ -4426,15 +4426,15 @@ namespace AVFoundation {
 		[NullAllowed, Export ("assetCache")]
 		AVAssetCache Cache { get; }
 
-		[iOS (10, 0), TV (10, 0), Mac (10,15)]
+		[iOS (10, 0), TV (10, 0), NoMac]
 		[Field ("AVURLAssetAllowsCellularAccessKey")]
 		NSString AllowsCellularAccessKey { get; }	
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Field ("AVURLAssetAllowsExpensiveNetworkAccessKey")]
 		NSString AllowsExpensiveNetworkAccessKey { get; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Field ("AVURLAssetAllowsConstrainedNetworkAccessKey")]
 		NSString AllowsConstrainedNetworkAccessKey { get; }
 	}
@@ -4580,7 +4580,7 @@ namespace AVFoundation {
 		[Export ("makeSampleCursorAtLastSampleInDecodeOrder")]
 		AVSampleCursor MakeSampleCursorAtLastSampleInDecodeOrder ();
 
-		[iOS (13,0), TV (13,0), Mac (10,15)]
+		[iOS (13,0), TV (13,0), NoMac]
 		[Export ("hasAudioSampleDependencies")]
 		bool HasAudioSampleDependencies { get; }
 	}
@@ -4651,7 +4651,7 @@ namespace AVFoundation {
 		AVSampleCursorStorageRange CurrentSampleStorageRange { get; }
 
 #if MONOMAC
-		[NoTV, NoWatch, NoiOS, Mac (10,15)]
+		[NoTV, NoWatch, NoiOS, NoMac]
 		[Export ("currentSampleAudioDependencyInfo")]
 		AVSampleCursorAudioDependencyInfo CurrentSampleAudioDependencyInfo { get; }
 #endif
@@ -6732,71 +6732,71 @@ namespace AVFoundation {
 		[Field ("AVMetadataObjectTypeFace"), Mac (10,10)]
 		NSString TypeFace { get; }
 
-		[NoTV, iOS (7,0), Mac (10,15)]
+		[NoTV, iOS (7,0), NoMac]
 		[Field ("AVMetadataObjectTypeAztecCode")]
 		NSString TypeAztecCode { get; }
 		
-		[NoTV, iOS (7,0), Mac (10,15)]
+		[NoTV, iOS (7,0), NoMac]
 		[Field ("AVMetadataObjectTypeCode128Code")]
 		NSString TypeCode128Code { get; }
 		
-		[NoTV, iOS (7,0), Mac (10,15)]
+		[NoTV, iOS (7,0), NoMac]
 		[Field ("AVMetadataObjectTypeCode39Code")]
 		NSString TypeCode39Code { get; }
 		
-		[NoTV, iOS (7,0), Mac (10,15)]
+		[NoTV, iOS (7,0), NoMac]
 		[Field ("AVMetadataObjectTypeCode39Mod43Code")]
 		NSString TypeCode39Mod43Code { get; }
 		
-		[NoTV, iOS (7,0), Mac (10,15)]
+		[NoTV, iOS (7,0), NoMac]
 		[Field ("AVMetadataObjectTypeCode93Code")]
 		NSString TypeCode93Code { get; }
 		
-		[NoTV, iOS (7,0), Mac (10,15)]
+		[NoTV, iOS (7,0), NoMac]
 		[Field ("AVMetadataObjectTypeEAN13Code")]
 		NSString TypeEAN13Code { get; }
 		
-		[NoTV, iOS (7,0), Mac (10,15)]
+		[NoTV, iOS (7,0), NoMac]
 		[Field ("AVMetadataObjectTypeEAN8Code")]
 		NSString TypeEAN8Code { get; }
 		
 		[Field ("AVMetadataObjectTypePDF417Code")]
-		[NoTV, iOS (7,0), Mac (10,15)]
+		[NoTV, iOS (7,0), NoMac]
 		NSString TypePDF417Code { get; }
 		
-		[NoTV, iOS (7,0), Mac (10,15)]
+		[NoTV, iOS (7,0), NoMac]
 		[Field ("AVMetadataObjectTypeQRCode")]
 		NSString TypeQRCode { get; }
 		
-		[NoTV, iOS (7,0), Mac (10,15)]
+		[NoTV, iOS (7,0), NoMac]
 		[Field ("AVMetadataObjectTypeUPCECode")]
 		NSString TypeUPCECode { get; }
 
-		[NoTV, iOS (8,0), Mac (10,15)]
+		[NoTV, iOS (8,0), NoMac]
 		[Field ("AVMetadataObjectTypeInterleaved2of5Code")]
 		NSString TypeInterleaved2of5Code { get; }
 		
-		[NoTV, iOS (8,0), Mac (10,15)]
+		[NoTV, iOS (8,0), NoMac]
 		[Field ("AVMetadataObjectTypeITF14Code")]
 		NSString TypeITF14Code { get; }
 		
-		[NoTV, iOS (8,0), Mac (10,15)]
+		[NoTV, iOS (8,0), NoMac]
 		[Field ("AVMetadataObjectTypeDataMatrixCode")]
 		NSString TypeDataMatrixCode { get; }
 
-		[NoWatch, NoTV, iOS (13, 0), Mac (10, 15)]
+		[NoWatch, NoTV, iOS (13, 0), NoMac]
 		[Field ("AVMetadataObjectTypeCatBody")]
 		NSString TypeCatBody { get; }
 
-		[NoWatch, NoTV, iOS (13, 0), Mac (10, 15)]
+		[NoWatch, NoTV, iOS (13, 0), NoMac]
 		[Field ("AVMetadataObjectTypeDogBody")]
 		NSString TypeDogBody { get; }
 
-		[NoWatch, NoTV, iOS (13, 0), Mac (10, 15)]
+		[NoWatch, NoTV, iOS (13, 0), NoMac]
 		[Field ("AVMetadataObjectTypeHumanBody")]
 		NSString TypeHumanBody { get; }
 
-		[NoWatch, NoTV, iOS (13, 0), Mac (10, 15)]
+		[NoWatch, NoTV, iOS (13, 0), NoMac]
 		[Field ("AVMetadataObjectTypeSalientObject")]
 		NSString TypeSalientObject { get; }
 #endif
@@ -6816,87 +6816,87 @@ namespace AVFoundation {
 		[Field ("AVMetadataObjectTypeFace")]
 		Face = 1 << 0,
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeAztecCode")]
 		AztecCode = 1 << 1,
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeCode128Code")]
 		Code128Code = 1 << 2,
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeCode39Code")]
 		Code39Code = 1 << 3,
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeCode39Mod43Code")]
 		Code39Mod43Code = 1 << 4,
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeCode93Code")]
 		Code93Code = 1 << 5,
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeEAN13Code")]
 		EAN13Code = 1 << 6,
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeEAN8Code")]
 		EAN8Code = 1 << 7,
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypePDF417Code")]
 		PDF417Code = 1 << 8,
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeQRCode")]
 		QRCode = 1 << 9,
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeUPCECode")]
 		UPCECode = 1 << 10,
 
-		[iOS (8,0), Mac (10,15)]
+		[iOS (8,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeInterleaved2of5Code")]
 		Interleaved2of5Code = 1 << 11,
 
-		[iOS (8,0), Mac (10,15)]
+		[iOS (8,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeITF14Code")]
 		ITF14Code = 1 << 12,
 
-		[iOS (8,0), Mac (10,15)]
+		[iOS (8,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeDataMatrixCode")]
 		DataMatrixCode = 1 << 13,
 
-		[iOS (13,0), Mac (10,15)]
+		[iOS (13,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeCatBody")]
 		CatBody = 1 << 14,
 
-		[iOS (13,0), Mac (10,15)]
+		[iOS (13,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeDogBody")]
 		DogBody = 1 << 15,
 
-		[iOS (13,0), Mac (10,15)]
+		[iOS (13,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeHumanBody")]
 		HumanBody = 1 << 16,
 
-		[iOS (13,0), Mac (10,15)]
+		[iOS (13,0), NoMac]
 		[NoTV][NoWatch]
 		[Field ("AVMetadataObjectTypeSalientObject")]
 		SalientObject = 1 << 17,
@@ -6925,7 +6925,7 @@ namespace AVFoundation {
 
 	[NoWatch]
 	[NoTV]
-	[iOS (7,0), Mac (10,15)]
+	[iOS (7,0), NoMac]
 	[BaseType (typeof (AVMetadataObject))]
 	interface AVMetadataMachineReadableCodeObject {
 		[Export ("corners", ArgumentSemantic.Copy)]
@@ -7514,7 +7514,7 @@ namespace AVFoundation {
 		[Export ("segments", ArgumentSemantic.Copy)]
 		AVCompositionTrackSegment [] Segments { get; }
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("formatDescriptionReplacements")]
 		AVCompositionTrackFormatDescriptionReplacement[] FormatDescriptionReplacements { get; }
 	}
@@ -7575,11 +7575,11 @@ namespace AVFoundation {
 		[Export ("removeTrackAssociationToTrack:type:")]
 		void RemoveTrackAssociation (AVCompositionTrack compositionTrack, string trackAssociationType);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("replaceFormatDescription:withFormatDescription:")]
 		void ReplaceFormatDescription (CMFormatDescription originalFormatDescription, [NullAllowed] CMFormatDescription replacementFormatDescription);
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("enabled")]
 		bool Enabled { [Bind ("isEnabled")] get; set; }
 	}
@@ -7904,19 +7904,19 @@ namespace AVFoundation {
 		[Field ("AVAssetExportPresetPassthrough")]
 		NSString PresetPassthrough { get; }
 
-		[NoWatch, NoTV, NoiOS, Mac (10,15)]
+		[NoWatch, NoTV, NoiOS, NoMac]
 		[Field ("AVAssetExportPresetAppleProRes4444LPCM")]
 		NSString PresetAppleProRes4444Lpcm { get; }
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Field ("AVAssetExportPresetHEVC1920x1080WithAlpha")]
 		NSString PresetHevc1920x1080WithAlpha { get; }
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Field ("AVAssetExportPresetHEVC3840x2160WithAlpha")]
 		NSString PresetHevc3840x2160WithAlpha { get; }
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Field ("AVAssetExportPresetHEVCHighestQualityWithAlpha")]
 		NSString PresetHevcHighestQualityWithAlpha { get; }
 
@@ -7972,12 +7972,12 @@ namespace AVFoundation {
 		NSUrl DirectoryForTemporaryFiles { get; set; }
 
 		[Async]
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("estimateMaximumDurationWithCompletionHandler:")]
 		void EstimateMaximumDuration (Action<CMTime, NSError> handler);
 
 		[Async]
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("estimateOutputFileLengthWithCompletionHandler:")]
 		void EstimateOutputFileLength (Action<long, NSError> handler);
 	}
@@ -8101,11 +8101,11 @@ namespace AVFoundation {
 		[Export ("supportsWideColorSourceFrames")]
 		bool SupportsWideColorSourceFrames { get; }
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("anticipateRenderingUsingHint:")]
 		void AnticipateRendering (AVVideoCompositionRenderHint renderHint);
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("prerollForRenderingUsingHint:")]
 		void PrerollForRendering (AVVideoCompositionRenderHint renderHint);
 
@@ -8246,7 +8246,7 @@ namespace AVFoundation {
 		[Static, Export ("videoCompositionWithPropertiesOfAsset:")]
 		AVMutableVideoComposition Create (AVAsset asset);
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Static]
 		[Export ("videoCompositionWithPropertiesOfAsset:prototypeInstruction:")]
 		AVMutableVideoComposition Create (AVAsset asset, AVVideoCompositionInstruction prototypeInstruction);
@@ -8509,11 +8509,11 @@ namespace AVFoundation {
 		[Field ("AVCaptureSessionPreset1280x720")]
 		NSString Preset1280x720 { get; }
 
-		[Mac (10,15)]
+		[NoMac]
 		[Field ("AVCaptureSessionPreset1920x1080")]
 		NSString Preset1920x1080 { get; }
 
-		[Mac (10,15)]
+		[NoMac]
 		[iOS (9,0)]
 		[Field ("AVCaptureSessionPreset3840x2160")]
 		NSString Preset3840x2160 { get; }
@@ -8614,7 +8614,7 @@ namespace AVFoundation {
 		[Export ("removeConnection:")]
 		void RemoveConnection (AVCaptureConnection connection);
 
-		[NoWatch, NoTV, Mac (10,15), iOS (13,0)]
+		[NoWatch, NoTV, NoMac, iOS (13,0)]
 		[Export ("connections")]
 		AVCaptureConnection[] Connections { get; }
 	}
@@ -8955,15 +8955,15 @@ namespace AVFoundation {
 		[return: NullAllowed]
 		AVCaptureConnection ConnectionFromMediaType (NSString avMediaType);
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[Export ("metadataOutputRectOfInterestForRect:")]
 		CGRect GetMetadataOutputRectOfInterestForRect (CGRect rectInOutputCoordinates);
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[Export ("rectForMetadataOutputRectOfInterest:")]
 		CGRect GetRectForMetadataOutputRectOfInterest (CGRect rectInMetadataOutputCoordinates);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("transformedMetadataObjectForMetadataObject:connection:")]
 		[return: NullAllowed]
 		AVMetadataObject GetTransformedMetadataObject (AVMetadataObject metadataObject, AVCaptureConnection connection);
@@ -9051,28 +9051,28 @@ namespace AVFoundation {
 		[NullAllowed, Export ("connection")]
 		AVCaptureConnection Connection { get; }
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("captureDevicePointOfInterestForPoint:")]
 		CGPoint CaptureDevicePointOfInterestForPoint (CGPoint pointInLayer);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("pointForCaptureDevicePointOfInterest:")]
 		CGPoint PointForCaptureDevicePointOfInterest (CGPoint captureDevicePointOfInterest);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("transformedMetadataObjectForMetadataObject:")]
 		[return: NullAllowed]
 		AVMetadataObject GetTransformedMetadataObject (AVMetadataObject metadataObject);
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[Export ("metadataOutputRectOfInterestForRect:")]
 		CGRect MapToMetadataOutputCoordinates (CGRect rectInLayerCoordinates);
 		
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[Export ("rectForMetadataOutputRectOfInterest:")]
 		CGRect MapToLayerCoordinates (CGRect rectInMetadataOutputCoordinates);
 
-		[iOS (8,0), Mac (10,15)]
+		[iOS (8,0), NoMac]
 		[Static]
 		[Export ("layerWithSessionWithNoConnection:")]
 		AVCaptureVideoPreviewLayer CreateWithNoConnection (AVCaptureSession session);
@@ -9133,22 +9133,22 @@ namespace AVFoundation {
 		[Export ("availableVideoCodecTypes")]
 		NSString [] AvailableVideoCodecTypes { get;  }
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[Export ("recommendedVideoSettingsForAssetWriterWithOutputFileType:")]
 		[return: NullAllowed]
 		NSDictionary GetRecommendedVideoSettingsForAssetWriter (string outputFileType);
 
-		[iOS (11,0), Mac (10,15)]
+		[iOS (11,0), NoMac]
 		[Export ("availableVideoCodecTypesForAssetWriterWithOutputFileType:")]
 		string[] GetAvailableVideoCodecTypes (string outputFileType);
 
 		[Internal]
-		[iOS (11,0), Mac (10,15)]
+		[iOS (11,0), NoMac]
 		[Export ("recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:")]
 		[return: NullAllowed]
 		NSDictionary GetWeakRecommendedVideoSettings (string videoCodecType, string outputFileType);
 
-		[iOS (11,0), Mac (10,15)]
+		[iOS (11,0), NoMac]
 		[Wrap ("new AVPlayerItemVideoOutputSettings (GetWeakRecommendedVideoSettings (videoCodecType, outputFileType)!)")]
 		[return: NullAllowed]
 		AVPlayerItemVideoOutputSettings GetRecommendedVideoSettings (string videoCodecType, string outputFileType);
@@ -9202,7 +9202,7 @@ namespace AVFoundation {
 		void SetSampleBufferDelegateQueue ([NullAllowed] AVCaptureAudioDataOutputSampleBufferDelegate sampleBufferDelegate, [NullAllowed] DispatchQueue sampleBufferCallbackDispatchQueue);
 #endif
 
-		[iOS (7,0), Mac (10,15)]
+		[iOS (7,0), NoMac]
 		[Export ("recommendedAudioSettingsForAssetWriterWithOutputFileType:")]
 		[return: NullAllowed]
 		NSDictionary GetRecommendedAudioSettingsForAssetWriter (string outputFileType);
@@ -9385,7 +9385,7 @@ namespace AVFoundation {
 	}
 #endif
 
-	[NoTV, Mac (10,15), NoWatch, iOS (12,0)]
+	[NoTV, NoMac, NoWatch, iOS (12,0)]
 	[Internal]
 	[Static]
 	interface AVCapturePhotoSettingsThumbnailFormatKeys {
@@ -9400,7 +9400,7 @@ namespace AVFoundation {
 	}
 
 	
-	[NoTV, Mac (10,15), NoWatch, iOS (12,0)]
+	[NoTV, NoMac, NoWatch, iOS (12,0)]
 	[StrongDictionary ("AVCapturePhotoSettingsThumbnailFormatKeys")]
 	interface AVCapturePhotoSettingsThumbnailFormat {
 		NSString Codec { get; set; }
@@ -9409,7 +9409,7 @@ namespace AVFoundation {
 	}
 
 	[NoWatch]
-	[NoTV, Mac (10,15), iOS (10,0)]
+	[NoTV, NoMac, iOS (10,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface AVCapturePhotoSettings : NSCopying
@@ -9613,7 +9613,7 @@ namespace AVFoundation {
 #endif
 
 	[NoWatch]
-	[NoTV, Mac (10,15), iOS (10,0)]
+	[NoTV, NoMac, iOS (10,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface AVCaptureResolvedPhotoSettings
@@ -9683,7 +9683,7 @@ namespace AVFoundation {
 	interface IAVCapturePhotoCaptureDelegate {}
 
 	[NoWatch]
-	[NoTV, Mac (10,15), iOS (10,0)]
+	[NoTV, NoMac, iOS (10,0)]
 	[Protocol, Model]
 	[BaseType (typeof(NSObject))]
 	interface AVCapturePhotoCaptureDelegate
@@ -9724,7 +9724,7 @@ namespace AVFoundation {
 	}
 
 	[NoWatch]
-	[NoTV, Mac (10,15), iOS (10,0)]
+	[NoTV, NoMac, iOS (10,0)]
 	[BaseType (typeof(AVCaptureOutput))]
 	interface AVCapturePhotoOutput
 	{
@@ -9855,7 +9855,7 @@ namespace AVFoundation {
 		NSNumber[] GetSupportedPhotoPixelFormatTypesForFileType (string fileType);
 
 		[Internal]
-		[iOS (11,0), Mac (10,15)]
+		[iOS (11,0), NoMac]
 		[Export ("supportedPhotoCodecTypesForFileType:")]
 		NSString[] _GetSupportedPhotoCodecTypesForFileType (string fileType);
 
@@ -10034,7 +10034,7 @@ namespace AVFoundation {
 		bool HighResolutionStillImageOutputEnabled { [Bind ("isHighResolutionStillImageOutputEnabled")] get; set; }
 	}
 
-	[NoTV, iOS (10,0), Mac (10,15), NoWatch]
+	[NoTV, iOS (10,0), NoMac, NoWatch]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor] // init NS_UNAVAILABLE
 	interface AVCaptureDeviceDiscoverySession {
@@ -10052,7 +10052,7 @@ namespace AVFoundation {
 		NSSet<AVCaptureDevice>[] SupportedMultiCamDeviceSets { get; }
 	}
 
-	[NoTV, iOS (10,0), Mac (10,15), NoWatch]
+	[NoTV, iOS (10,0), NoMac, NoWatch]
 	enum AVCaptureDeviceType {
 
 		[Field ("AVCaptureDeviceTypeBuiltInMicrophone")]
@@ -10269,7 +10269,7 @@ namespace AVFoundation {
 		[Notification]
 		NSString WasDisconnectedNotification { get; }
 
-		[Mac (10,15), NoWatch]
+		[NoMac, NoWatch]
 		[Field ("AVCaptureMaxAvailableTorchLevel")]
 		float MaxAvailableTorchLevel { get; } // defined as 'float'
 
@@ -10282,7 +10282,7 @@ namespace AVFoundation {
 		[Export ("subjectAreaChangeMonitoringEnabled")]
 		bool SubjectAreaChangeMonitoringEnabled { [Bind ("isSubjectAreaChangeMonitoringEnabled")] get; set; }
 		
-		[NoWatch, Mac (10,15)]
+		[NoWatch, NoMac]
 		[Export ("isFlashAvailable")]
 		bool FlashAvailable { get;  }
 
@@ -10291,20 +10291,20 @@ namespace AVFoundation {
 		[Export ("isFlashActive")]
 		bool FlashActive { get; }
 
-		[NoWatch, Mac (10,15)]
+		[NoWatch, NoMac]
 		[Export ("isTorchAvailable")]
 		bool TorchAvailable { get; }
 
-		[NoWatch, Mac (10,15)]
+		[NoWatch, NoMac]
 		[Export ("torchLevel")]
 		float TorchLevel { get; } // defined as 'float'
 
 		// 6.0
-		[NoWatch, Mac (10,15)]
+		[NoWatch, NoMac]
 		[Export ("torchActive")]
 		bool TorchActive { [Bind ("isTorchActive")] get;  }
 
-		[NoWatch, Mac (10,15)]
+		[NoWatch, NoMac]
 		[Export ("setTorchModeOnWithLevel:error:")]
 		bool SetTorchModeLevel (float /* defined as 'float' */ torchLevel, out NSError outError);
 
@@ -10461,21 +10461,21 @@ namespace AVFoundation {
 
 		// From AVCaptureDevice (AVCaptureDeviceType) Category
 		[Internal]
-		[iOS (10,0), Mac (10,15), NoWatch]
+		[iOS (10,0), NoMac, NoWatch]
 		[Export ("deviceType")]
 		NSString _DeviceType { get; }
 
-		[iOS (10, 0), Mac (10,15), NoWatch]
+		[iOS (10, 0), NoMac, NoWatch]
 		[Wrap ("AVCaptureDeviceTypeExtensions.GetValue (_DeviceType)")]
 		AVCaptureDeviceType DeviceType { get; }
 
 		[Internal]
-		[iOS (10,0), Mac (10,15), NoWatch]
+		[iOS (10,0), NoMac, NoWatch]
 		[Static]
 		[Export ("defaultDeviceWithDeviceType:mediaType:position:")]
 		AVCaptureDevice _DefaultDeviceWithDeviceType (NSString deviceType, string mediaType, AVCaptureDevicePosition position);
 
-		[iOS (10,0), Mac (10,15), NoWatch]
+		[iOS (10,0), NoMac, NoWatch]
 		[Static]
 		[Wrap ("AVCaptureDevice._DefaultDeviceWithDeviceType (deviceType.GetConstant ()!, mediaType, position)")]
 		AVCaptureDevice GetDefaultDevice (AVCaptureDeviceType deviceType, string mediaType, AVCaptureDevicePosition position);
@@ -10595,7 +10595,7 @@ namespace AVFoundation {
 		[Export ("videoHDREnabled")]
 		bool VideoHdrEnabled { [Bind ("isVideoHDREnabled")] get; set; }
 
-		[iOS (10, 0), NoWatch, Mac (10,15)]
+		[iOS (10, 0), NoWatch, NoMac]
 		[Export ("activeColorSpace", ArgumentSemantic.Assign)]
 		AVCaptureColorSpace ActiveColorSpace { get; set; }
 
@@ -10634,7 +10634,7 @@ namespace AVFoundation {
 		[Export ("activeMaxExposureDuration", ArgumentSemantic.Assign)]
 		CMTime ActiveMaxExposureDuration { get; set; }
 
-		[Mac (10,15), iOS (10,0), NoTV, NoWatch]
+		[NoMac, iOS (10,0), NoTV, NoWatch]
 		[Static]
 		[Export ("defaultDeviceWithDeviceType:mediaType:position:")]
 		[return: NullAllowed]
@@ -10726,14 +10726,14 @@ namespace AVFoundation {
 		[Export ("videoSupportedFrameRateRanges", ArgumentSemantic.Copy)]
 		AVFrameRateRange [] VideoSupportedFrameRateRanges { get; }
 
-		[iOS (10,0), Mac (10,15)]
+		[iOS (10,0), NoMac]
 		[Export ("supportedColorSpaces")]
 #if XAMCORE_4_0
 		[BindAs (typeof (CGColorSpace []))]
 #endif
 		NSNumber[] SupportedColorSpaces { get; }
 
-		[iOS (8,0), Mac (10,15)]
+		[iOS (8,0), NoMac]
 		[Export ("autoFocusSystem")]
 		AVCaptureAutoFocusSystem AutoFocusSystem { get; }
 
@@ -11037,13 +11037,13 @@ namespace AVFoundation {
 		[Export ("preventsDisplaySleepDuringVideoPlayback")]
 		bool PreventsDisplaySleepDuringVideoPlayback { get; set; }
 
-		[TV (13,4), NoWatch, Mac (10,15), iOS (13,4)]
+		[TV (13,4), NoWatch, NoMac, iOS (13,4)]
 		[Static]
 		[Export ("eligibleForHDRPlayback")]
 		bool EligibleForHdrPlayback { get; }
 
 		[Notification]
-		[TV (13,4), NoWatch, Mac (10,15), iOS (13,4)]
+		[TV (13,4), NoWatch, NoMac, iOS (13,4)]
 		[Field ("AVPlayerEligibleForHDRPlaybackDidChangeNotification")]
 		NSString EligibleForHdrPlaybackDidChangeNotification { get; }
 	}
@@ -11060,12 +11060,12 @@ namespace AVFoundation {
 		[Export ("initWithPreferredLanguages:preferredMediaCharacteristics:")]
 		IntPtr Constructor ([NullAllowed] string [] preferredLanguages, [NullAllowed] NSString [] preferredMediaCharacteristics);
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("initWithPrincipalMediaCharacteristics:preferredLanguages:preferredMediaCharacteristics:")]
 		IntPtr Constructor ([NullAllowed] [BindAs (typeof (AVMediaCharacteristics []))]NSString[] principalMediaCharacteristics, [NullAllowed] [BindAs (typeof (AVMediaCharacteristics []))] NSString[] preferredLanguages, [NullAllowed] string[] preferredMediaCharacteristics);
 
 		[BindAs (typeof (AVMediaCharacteristics []))]
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[NullAllowed, Export ("principalMediaCharacteristics")]
 		NSString[] PrincipalMediaCharacteristics { get; }
 	}
@@ -11479,30 +11479,30 @@ namespace AVFoundation {
 		NSString _VideoApertureMode { get; set; }
 
 		[Notification]
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Field ("AVPlayerItemRecommendedTimeOffsetFromLiveDidChangeNotification")]
 		NSString RecommendedTimeOffsetFromLiveDidChangeNotification { get; }
 
 		[Notification]
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Field ("AVPlayerItemMediaSelectionDidChangeNotification")]
 		NSString MediaSelectionDidChangeNotification { get; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("configuredTimeOffsetFromLive", ArgumentSemantic.Assign)]
 		CMTime ConfiguredTimeOffsetFromLive { get; set; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("recommendedTimeOffsetFromLive")]
 		CMTime RecommendedTimeOffsetFromLive { get; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("automaticallyPreservesTimeOffsetFromLive")]
 		bool AutomaticallyPreservesTimeOffsetFromLive { get; set; }
 
 		[Deprecated (PlatformName.iOS, 14, 0, message : "Use 'AllowedAudioSpatializationFormats' instead.")]
 		[Deprecated (PlatformName.MacOSX, 11, 0, message : "Use 'AllowedAudioSpatializationFormats' instead.")]
-		[NoWatch, NoTV, Mac (10, 15), iOS (13, 0)]
+		[NoWatch, NoTV, NoMac, iOS (13, 0)]
 		[Export ("audioSpatializationAllowed")]
 		bool AudioSpatializationAllowed { [Bind ("isAudioSpatializationAllowed")] get; set; }
 
@@ -12404,7 +12404,7 @@ namespace AVFoundation {
 		[Export ("preventsCapture")]
 		bool PreventsCapture { get; set; }
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Export ("preventsDisplaySleepDuringVideoPlayback")]
 		bool PreventsDisplaySleepDuringVideoPlayback { get; set; }
 
@@ -12430,7 +12430,7 @@ namespace AVFoundation {
 		AVPlayerItem PlayerItem { get; set; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Watch (3,0)]
 	[iOS (7,0)]
 	[BaseType (typeof (NSObject))]
@@ -12470,20 +12470,20 @@ namespace AVFoundation {
 		[Field ("AVSpeechSynthesisVoiceIdentifierAlex")]
 		NSString IdentifierAlex { get; }
 
-		[iOS (10, 0), TV (10,0), Watch (3,0), Mac (10,15)]
+		[iOS (10, 0), TV (10,0), Watch (3,0), NoMac]
 		[Field ("AVSpeechSynthesisIPANotationAttribute")]
 		NSString IpaNotationAttribute { get; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("gender")]
 		AVSpeechSynthesisVoiceGender Gender { get; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("audioFileSettings")]
 		NSDictionary<NSString, NSObject> AudioFileSettings { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Watch (3,0)]
 	[iOS (7,0)]
 	[BaseType (typeof (NSObject))]
@@ -12547,7 +12547,7 @@ namespace AVFoundation {
 		bool PrefersAssistiveTechnologySettings { get; set; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Watch (3,0)]
 	[iOS (7,0)]
 	[BaseType (typeof (NSObject), Delegates=new string [] {"WeakDelegate"}, Events=new Type [] { typeof (AVSpeechSynthesizerDelegate)})]
@@ -12601,7 +12601,7 @@ namespace AVFoundation {
 		AVAudioSessionChannelDescription[] OutputChannels { get; set; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Watch (3,0)]
 	[Model]
 	[BaseType (typeof (NSObject))]
@@ -13150,7 +13150,7 @@ namespace AVFoundation {
 		AVAudioUnitComponent[] GetComponents (AudioComponentDescription desc);
 
 		[Notification]
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Field ("AVAudioUnitComponentManagerRegistrationsChangedNotification")]
 		NSString RegistrationsChangedNotification { get; }
 	}
@@ -13264,7 +13264,7 @@ namespace AVFoundation {
 		[Export ("contentKeySessionContentProtectionSessionIdentifierDidChange:")]
 		void DidChange (AVContentKeySession session);
 
-		[NoTV, Mac (10,15), iOS (11,0)]
+		[NoTV, NoMac, iOS (11,0)]
 		[Export ("contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:")]
 		void DidUpdate (AVContentKeySession session, NSData persistableContentKey, NSObject keyIdentifier);
 
@@ -13338,12 +13338,12 @@ namespace AVFoundation {
 		void RenewExpiringResponseData (AVContentKeyRequest contentKeyRequest);
 
 		[Async]
-		[NoTV, Mac (10,15), iOS (11,0)]
+		[NoTV, NoMac, iOS (11,0)]
 		[Export ("makeSecureTokenForExpirationDateOfPersistableContentKey:completionHandler:")]
 		void MakeSecureToken (NSData persistableContentKeyData, Action<NSData, NSError> handler);
 
 		[Async]
-		[NoTV, Mac (10,15), iOS (12,2)]
+		[NoTV, NoMac, iOS (12,2)]
 		[Export ("invalidatePersistableContentKey:options:completionHandler:")]
 		void InvalidatePersistableContentKey (NSData persistableContentKeyData, [NullAllowed] NSDictionary options, Action<NSData, NSError> handler);
 
@@ -13353,7 +13353,7 @@ namespace AVFoundation {
 		void InvalidatePersistableContentKey (NSData persistableContentKeyData, [NullAllowed] AVContentKeySessionServerPlaybackContextOptions options, Action<NSData, NSError> handler);
 
 		[Async]
-		[NoTV, Mac (10,15), iOS (12,2)]
+		[NoTV, NoMac, iOS (12,2)]
 		[Export ("invalidateAllPersistableContentKeysForApp:options:completionHandler:")]
 		void InvalidateAllPersistableContentKeys (NSData appIdentifier, [NullAllowed] NSDictionary options, Action<NSData, NSError> handler);
 
@@ -13377,7 +13377,7 @@ namespace AVFoundation {
 	}
 
 	[Static][Internal]
-	[Watch (7,0), NoTV, Mac (10,15), iOS (12,2)]
+	[Watch (7,0), NoTV, NoMac, iOS (12,2)]
 	interface AVContentKeySessionServerPlaybackContextOptionKeys {
 		[Field ("AVContentKeySessionServerPlaybackContextOptionProtocolVersions")]
 		NSString ProtocolVersionsKey { get; }
@@ -13459,11 +13459,11 @@ namespace AVFoundation {
 		[Export ("respondByRequestingPersistableContentKeyRequest"), NoWatch, NoTV, NoMac]
 		void RespondByRequestingPersistableContentKeyRequest ();
 
-		[Watch (7, 0), NoTV, Mac (10,15), iOS (11,2)]
+		[Watch (7, 0), NoTV, NoMac, iOS (11,2)]
 		[Export ("respondByRequestingPersistableContentKeyRequestAndReturnError:")]
 		bool RespondByRequestingPersistableContentKeyRequest ([NullAllowed] out NSError error);
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Field ("AVContentKeyRequestRequiresValidationDataInSecureTokenKey")]
 		NSString RequiresValidationDataInSecureTokenKey { get; }
 	}
@@ -13502,7 +13502,7 @@ namespace AVFoundation {
 		AVContentKeyResponse Create (NSData keyData, [NullAllowed] NSData initializationVector);
 
 		[Internal]
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Static]
 		[Export ("contentKeyResponseWithAuthorizationTokenData:")]
 		AVContentKeyResponse _InitWithAuthorizationToken (NSData authorizationTokenData);
@@ -13551,7 +13551,7 @@ namespace AVFoundation {
 		AVSemanticSegmentationMatte GetReplacementSemanticSegmentationMatte (NSString semanticSegmentationMatteType, AVCapturePhoto photo);
 	}
 
-	[NoTV, iOS (11,0), NoWatch, Mac (10,15)]
+	[NoTV, iOS (11,0), NoWatch, NoMac]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface AVCapturePhoto
@@ -13693,7 +13693,7 @@ namespace AVFoundation {
 		bool ProvidesExpiredSessionReports { get; }
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	enum AVSemanticSegmentationMatteType {
 		[DefaultEnumValue]
 		[Field (null)]
@@ -13706,7 +13706,7 @@ namespace AVFoundation {
 		Teeth,
 	} 
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface AVSemanticSegmentationMatte {
@@ -13738,7 +13738,7 @@ namespace AVFoundation {
 		CVPixelBuffer MattingImage { get; }
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface AVCompositionTrackFormatDescriptionReplacement : NSSecureCoding {
@@ -13754,7 +13754,7 @@ namespace AVFoundation {
 	delegate /* OSStatus */ int AVAudioSourceNodeRenderHandler (bool isSilence, AudioToolbox.AudioTimeStamp timestamp, uint frameCount, ref AudioBuffers outputData);
 	delegate /* OSStatus */ int AVAudioSourceNodeRenderHandler2 (ref bool isSilence, ref AudioTimeStamp timestamp, uint frameCount, ref AudioBuffers outputData);
 #endif
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(AVAudioNode))]
 	[DisableDefaultCtor]
 	interface AVAudioSourceNode : AVAudioMixing {
@@ -13777,7 +13777,7 @@ namespace AVFoundation {
 
 	delegate int AVAudioSinkNodeReceiverHandler (AudioTimeStamp timestamp, uint frameCount, ref AudioBuffers inputData);
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(AVAudioNode))]
 	[DisableDefaultCtor]
 	interface AVAudioSinkNode {
@@ -13786,7 +13786,7 @@ namespace AVFoundation {
 		IntPtr Constructor (AVAudioSinkNodeReceiverHandler receiverHandler);
 	}
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	interface AVVideoCompositionRenderHint {
 
@@ -13811,7 +13811,7 @@ namespace AVFoundation {
 		float SystemPressureCost { get; }
 	}
 
-	[NoWatch, NoTV, Mac (10,15), iOS (13,0)]
+	[NoWatch, NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof(AVMetadataObject))]
 	[DisableDefaultCtor]
 	interface AVMetadataBodyObject : NSCopying {
@@ -13819,25 +13819,25 @@ namespace AVFoundation {
 		nint BodyId { get; }
 	}
 
-	[NoWatch, NoTV, Mac (10,15), iOS (13,0)]
+	[NoWatch, NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof(AVMetadataBodyObject))]
 	[DisableDefaultCtor]
 	interface AVMetadataCatBodyObject : NSCopying {
 	}
 
-	[NoWatch, NoTV, Mac (10,15), iOS (13,0)]
+	[NoWatch, NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof(AVMetadataBodyObject))]
 	[DisableDefaultCtor]
 	interface AVMetadataDogBodyObject : NSCopying {
 	}
 
-	[NoWatch, NoTV, Mac (10,15), iOS (13,0)]
+	[NoWatch, NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof(AVMetadataBodyObject))]
 	[DisableDefaultCtor]
 	interface AVMetadataHumanBodyObject : NSCopying {
 	}
 
-	[NoWatch, NoTV, Mac (10,15), iOS (13,0)]
+	[NoWatch, NoTV, NoMac, iOS (13,0)]
 	[BaseType (typeof(AVMetadataObject))]
 	[DisableDefaultCtor]
 	interface AVMetadataSalientObject : NSCopying {

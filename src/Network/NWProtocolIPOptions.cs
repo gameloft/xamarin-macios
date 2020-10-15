@@ -21,7 +21,7 @@ using IntPtr=System.IntPtr;
 
 namespace Network {
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	public enum NWIPLocalAddressPreference {
 		Default = 0,
 		Temporary = 1,
@@ -35,7 +35,7 @@ namespace Network {
 		Version6 = 2,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+	[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 	public class NWProtocolIPOptions : NWProtocolOptions {
 		internal NWProtocolIPOptions (IntPtr handle, bool owns) : base (handle, owns) {}
 
@@ -54,7 +54,7 @@ namespace Network {
 		public void SetCalculateReceiveTime (bool shouldCalculateReceiveTime)
 			=> nw_ip_options_set_calculate_receive_time (GetCheckedHandle (), shouldCalculateReceiveTime);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		public void SetIPLocalAddressPreference (NWIPLocalAddressPreference localAddressPreference)
 			=> nw_ip_options_set_local_address_preference (GetCheckedHandle (), localAddressPreference);
 	}

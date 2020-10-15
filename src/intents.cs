@@ -82,11 +82,11 @@ namespace Intents {
 		Latest,
 		[Watch (4,0), Mac (10,13), iOS (11,0)]
 		Voicemail,
-		[Watch (6,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), NoMac, iOS (13,0)]
 		Ringing,
-		[Watch (6,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), NoMac, iOS (13,0)]
 		InProgress,
-		[Watch (6,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), NoMac, iOS (13,0)]
 		OnHold,
 	}
 
@@ -1248,7 +1248,7 @@ namespace Intents {
 		Emergency,
 		Voicemail,
 		Redial,
-		[Watch (6,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), NoMac, iOS (13,0)]
 		CallBack,
 	}
 
@@ -1267,11 +1267,11 @@ namespace Intents {
 		Received = (1 << 2),
 		Latest = (1 << 3),
 		Voicemail = (1 << 4),
-		[Watch (6,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), NoMac, iOS (13,0)]
 		Ringing = (1 << 5),
-		[Watch (6,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), NoMac, iOS (13,0)]
 		InProgress = (1 << 6),
-		[Watch (6,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), NoMac, iOS (13,0)]
 		OnHold = (1 << 7),
 	}
 
@@ -2245,11 +2245,11 @@ namespace Intents {
 		[Field ("INPersonRelationshipManager")]
 		Manager,
 
-		[Watch (6,0), NoTV, Mac (10,15), iOS (13,0)]
+		[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 		[Field ("INPersonRelationshipSon")]
 		Son,
 
-		[Watch (6,0), NoTV, Mac (10,15), iOS (13,0)]
+		[Watch (6,0), NoTV, NoMac, iOS (13,0)]
 		[Field ("INPersonRelationshipDaughter")]
 		Daughter,
 	}
@@ -8942,7 +8942,7 @@ namespace Intents {
 	[DisableDefaultCtor]
 	interface INCallRecord : NSCopying, NSSecureCoding {
 
-		[Watch (6,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), NoMac, iOS (13,0)]
 		[Export ("initWithIdentifier:dateCreated:caller:callRecordType:callCapability:callDuration:unseen:numberOfCalls:")]
 		[DesignatedInitializer]
 		IntPtr Constructor (string identifier, [NullAllowed] NSDate dateCreated, [NullAllowed] INPerson caller, INCallRecordType callRecordType, INCallCapability callCapability, [NullAllowed] [BindAs (typeof (double?))] NSNumber callDuration, [NullAllowed] [BindAs (typeof (bool?))] NSNumber unseen, [NullAllowed] [BindAs (typeof (int?))] NSNumber numberOfCalls);
@@ -9793,7 +9793,7 @@ namespace Intents {
 		[Export ("initWithTitle:content:itemType:status:location:locationSearchType:dateTime:dateSearchType:notebookItemIdentifier:")]
 		IntPtr Constructor ([NullAllowed] INSpeakableString title, [NullAllowed] string content, INNotebookItemType itemType, INTaskStatus status, [NullAllowed] CLPlacemark location, INLocationSearchType locationSearchType, [NullAllowed] INDateComponentsRange dateTime, INDateSearchType dateSearchType, [NullAllowed] string notebookItemIdentifier);
 
-		[Watch (6,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), NoMac, iOS (13,0)]
 		[Export ("initWithTitle:content:itemType:status:location:locationSearchType:dateTime:dateSearchType:temporalEventTriggerTypes:taskPriority:notebookItemIdentifier:")]
 		[DesignatedInitializer]
 		IntPtr Constructor ([NullAllowed] INSpeakableString title, [NullAllowed] string content, INNotebookItemType itemType, INTaskStatus status, [NullAllowed] CLPlacemark location, INLocationSearchType locationSearchType, [NullAllowed] INDateComponentsRange dateTime, INDateSearchType dateSearchType, INTemporalEventTriggerTypeOptions temporalEventTriggerTypes, INTaskPriority taskPriority, [NullAllowed] string notebookItemIdentifier);
@@ -10783,7 +10783,7 @@ namespace Intents {
 	[DisableDefaultCtor]
 	interface INPlayMediaIntent {
 
-		[Watch (6,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), NoMac, iOS (13,0)]
 		[Export ("initWithMediaItems:mediaContainer:playShuffled:playbackRepeatMode:resumePlayback:playbackQueueLocation:playbackSpeed:mediaSearch:")]
 		[DesignatedInitializer]
 		IntPtr Constructor ([NullAllowed] INMediaItem [] mediaItems, [NullAllowed] INMediaItem mediaContainer, [NullAllowed, BindAs (typeof (bool?))] NSNumber playShuffled, INPlaybackRepeatMode playbackRepeatMode, [NullAllowed, BindAs (typeof (bool?))] NSNumber resumePlayback, INPlaybackQueueLocation playbackQueueLocation, [NullAllowed, BindAs (typeof (double?))] NSNumber playbackSpeed, [NullAllowed] INMediaSearch mediaSearch);

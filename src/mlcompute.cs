@@ -455,7 +455,7 @@ namespace MLCompute {
 	[NoWatch]
 	[BaseType (typeof (MLCOptimizer))]
 	[DisableDefaultCtor]
-	[TV (14,0), Mac (10,15), iOS (14,0)]
+	[TV (14,0), NoMac, iOS (14,0)]
 	interface MLCAdamOptimizer : NSCopying {
 
 		[Export ("beta1")]

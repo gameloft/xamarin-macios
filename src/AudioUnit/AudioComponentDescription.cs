@@ -70,7 +70,7 @@ namespace AudioUnit
 		Default=0x64656620, // 'def'
 		System=0x73797320, // 'sys'
 #endif
-		[Mac (10, 15)]
+		[NoMac]
 		[Introduced (PlatformName.UIKitForMac, 13,0)]
 		Remote=0x72696f63, // 'rioc'
 		VoiceProcessingIO = 0x7670696f // 'vpio'
@@ -137,7 +137,7 @@ namespace AudioUnit
 		[Deprecated (PlatformName.WatchOS, 6,0, message: "Use 'AudioTypeEffect.GraphicEQ' instead.")]
 		AUiPodEQ=0x69706571, // 'ipeq'
 #endif
-		[Mac (10,15)]
+		[NoMac]
 		[Unavailable (PlatformName.UIKitForMac)]
 		[Advice ("This API is not available when using UIKit on macOS.")]
 		Reverb2=0x72766232, // 'rvb2'

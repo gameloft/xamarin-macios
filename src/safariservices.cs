@@ -276,11 +276,11 @@ namespace SafariServices {
 		[Export ("additionalRequestHeadersForURL:completionHandler:")]
 		void AdditionalRequestHeaders (NSUrl url, Action<NSDictionary<NSString, NSString>> completionHandler);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("contentBlockerWithIdentifier:blockedResourcesWithURLs:onPage:")]
 		void ContentBlocker (string contentBlockerIdentifier, NSUrl[] urls, SFSafariPage page);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("page:willNavigateToURL:")]
 		void WillNavigate (SFSafariPage page, [NullAllowed] NSUrl url);
 	}
@@ -438,7 +438,7 @@ namespace SafariServices {
 // 		bool Enabled { [Bind ("isEnabled")] get; }
 // 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface SFUniversalLink {

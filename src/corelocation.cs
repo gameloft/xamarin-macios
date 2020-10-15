@@ -153,13 +153,13 @@ namespace CoreLocation {
 		[Field ("kCLLocationAccuracyReduced")]
 		double AccuracyReduced { get; }
 
-		[Mac (10,15)]
+		[NoMac]
 		[iOS (8,0)]
 		[NullAllowed, Export ("floor", ArgumentSemantic.Copy)]
 		CLFloor Floor { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[iOS (8,0)]
 	[BaseType (typeof(NSObject))]
 	partial interface CLFloor : NSSecureCoding, NSCopying {
@@ -380,7 +380,7 @@ namespace CoreLocation {
 
 		[NoTV]
 		[iOS (8,0)]
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("requestAlwaysAuthorization")]
 		void RequestAlwaysAuthorization ();
 

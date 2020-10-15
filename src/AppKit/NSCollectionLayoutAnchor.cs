@@ -7,7 +7,7 @@ using CoreGraphics;
 
 namespace AppKit {
 
-	[Mac (10, 15)]
+	[NoMac]
 	public enum NSCollectionLayoutAnchorOffsetType {
 		Absolute,
 		Fractional,

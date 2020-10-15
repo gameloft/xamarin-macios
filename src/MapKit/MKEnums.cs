@@ -145,7 +145,7 @@ namespace MapKit {
 	}
 
 	[Flags]
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[Native]
 	public enum MKLocalSearchCompleterResultType : ulong
 	{
@@ -155,7 +155,7 @@ namespace MapKit {
 	}
 
 	[Flags]
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[Native]
 	public enum MKLocalSearchResultType : ulong
 	{
@@ -164,7 +164,7 @@ namespace MapKit {
 	}
 
 #if !WATCH
-	[TV (13, 0), NoWatch, Mac (10, 15), iOS (13, 0)]
+	[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
 	public enum MKPointOfInterestCategory {
 
 		[Field ("MKPointOfInterestCategoryAirport")]

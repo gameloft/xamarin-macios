@@ -77,7 +77,7 @@ namespace MetalPerformanceShaders {
 
 	[Flags]
 	[Native]
-	[iOS (13,0), TV (13,0), Mac (10,15)]
+	[iOS (13,0), TV (13,0), NoMac]
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
 	public enum MPSAliasingStrategy : ulong
 	{
@@ -98,7 +98,7 @@ namespace MetalPerformanceShaders {
 		Unorm16 = 2,
 		Float16 = 3,
 		Float32 = 4,
-		[iOS (13,0), TV (13,0), Mac (10,15)]
+		[iOS (13,0), TV (13,0), NoMac]
 		Reserved0 = 5,
 
 		//[iOS (12,0), TV (12,0), Mac (10,14)]
@@ -130,7 +130,7 @@ namespace MetalPerformanceShaders {
 	}
 
 	// uses NSUInteger
-	[iOS (13,0), TV (13,0), Mac (10,15)]
+	[iOS (13,0), TV (13,0), NoMac]
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
 	public struct MPSDimensionSlice {
 		public nuint Start;
@@ -192,7 +192,7 @@ namespace MetalPerformanceShaders {
 		NonPositiveDefinite = -3,
 	}
 
-	[iOS (13,0), TV (13,0), Mac (10,15)]
+	[iOS (13,0), TV (13,0), NoMac]
 	[Introduced (PlatformName.MacCatalyst, 13, 0)]
 	[Flags]
 	[Native]

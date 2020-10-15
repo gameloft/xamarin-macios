@@ -158,7 +158,7 @@ namespace CoreGraphics {
 				throw new Exception ("Failed to create CGColorConversionInfo");
 		}
 
-		[Mac (10,15)]
+		[NoMac]
 		[iOS (13,0)]
 		[TV (13,0)]
 		[Watch (6,0)]

@@ -169,7 +169,7 @@ namespace CoreMedia {
 		[Field ("kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix")]
 		NSString CameraIntrinsicMatrixKey { get; }
 
-		[iOS (13,0), Mac (10,15), TV (13,0), Watch (6,0)]
+		[iOS (13,0), NoMac, TV (13,0), Watch (6,0)]
 		[Field ("kCMSampleAttachmentKey_AudioIndependentSampleDecoderRefreshCount")]
 		NSString AudioIndependentSampleDecoderRefreshCountKey { get; }
 
@@ -208,7 +208,7 @@ namespace CoreMedia {
 		[iOS (11,0), Mac (10,13), TV (11,0)]
 		NSData CameraIntrinsicMatrix { get; set; }
 
-		[iOS (13,0), Mac (10,15), TV (13,0), Watch (6,0)]
+		[iOS (13,0), NoMac, TV (13,0), Watch (6,0)]
 		nint AudioIndependentSampleDecoderRefreshCount { get; set; }
 
 		[Mac (10,10), Watch (6,0)]

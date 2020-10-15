@@ -86,7 +86,7 @@ namespace JavaScriptCore {
 		IntPtr JSGlobalContextRefPtr { get; }
 	}
 
-	[Mac (10,15), iOS (13,0)][TV (13,0)]
+	[NoMac, iOS (13,0)][TV (13,0)]
 	delegate void JSPromiseCreationExecutor (JSValue resolve, JSValue rejected);
 
 	[Mac (10,9), iOS (7,0)]
@@ -126,22 +126,22 @@ namespace JavaScriptCore {
 		[Static, Export ("valueWithUndefinedInContext:")]
 		JSValue Undefined (JSContext context);
 
-		[Mac (10,15), iOS (13,0)][TV (13,0)]
+		[NoMac, iOS (13,0)][TV (13,0)]
 		[Static]
 		[Export ("valueWithNewPromiseInContext:fromExecutor:")]
 		JSValue CreatePromise (JSContext context, JSPromiseCreationExecutor callback);
 
-		[Mac (10,15), iOS (13,0)][TV (13,0)]
+		[NoMac, iOS (13,0)][TV (13,0)]
 		[Static]
 		[Export ("valueWithNewPromiseResolvedWithResult:inContext:")]
 		JSValue CreateResolvedPromise (NSObject result, JSContext context);
 
-		[Mac (10,15), iOS (13,0)][TV (13,0)]
+		[NoMac, iOS (13,0)][TV (13,0)]
 		[Static]
 		[Export ("valueWithNewPromiseRejectedWithReason:inContext:")]
 		JSValue CreateRejectedPromise (NSObject reason, JSContext context);
 
-		[Mac (10,15), iOS (13,0)][TV (13,0)]
+		[NoMac, iOS (13,0)][TV (13,0)]
 		[Static]
 		[Export ("valueWithNewSymbolFromDescription:inContext:")]
 		JSValue CreateSymbol (string description, JSContext context);
@@ -302,7 +302,7 @@ namespace JavaScriptCore {
 		[Export ("JSValueRef")]
 		IntPtr JSValueRefPtr { get; }
 
-		[Mac (10, 15), iOS (13, 0)][TV (13,0)]
+		[NoMac, iOS (13, 0)][TV (13,0)]
 		[Export ("isSymbol")]
 		bool IsSymbol { get; }
 	}

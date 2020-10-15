@@ -4079,7 +4079,7 @@ namespace AppKit {
 		[Export ("systemGrayColor", ArgumentSemantic.Strong)]
 		NSColor SystemGrayColor { get; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Static]
 		[Export ("systemIndigoColor", ArgumentSemantic.Strong)]
 		NSColor SystemIndigoColor { get; }
@@ -4138,7 +4138,7 @@ namespace AppKit {
 		[Export ("placeholderTextColor", ArgumentSemantic.Strong)]
 		NSColor PlaceholderTextColor { get; }
 
-		[Mac (10,15)]
+		[NoMac]
 		[Static]
 		[Export ("colorWithName:dynamicProvider:")]
 		NSColor GetColor ([NullAllowed] string colorName, Func<NSAppearance, NSColor> dynamicProvider);
@@ -6516,7 +6516,7 @@ namespace AppKit {
 		[Export ("getAdvancements:forCGGlyphs:count:")]
 		void _GetAdvancements (IntPtr advancements, IntPtr glyphs, nuint glyphCount);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Static]
 		[Export ("monospacedSystemFontOfSize:weight:")]
 		[Internal]
@@ -6753,7 +6753,7 @@ namespace AppKit {
 		[Export ("requiresFontAssetRequest")]
 		bool RequiresFontAssetRequest { get; }
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("fontDescriptorWithDesign:")]
 		[return: NullAllowed]
 		NSFontDescriptor Create (NSFontDescriptorSystemDesign design);
@@ -7768,7 +7768,7 @@ namespace AppKit {
 		[Export ("coalescedTouchesForTouch:")]
 		NSTouch[] GetCoalescedTouches (NSTouch touch);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("charactersByApplyingModifiers:")]
 		[return: NullAllowed]
 		string GetCharacters (NSEventModifierFlags modifiers);
@@ -13195,17 +13195,17 @@ namespace AppKit {
 		nfloat MaximumExtendedDynamicRangeColorComponentValue { get; }
 
 		[ThreadSafe]
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("maximumPotentialExtendedDynamicRangeColorComponentValue")]
 		nfloat MaximumPotentialExtendedDynamicRangeColorComponentValue { get; }
 
 		[ThreadSafe]
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("maximumReferenceExtendedDynamicRangeColorComponentValue")]
 		nfloat MaximumReferenceExtendedDynamicRangeColorComponentValue { get; }
 
 		[ThreadSafe]
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("localizedName", ArgumentSemantic.Copy)]
 		string LocalizedName { get; }
 	}
@@ -14058,15 +14058,15 @@ namespace AppKit {
 		[Export ("view")]
 		INSUserInterfaceCompression View { get; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("doubleValue")]
 		double DoubleValue { get; set; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("minimumSliderWidth")]
 		nfloat MinimumSliderWidth { get; set; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("maximumSliderWidth")]
 		nfloat MaximumSliderWidth { get; set; }
 	}
@@ -15168,11 +15168,11 @@ namespace AppKit {
 		[Internal, Field ("NSDefaultAttributesDocumentAttribute")]
 		NSString NSDefaultAttributesDocumentAttribute { get; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Internal, Field ("NSTargetTextScalingDocumentOption")]
 		NSString TargetTextScalingDocumentOption { get; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Internal, Field ("NSSourceTextScalingDocumentOption")]
 		NSString SourceTextScalingDocumentOption { get; }
 	}
@@ -15196,12 +15196,12 @@ namespace AppKit {
 		[NullAllowed, Export ("mainStoryboard", ArgumentSemantic.Strong)]
 		NSStoryboard MainStoryboard { get; }
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("instantiateInitialControllerWithCreator:")]
 		[return: NullAllowed]
 		NSViewController InstantiateInitialController ([NullAllowed] NSStoryboardControllerCreator handler);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("instantiateControllerWithIdentifier:creator:")]
 		NSViewController InstantiateController (string identifier, [NullAllowed] NSStoryboardControllerCreator handler);
 	}
@@ -16336,11 +16336,11 @@ namespace AppKit {
 		[Export ("sortSubviewsUsingFunction:context:")]
 		void SortSubviews (IntPtr function_pointer, IntPtr context);
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("horizontalContentSizeConstraintActive")]
 		bool HorizontalContentSizeConstraintActive { [Bind ("isHorizontalContentSizeConstraintActive")] get; set; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("verticalContentSizeConstraintActive")]
 		bool VerticalContentSizeConstraintActive { [Bind ("isVerticalContentSizeConstraintActive")] get; set; }
 
@@ -18217,7 +18217,7 @@ namespace AppKit {
 		[Export ("allowsDefaultTighteningForTruncation")]
 		bool AllowsDefaultTighteningForTruncation { get; set; }
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("lineBreakStrategy", ArgumentSemantic.Assign)]
 		NSLineBreakStrategy LineBreakStrategy { get; set; }
 
@@ -19868,11 +19868,11 @@ namespace AppKit {
 		[Export ("autovalidates")]
 		bool Autovalidates { get; set; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("title")]
 		string Title { get; set; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("bordered")]
 		bool Bordered { [Bind ("isBordered")] get; set; }
 
@@ -19891,33 +19891,33 @@ namespace AppKit {
 		[Export ("subitems", ArgumentSemantic.Copy)]
 		NSToolbarItem[] Subitems { get; set; }
 
-		[Mac (10,15)]
+		[NoMac]
 		[Static]
 		[Export ("groupWithItemIdentifier:titles:selectionMode:labels:target:action:")]
 		NSToolbarItemGroup Create (string itemIdentifier, string[] titles, NSToolbarItemGroupSelectionMode selectionMode, [NullAllowed] string[] labels, [NullAllowed] NSObject target, [NullAllowed] Selector action);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Static]
 		[Export ("groupWithItemIdentifier:images:selectionMode:labels:target:action:")]
 		NSToolbarItemGroup Create (string itemIdentifier, NSImage[] images, NSToolbarItemGroupSelectionMode selectionMode, [NullAllowed] string[] labels, [NullAllowed] NSObject target, [NullAllowed] Selector action);
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("controlRepresentation", ArgumentSemantic.Assign)]
 		NSToolbarItemGroupControlRepresentation ControlRepresentation { get; set; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("selectionMode", ArgumentSemantic.Assign)]
 		NSToolbarItemGroupSelectionMode SelectionMode { get; set; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("selectedIndex")]
 		nint SelectedIndex { get; set; }
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("setSelected:atIndex:")]
 		void SetSelected (bool selected, nint index);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("isSelectedAtIndex:")]
 		bool GetSelected (nint index);
 	}
@@ -19994,7 +19994,7 @@ namespace AppKit {
 		[NullAllowed, Export ("escapeKeyReplacementItemIdentifier")]
 		string EscapeKeyReplacementItemIdentifier { get; set; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Static]
 		[Export ("automaticCustomizeTouchBarMenuItemEnabled")]
 		bool AutomaticCustomizeTouchBarMenuItemEnabled { [Bind ("isAutomaticCustomizeTouchBarMenuItemEnabled")] get; set; }
@@ -21812,17 +21812,17 @@ namespace AppKit {
 		[Export ("requestAuthorizationOfType:completionHandler:")]
 		void RequestAuthorization (NSWorkspaceAuthorizationType type, Action<NSWorkspaceAuthorization, NSError> completionHandler);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Async]
 		[Export ("openApplicationAtURL:configuration:completionHandler:")]
 		void OpenApplication (NSUrl applicationUrl, NSWorkspaceOpenConfiguration configuration, [NullAllowed] Action<NSRunningApplication, NSError> completionHandler);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Async]
 		[Export ("openURL:configuration:completionHandler:")]
 		void OpenUrl (NSUrl url, NSWorkspaceOpenConfiguration configuration, [NullAllowed] Action<NSRunningApplication, NSError> completionHandler);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Async]
 		[Export ("openURLs:withApplicationAtURL:configuration:completionHandler:")]
 		void OpenUrls (NSUrl[] urls, NSUrl applicationUrl, NSWorkspaceOpenConfiguration configuration, [NullAllowed] Action<NSRunningApplication, NSError> completionHandler);
@@ -22969,7 +22969,7 @@ namespace AppKit {
 		[Export ("validateProposedFirstResponder:forEvent:")]
 		bool ValidateProposedFirstResponder (NSResponder responder, [NullAllowed] NSEvent forEvent);
 
-		[Mac (10,15)]
+		[NoMac]
 		[Export ("changeModeWithEvent:")]
 		void ChangeMode (NSEvent withEvent);
 	}
@@ -26920,7 +26920,7 @@ namespace AppKit {
 		void Remove (NSWindow window);
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	public enum NSTextScalingType : long
 	{
@@ -26928,7 +26928,7 @@ namespace AppKit {
 		iOS,
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof(NSTouchBarItem))]
 	[DisableDefaultCtor]
 	interface NSButtonTouchBarItem
@@ -26971,7 +26971,7 @@ namespace AppKit {
 		string CustomizationLabel { get; set; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	public enum NSCollectionLayoutSectionOrthogonalScrollingBehavior : long
 	{
@@ -26983,7 +26983,7 @@ namespace AppKit {
 		GroupPagingCentered,
 	}
 
-	[Flags, Mac (10,15)]
+	[Flags, NoMac]
 	[Native]
 	public enum NSDirectionalRectEdge : ulong
 	{
@@ -26995,7 +26995,7 @@ namespace AppKit {
 		All = Top | Leading | Bottom | Trailing,
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	public enum NSPickerTouchBarItemControlRepresentation : long
 	{
@@ -27004,7 +27004,7 @@ namespace AppKit {
 		Collapsed = 2,
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	public enum NSPickerTouchBarItemSelectionMode : long
 	{
@@ -27013,7 +27013,7 @@ namespace AppKit {
 		Momentary = 2,
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	public enum NSRectAlignment : long
 	{
@@ -27028,7 +27028,7 @@ namespace AppKit {
 		TopTrailing,
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	public enum NSTextInputTraitType : long
 	{
@@ -27037,7 +27037,7 @@ namespace AppKit {
 		Yes,
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	public enum NSToolbarItemGroupControlRepresentation : long
 	{
@@ -27046,7 +27046,7 @@ namespace AppKit {
 		Collapsed,
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	public enum NSToolbarItemGroupSelectionMode : long
 	{
@@ -27055,7 +27055,7 @@ namespace AppKit {
 		Momentary = 2,
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface NSCollectionLayoutAnchor : NSCopying, INSCopying
@@ -27085,7 +27085,7 @@ namespace AppKit {
 		bool IsFractionalOffset { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface NSCollectionLayoutDimension : NSCopying, INSCopying
@@ -27122,7 +27122,7 @@ namespace AppKit {
 		nfloat Dimension { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof(NSTouchBarItem))]
 	[DisableDefaultCtor]
 	interface NSPickerTouchBarItem
@@ -27189,7 +27189,7 @@ namespace AppKit {
 		string CustomizationLabel { get; set; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface NSCollectionLayoutSize : NSCopying, INSCopying
@@ -27205,7 +27205,7 @@ namespace AppKit {
 		NSCollectionLayoutDimension HeightDimension { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface NSCollectionLayoutSpacing : NSCopying, INSCopying
@@ -27228,7 +27228,7 @@ namespace AppKit {
 		bool IsFixedSpacing { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface NSCollectionLayoutEdgeSpacing : NSCopying, INSCopying
@@ -27250,7 +27250,7 @@ namespace AppKit {
 		NSCollectionLayoutSpacing Bottom { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSCollectionLayoutItem))]
 	[DisableDefaultCtor]
 	interface NSCollectionLayoutSupplementaryItem : NSCopying
@@ -27276,7 +27276,7 @@ namespace AppKit {
 		NSCollectionLayoutAnchor ItemAnchor { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface NSCollectionLayoutItem : NSCopying
@@ -27302,7 +27302,7 @@ namespace AppKit {
 		NSCollectionLayoutSupplementaryItem[] SupplementaryItems { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSCollectionLayoutSupplementaryItem))]
 	[DisableDefaultCtor]
 	interface NSCollectionLayoutBoundarySupplementaryItem : NSCopying
@@ -27328,7 +27328,7 @@ namespace AppKit {
 		CGPoint Offset { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSCollectionLayoutItem))]
 	[DisableDefaultCtor]
 	interface NSCollectionLayoutDecorationItem : NSCopying
@@ -27344,7 +27344,7 @@ namespace AppKit {
 		string ElementKind { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface NSCollectionLayoutGroupCustomItem : NSCopying
@@ -27364,7 +27364,7 @@ namespace AppKit {
 		nint ZIndex { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	interface NSCollectionViewCompositionalLayoutConfiguration : NSCopying
 	{
@@ -27378,7 +27378,7 @@ namespace AppKit {
 		NSCollectionLayoutBoundarySupplementaryItem[] BoundarySupplementaryItems { get; set; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	interface NSColorSampler
 	{
@@ -27386,7 +27386,7 @@ namespace AppKit {
 		void ShowSampler (Action<NSColor> selectionHandler);
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSControl))]
 	[DesignatedDefaultCtor]
 	interface NSSwitch : NSAccessibilitySwitch
@@ -27397,7 +27397,7 @@ namespace AppKit {
 
 	interface INSCollectionLayoutContainer { }
 
-	[Mac (10,15)]
+	[NoMac]
 	[Protocol]
 	interface NSCollectionLayoutContainer
 	{
@@ -27418,7 +27418,7 @@ namespace AppKit {
 		NSDirectionalEdgeInsets EffectiveContentInsets { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Protocol]
 	interface NSCollectionLayoutEnvironment
 	{
@@ -27431,7 +27431,7 @@ namespace AppKit {
 
 	delegate NSCollectionLayoutGroupCustomItem[] NSCollectionLayoutGroupCustomItemProvider (INSCollectionLayoutEnvironment layout);
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSCollectionLayoutItem))]
 	[DisableDefaultCtor]
 	interface NSCollectionLayoutGroup : NSCopying
@@ -27469,7 +27469,7 @@ namespace AppKit {
 		string VisualDescription { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSToolbarItem))]
 	interface NSMenuToolbarItem
 	{
@@ -27480,7 +27480,7 @@ namespace AppKit {
 		bool ShowsIndicator { get; set; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[Protocol]
 	interface NSCollectionLayoutVisibleItem
 	{
@@ -27529,7 +27529,7 @@ namespace AppKit {
 
 	delegate void NSCollectionLayoutSectionVisibleItemsInvalidationHandler (INSCollectionLayoutVisibleItem[] items, CGPoint point, INSCollectionLayoutEnvironment layout);
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface NSCollectionLayoutSection : NSCopying
@@ -27562,7 +27562,7 @@ namespace AppKit {
 
 	delegate NSCollectionLayoutSection NSCollectionViewCompositionalLayoutSectionProvider (nint section, INSCollectionLayoutEnvironment layout);
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSCollectionViewLayout))]
 	[DisableDefaultCtor]
 	interface NSCollectionViewCompositionalLayout
@@ -27583,7 +27583,7 @@ namespace AppKit {
 		NSCollectionViewCompositionalLayoutConfiguration Configuration { get; set; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSTouchBarItem))]
 	[DisableDefaultCtor]
 	interface NSStepperTouchBarItem
@@ -27619,7 +27619,7 @@ namespace AppKit {
 	}
 
 	[Protocol]
-	[Mac (10,15)]
+	[NoMac]
 	interface NSTextInputTraits
 	{
 		[Export ("autocorrectionType", ArgumentSemantic.Assign)]
@@ -27656,7 +27656,7 @@ namespace AppKit {
 	interface INSTextCheckingClient { }
 
 	[Protocol]
-	[Mac (10,15)]
+	[NoMac]
 	interface NSTextCheckingClient : NSTextInputTraits, NSTextInputClient
 	{
 		[Abstract]
@@ -27694,7 +27694,7 @@ namespace AppKit {
 		NSCandidateListTouchBarItem CandidateListTouchBarItem { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface NSWorkspaceOpenConfiguration : NSCopying
@@ -27751,7 +27751,7 @@ namespace AppKit {
 		bool RequiresUniversalLinks { get; set; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface NSTextCheckingController
@@ -27824,7 +27824,7 @@ namespace AppKit {
 
 	delegate NSView NSCollectionViewDiffableDataSourceSupplementaryViewProvider (NSCollectionView collectionView, string str, NSIndexPath indexPath);
 
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface NSCollectionViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType> : NSCollectionViewDataSource
@@ -27852,7 +27852,7 @@ namespace AppKit {
 		NSCollectionViewDiffableDataSourceSupplementaryViewProvider SupplementaryViewProvider { get; set; }
 	}
 
-	[Mac (10, 15)]
+	[NoMac]
 	public enum NSFontDescriptorSystemDesign 
 	{
 		[Field ("NSFontDescriptorSystemDesignDefault")]
@@ -27905,7 +27905,7 @@ namespace AppKit {
 		Caption2,
 	}
 
-	[Mac (10,15), iOS (10,13)]
+	[NoMac, iOS (10,13)]
 	[BaseType (typeof (NSToolbarItem))]
 	interface NSSharingServicePickerToolbarItem
 	{
@@ -27919,7 +27919,7 @@ namespace AppKit {
 
 	public interface INSSharingServicePickerToolbarItemDelegate { }
 
-	[Mac (10,15)]
+	[NoMac]
 	[Protocol, Model (AutoGeneratedName = true)]
 	[BaseType (typeof (NSSharingServicePickerDelegate))]
 	interface NSSharingServicePickerToolbarItemDelegate

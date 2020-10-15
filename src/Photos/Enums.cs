@@ -51,7 +51,7 @@ namespace Photos
 	// NSInteger -> PHImageManager.h
 	[iOS (8,0)]
 	[TV (10,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	public enum PHVideoRequestOptionsVersion : long {
 		Current = 0,
@@ -61,7 +61,7 @@ namespace Photos
 	// NSInteger -> PHImageManager.h
 	[iOS (8,0)]
 	[TV (10,0)]
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	public enum PHVideoRequestOptionsDeliveryMode : long {
 		Automatic = 0,
@@ -176,11 +176,11 @@ namespace Photos
 		SmartAlbumDepthEffect   = 212,
 		[iOS (10,3), TV (10,2)][Mac (10,13)]
 		SmartAlbumLivePhotos = 213,
-		[iOS (11,0)][TV(11,0)][Mac (10,15)]
+		[iOS (11,0)][TV(11,0)][NoMac]
 		SmartAlbumAnimated = 214,
-		[iOS (11,0)][TV(11,0)][Mac (10,15)]
+		[iOS (11,0)][TV(11,0)][NoMac]
 		SmartAlbumLongExposures = 215,
-		[iOS (13,0)][TV(13,0)][Mac (10,15)]
+		[iOS (13,0)][TV(13,0)][NoMac]
 		SmartAlbumUnableToUpload = 216,
 
 
@@ -225,7 +225,7 @@ namespace Photos
 		Screenshot         = (1 << 2),
 		[iOS (9,1)]
 		PhotoLive          = (1 << 3),
-		[iOS (10,2), TV (10,1), Mac (10,15)]
+		[iOS (10,2), TV (10,1), NoMac]
 		PhotoDepthEffect   = (1 << 4),
 		VideoStreamed      = (1 << 16),
 		VideoHighFrameRate = (1 << 17),
@@ -273,11 +273,11 @@ namespace Photos
 		AdjustmentBasePhoto = 8,
 		[iOS (9,1)]
 		PairedVideo = 9,
-		[Mac (10,15), iOS (13,0)]
+		[NoMac, iOS (13,0)]
 		FullSizePairedVideo = 10,
-		[Mac (10,15), iOS (13,0)]
+		[NoMac, iOS (13,0)]
 		AdjustmentBasePairedVideo = 11,
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		AdjustmentBaseVideo = 12,
 	}
 
@@ -375,7 +375,7 @@ namespace Photos
 	}
 
 	[ErrorDomain ("PHPhotosErrorDomain")]
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	public enum PHPhotosError : long {
 		Invalid = -1,

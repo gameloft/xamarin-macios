@@ -1483,7 +1483,7 @@ namespace CoreMidi {
 			}
 		}
 
-		[Mac (10,15), iOS (13,0)]
+		[NoMac, iOS (13,0)]
 		public string NameConfigurationDictionary {
 			get {
 				return GetString (kMIDIPropertyNameConfigurationDictionary);

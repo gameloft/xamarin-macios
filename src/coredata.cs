@@ -228,7 +228,7 @@ namespace CoreData
 		[Export ("allowsExternalBinaryDataStorage")]
 		bool AllowsExternalBinaryDataStorage { get; set; }
 
-		[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 		[Export ("preservesValueInHistoryOnDeletion")]
 		bool PreservesValueInHistoryOnDeletion { get; set; }
 	}
@@ -1516,17 +1516,17 @@ namespace CoreData
 		[NullAllowed, Export ("updatedProperties", ArgumentSemantic.Copy)]
 		NSSet<NSPropertyDescription> UpdatedProperties { get; }
 
-		[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 		[Static]
 		[NullAllowed, Export ("entityDescription")]
 		NSEntityDescription EntityDescription { get; }
 
-		[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 		[Static]
 		[NullAllowed, Export ("fetchRequest")]
 		NSFetchRequest FetchRequest { get; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Static]
 		[Export ("entityDescriptionWithContext:")]
 		[return: NullAllowed]
@@ -1574,12 +1574,12 @@ namespace CoreData
 		[NullAllowed, Export ("token", ArgumentSemantic.Strong)]
 		NSPersistentHistoryToken Token { get; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Static]
 		[Export ("fetchHistoryWithFetchRequest:")]
 		NSPersistentHistoryChangeRequest FetchHistory (NSFetchRequest fetchRequest);
 
-		[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 		[NullAllowed, Export ("fetchRequest", ArgumentSemantic.Strong)]
 		NSFetchRequest FetchRequest { get; set; }
 	}
@@ -1631,18 +1631,18 @@ namespace CoreData
 		[Export ("objectIDNotification")]
 		NSNotification ObjectIdNotification { get; }
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Static]
 		[Export ("entityDescriptionWithContext:")]
 		[return: NullAllowed]
 		NSEntityDescription GetEntityDescription (NSManagedObjectContext context);
 
-		[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 		[Static]
 		[NullAllowed, Export ("entityDescription")]
 		NSEntityDescription EntityDescription { get; }
 
-		[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 		[Static]
 		[NullAllowed, Export ("fetchRequest")]
 		NSFetchRequest FetchRequest { get; }
@@ -1758,12 +1758,12 @@ namespace CoreData
 		NSCoreDataCoreSpotlightDelegate CoreSpotlightExporter { get; }
 #endif
 
-		[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 		[Field ("NSPersistentStoreRemoteChangeNotificationPostOptionKey")]
 		NSString RemoteChangeNotificationPostOptionKey { get; }
 
 		[Notification (typeof (NSPersistentStoreRemoteChangeEventArgs))]
-		[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 		[Field ("NSPersistentStoreRemoteChangeNotification")]
 		NSString StoreRemoteChangeNotification { get; }
 
@@ -1830,7 +1830,7 @@ namespace CoreData
 		IntPtr Constructor (NSUrl url);
 
 		// NSPersistentStoreDescription_NSPersistentCloudKitContainerAdditions category
-		[Watch (6, 0), TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[Watch (6, 0), TV (13, 0), NoMac, iOS (13, 0)]
 		[NullAllowed, Export ("cloudKitContainerOptions", ArgumentSemantic.Strong)]
 		NSPersistentCloudKitContainerOptions CloudKitContainerOptions { get; set; }
 	}
@@ -2189,7 +2189,7 @@ namespace CoreData
 		bool ReplacePersistentStore (NSUrl destinationUrl, [NullAllowed] NSDictionary destinationOptions, NSUrl sourceUrl, [NullAllowed] NSDictionary sourceOptions, string storeType, out NSError error);
 
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[Export ("currentPersistentHistoryTokenFromStores:")]
 		[return: NullAllowed]
 		NSPersistentHistoryToken GetCurrentPersistentHistoryToken ([NullAllowed] NSObject[] stores);
@@ -2527,7 +2527,7 @@ namespace CoreData
 #endif
 	delegate bool NSBatchInsertRequestManagedObjectHandler (NSManagedObject managedObject);
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSPersistentStoreRequest))]
 	[DisableDefaultCtor] // NSInternalInconsistencyException Reason: -init results in undefined behavior for NSBatchInsertRequest
 	interface NSBatchInsertRequest {
@@ -2598,7 +2598,7 @@ namespace CoreData
 		NSBatchInsertRequest CreateBatchInsertRequest (string entityName, NSBatchInsertRequestManagedObjectHandler handler);
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSPersistentStoreResult))]
 	interface NSBatchInsertResult {
 		[NullAllowed, Export ("result", ArgumentSemantic.Strong)]
@@ -2608,14 +2608,14 @@ namespace CoreData
 		NSBatchInsertRequestResultType ResultType { get; }
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSAttributeDescription))]
 	interface NSDerivedAttributeDescription : NSSecureCoding {
 		[NullAllowed, Export ("derivationExpression", ArgumentSemantic.Strong)]
 		NSExpression DerivationExpression { get; set; }
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSPersistentContainer))]
 	[DisableDefaultCtor]
 	interface NSPersistentCloudKitContainer {
@@ -2654,7 +2654,7 @@ namespace CoreData
 		bool CanModifyManagedObjects (NSPersistentStore store);
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface NSPersistentCloudKitContainerOptions {

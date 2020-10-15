@@ -342,7 +342,7 @@ namespace Metal {
 	}
 #endif // MONOMAC
 
-	[Mac (10,15), iOS (13,0), TV (13,0)]
+	[NoMac, iOS (13,0), TV (13,0)]
 	public enum MTLTextureSwizzle : byte {
 		Zero = 0,
 		One = 1,
@@ -352,7 +352,7 @@ namespace Metal {
 		Alpha = 5,
 	}
 
-	[Mac (10,15), iOS (13,0), TV (13,0)]
+	[NoMac, iOS (13,0), TV (13,0)]
 	[StructLayout (LayoutKind.Sequential)]
 	public struct MTLTextureSwizzleChannels {
 		public MTLTextureSwizzle Red;

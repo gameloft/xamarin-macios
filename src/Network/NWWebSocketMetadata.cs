@@ -22,7 +22,7 @@ using dispatch_queue_t =System.IntPtr;
 
 namespace Network {
 
-	[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+	[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 	public enum NWWebSocketOpCode : int {
 		Cont = 0x0,
 		Text = 0x1,
@@ -33,7 +33,7 @@ namespace Network {
 		Invalid = -1,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+	[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 	public enum NWWebSocketCloseCode : int {
 		NormalClosure = 1000,
 		GoingAway = 1001,
@@ -49,7 +49,7 @@ namespace Network {
 		TlsHandshake = 1015,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+	[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 	public class NWWebSocketMetadata : NWProtocolMetadata {
 
 		internal NWWebSocketMetadata (IntPtr handle, bool owns) : base (handle, owns) {}

@@ -63,7 +63,7 @@ namespace ImageIO {
 		[Field ("kCGImagePropertyExifAuxDictionary")]
 		NSString ExifAuxDictionary { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyHEICSDictionary")]
 		NSString HeicsDictionary { get; }
 
@@ -326,15 +326,15 @@ namespace ImageIO {
 		[Field ("kCGImagePropertyGIFUnclampedDelayTime")]
 		NSString GIFUnclampedDelayTime { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyGIFCanvasPixelWidth")]
 		NSString GifCanvasPixelWidth { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyGIFCanvasPixelHeight")]
 		NSString GifCanvasPixelHeight { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyGIFFrameInfoArray")]
 		NSString GifFrameInfoArray { get; }
 
@@ -587,15 +587,15 @@ namespace ImageIO {
 		[Field ("kCGImagePropertyAPNGUnclampedDelayTime")]
 		NSString PNGUnclampedDelayTime { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyAPNGFrameInfoArray")]
 		NSString ApngFrameInfoArray { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyAPNGCanvasPixelWidth")]
 		NSString ApngCanvasPixelWidth { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyAPNGCanvasPixelHeight")]
 		NSString ApngCanvasPixelHeight { get; }
 
@@ -1110,27 +1110,27 @@ namespace ImageIO {
 
 		// HEICS
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyHEICSLoopCount")]
 		NSString HeicsLoopCount { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyHEICSDelayTime")]
 		NSString HeicsDelayTime { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyHEICSUnclampedDelayTime")]
 		NSString HeicsSUnclampedDelayTime { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyHEICSCanvasPixelWidth")]
 		NSString HeicsCanvasPixelWidth { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyHEICSCanvasPixelHeight")]
 		NSString HeicsCanvasPixelHeight { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyHEICSFrameInfoArray")]
 		NSString HeicsFrameInfoArray { get; }
 
@@ -1211,15 +1211,15 @@ namespace ImageIO {
 		[Field ("kCGImagePropertyExifStandardOutputSensitivity")]
 		NSString ExifStandardOutputSensitivity { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyExifOffsetTime")]
 		NSString ExifOffsetTime { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyExifOffsetTimeOriginal")]
 		NSString ExifOffsetTimeOriginal { get; }
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImagePropertyExifOffsetTimeDigitized")]
 		NSString ExifOffsetTimeDigitized { get; }
 
@@ -2322,15 +2322,15 @@ namespace ImageIO {
 		[Field ("kCGImageAuxiliaryDataTypePortraitEffectsMatte")]
 		PortraitEffectsMatte,
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImageAuxiliaryDataTypeSemanticSegmentationHairMatte")]
 		SemanticSegmentationHairMatte,
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImageAuxiliaryDataTypeSemanticSegmentationSkinMatte")]
 		SemanticSegmentationSkinMatte,
 
-		[iOS (13,0)][TV (13,0)][Watch (6,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][Watch (6,0)][NoMac]
 		[Field ("kCGImageAuxiliaryDataTypeSemanticSegmentationTeethMatte")]
 		SemanticSegmentationTeethMatte,
 	}
@@ -2357,7 +2357,7 @@ namespace ImageIO {
 		NSDictionary DataDescription { get; set; }
 	}
 
-	[Mac (10, 15), iOS (13, 0), TV (13, 0), Watch (6, 0)]
+	[NoMac, iOS (13, 0), TV (13, 0), Watch (6, 0)]
 	[Static]
 	[Internal]
 	interface CGImageAnimationOptionsKeys {
@@ -2371,7 +2371,7 @@ namespace ImageIO {
 		NSString StartIndexKey { get; }
 	}
 
-	[Mac (10, 15), iOS (13, 0), TV (13, 0), Watch (6, 0)]
+	[NoMac, iOS (13, 0), TV (13, 0), Watch (6, 0)]
 	[StrongDictionary ("CGImageAnimationOptionsKeys")]
 	interface CGImageAnimationOptions {
 		double DelayTime { get; set; }

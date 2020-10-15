@@ -52,7 +52,7 @@ namespace Security {
 		[iOS (9,0)][Mac (10,11)]
 		DevicePasscode      = 1 << 4,
 
-		[Mac (10,15)][NoiOS][NoTV][NoWatch]
+		[NoMac][NoiOS][NoTV][NoWatch]
 		Watch               = 1 << 5,
 
 		[iOS (9,0)][Mac (10,12,1)]

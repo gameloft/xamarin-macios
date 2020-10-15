@@ -58,7 +58,7 @@ namespace AVKit {
 	}
 
 	[NoiOS, NoWatch, NoTV]
-	[Mac (10,15)]
+	[NoMac]
 	[Native]
 	public enum AVRoutePickerViewButtonState : long {
 		Normal,

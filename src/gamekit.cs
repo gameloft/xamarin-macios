@@ -599,7 +599,7 @@ namespace GameKit {
 		string TeamPlayerId { get; }
 
 		[NoWatch]
-		[TV (13,0)][Mac (10,15)][iOS (13,0)]
+		[TV (13,0)][NoMac][iOS (13,0)]
 		[Export ("scopedIDsArePersistent")]
 		bool ScopedIdsArePersistent { get; }
 
@@ -928,17 +928,17 @@ namespace GameKit {
 		void ResolveConflictingSavedGames (GKSavedGame [] conflictingSavedGames, NSData data, [NullAllowed] Action<GKSavedGame[], NSError> handler);
 
 		[NoWatch]
-		[TV (13,0)][Mac (10,15)][iOS (13,0)]
+		[TV (13,0)][NoMac][iOS (13,0)]
 		[Export ("multiplayerGamingRestricted")]
 		bool MultiplayerGamingRestricted { [Bind ("isMultiplayerGamingRestricted")] get; }
 
-		[TV (13,0)][Mac (10,15)][iOS (13,0)][Watch (6,0)]
+		[TV (13,0)][NoMac][iOS (13,0)][Watch (6,0)]
 		[Export ("loadChallengableFriendsWithCompletionHandler:")]
 		[Async]
 		void LoadChallengeableFriends ([NullAllowed] Action<GKPlayer [], NSError> completionHandler);
 
 		[NoWatch]
-		[TV (13,0)][Mac (10,15)][iOS (13,0)]
+		[TV (13,0)][NoMac][iOS (13,0)]
 		[Static]
 		[Export ("local")]
 		GKLocalPlayer Local { get; }
@@ -1211,7 +1211,7 @@ namespace GameKit {
 		[Deprecated (PlatformName.iOS, 14, 0, message: "Use 'GKMatchmakerViewController.MatchmakingMode' instead.")]
 		[Deprecated (PlatformName.TvOS, 14, 0, message: "Use 'GKMatchmakerViewController.MatchmakingMode' instead.")]
 		[Deprecated (PlatformName.MacOSX, 11, 0, message: "Use 'GKMatchmakerViewController.MatchmakingMode' instead.")]
-		[TV (13,0)][Mac (10,15)][iOS (13,0)]
+		[TV (13,0)][NoMac][iOS (13,0)]
 		[Export ("restrictToAutomatch")]
 		bool RestrictToAutomatch { get; set; }
 	}

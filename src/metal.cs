@@ -185,14 +185,14 @@ namespace Metal {
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[NoiOS, NoTV, Mac (10, 15)]
+		[NoiOS, NoTV, NoMac]
 		[NullAllowed, Export ("remoteStorageBuffer")]
 		IMTLBuffer RemoteStorageBuffer { get; }
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[NoiOS, NoTV, Mac (10,15)]
+		[NoiOS, NoTV, NoMac]
 		[Export ("newRemoteBufferViewForDevice:")]
 		[return: NullAllowed]
 		IMTLBuffer CreateRemoteBuffer (IMTLDevice device);
@@ -624,7 +624,7 @@ namespace Metal {
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[iOS (14,0), TV (14,0), Mac (10,15)]
+		[iOS (14,0), TV (14,0), NoMac]
 		[Export ("sampleCountersInBuffer:atSampleIndex:withBarrier:")]
 #if XAMCORE_4_0
 		void SampleCounters (IMTLCounterSampleBuffer sampleBuffer, nuint sampleIndex, bool barrier);
@@ -880,14 +880,14 @@ namespace Metal {
 		[Export ("resetTextureAccessCounters:region:mipLevel:slice:")]
 		void ResetTextureAccessCounters (IMTLTexture texture, MTLRegion region, nuint mipLevel, nuint slice);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
 		[Export ("copyFromTexture:sourceSlice:sourceLevel:toTexture:destinationSlice:destinationLevel:sliceCount:levelCount:")]
 		void Copy (IMTLTexture sourceTexture, nuint sourceSlice, nuint sourceLevel, IMTLTexture destinationTexture, nuint destinationSlice, nuint destinationLevel, nuint sliceCount, nuint levelCount);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
@@ -897,14 +897,14 @@ namespace Metal {
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[iOS (14,0), TV (14,0), Mac (10,15)]
+		[iOS (14,0), TV (14,0), NoMac]
 		[Export ("sampleCountersInBuffer:atSampleIndex:withBarrier:")]
 		void SampleCounters (MTLCounterSampleBuffer sampleBuffer, nuint sampleIndex, bool barrier);
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[iOS (14,0), TV (14,0), Mac (10,15)]
+		[iOS (14,0), TV (14,0), NoMac]
 		[Export ("resolveCounters:inRange:destinationBuffer:destinationOffset:")]
 		void ResolveCounters (MTLCounterSampleBuffer sampleBuffer, NSRange range, IMTLBuffer destinationBuffer, nuint destinationOffset);
 	}
@@ -1404,14 +1404,14 @@ namespace Metal {
 		[Export ("convertSparsePixelRegions:toTileRegions:withTileSize:alignmentMode:numRegions:")]
 		void ConvertSparsePixelRegions (IntPtr pixelRegions, IntPtr tileRegions, MTLSize tileSize, MTLSparseTextureRegionAlignmentMode mode, nuint numRegions);
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
 		[Export ("hasUnifiedMemory")]
 		bool HasUnifiedMemory { get; }
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
@@ -1421,35 +1421,35 @@ namespace Metal {
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[iOS (14,0), NoTV, Mac (10, 15)]
+		[iOS (14,0), NoTV, NoMac]
 		[Export ("barycentricCoordsSupported")]
 		bool BarycentricCoordsSupported { [Bind ("areBarycentricCoordsSupported")] get; }
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[iOS (14,0), NoTV, Mac (10, 15)]
+		[iOS (14,0), NoTV, NoMac]
 		[Export ("supportsShaderBarycentricCoordinates")]
 		bool SupportsShaderBarycentricCoordinates { get; }
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[NoiOS, NoTV, Mac (10, 15)]
+		[NoiOS, NoTV, NoMac]
 		[Export ("peerIndex")]
 		uint PeerIndex { get; }
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[NoiOS, NoTV, Mac (10, 15)]
+		[NoiOS, NoTV, NoMac]
 		[Export ("peerCount")]
 		uint PeerCount { get; }
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[iOS (14,0), TV (14,0), Mac (10, 15)]
+		[iOS (14,0), TV (14,0), NoMac]
 		[NullAllowed, Export ("counterSets")]
 #if XAMCORE_4_0
 		IMTLCounterSet[] CounterSets { get; }
@@ -1461,7 +1461,7 @@ namespace Metal {
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[iOS (14,0), TV (14,0), Mac (10,15)]
+		[iOS (14,0), TV (14,0), NoMac]
 		[Export ("newCounterSampleBufferWithDescriptor:error:")]
 		[return: NullAllowed]
 #if XAMCORE_4_0
@@ -1474,35 +1474,35 @@ namespace Metal {
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[iOS (14,0), TV (14,0), Mac (10,15)]
+		[iOS (14,0), TV (14,0), NoMac]
 		[Export ("sampleTimestamps:gpuTimestamp:")]
 		void GetSampleTimestamps (nuint cpuTimestamp, nuint gpuTimestamp);
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[NoiOS, NoTV, Mac (10, 15)]
+		[NoiOS, NoTV, NoMac]
 		[Export ("peerGroupID")]
 		ulong PeerGroupId { get; }
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[NoiOS, NoTV, Mac (10, 15)]
+		[NoiOS, NoTV, NoMac]
 		[Export ("maxTransferRate")]
 		ulong MaxTransferRate { get; }
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[NoiOS, NoTV, Mac (10, 15)]
+		[NoiOS, NoTV, NoMac]
 		[Export ("location")]
 		MTLDeviceLocation Location { get; }
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[NoiOS, NoTV, Mac (10, 15)]
+		[NoiOS, NoTV, NoMac]
 		[Export ("locationNumber")]
 		nuint LocationNumber { get; }
 
@@ -1846,14 +1846,14 @@ namespace Metal {
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[Mac (10, 15), TV (13,0), iOS (13, 0)]
+		[NoMac, TV (13,0), iOS (13, 0)]
 		[Export ("swizzle")]
 		MTLTextureSwizzleChannels Swizzle { get; }
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[Mac (10,15), TV (13,0), iOS (13,0)]
+		[NoMac, TV (13,0), iOS (13,0)]
 		[Export ("newTextureViewWithPixelFormat:textureType:levels:slices:swizzle:")]
 		[return: NullAllowed]
 		IMTLTexture Create (MTLPixelFormat pixelFormat, MTLTextureType textureType, NSRange levelRange, NSRange sliceRange, MTLTextureSwizzleChannels swizzle);
@@ -1861,14 +1861,14 @@ namespace Metal {
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[NoiOS, NoTV, Mac (10, 15)]
+		[NoiOS, NoTV, NoMac]
 		[NullAllowed, Export ("remoteStorageTexture")]
 		IMTLTexture RemoteStorageTexture { get; }
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[NoiOS, NoTV, Mac (10,15)]
+		[NoiOS, NoTV, NoMac]
 		[Export ("newRemoteTextureViewForDevice:")]
 		[return: NullAllowed]
 		IMTLTexture CreateRemoteTexture (IMTLDevice device);
@@ -1932,11 +1932,11 @@ namespace Metal {
 		[Export ("allowGPUOptimizedContents")]
 		bool AllowGpuOptimizedContents { get; set; }
 
-		[Mac (10, 15), iOS (13, 0), TV (13,0)]
+		[NoMac, iOS (13, 0), TV (13,0)]
 		[Export ("hazardTrackingMode", ArgumentSemantic.Assign)]
 		MTLHazardTrackingMode HazardTrackingMode { get; set; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Export ("swizzle", ArgumentSemantic.Assign)]
 		MTLTextureSwizzleChannels Swizzle { get; set; }
 	}
@@ -3164,35 +3164,35 @@ namespace Metal {
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("useResource:usage:stages:")]
 		void UseResource (IMTLResource resource, MTLResourceUsage usage, MTLRenderStages stages);
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("useResources:count:usage:stages:")]
 		void UseResources (IMTLResource[] resources, nuint count, MTLResourceUsage usage, MTLRenderStages stages);
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("useHeap:stages:")]
 		void UseHeap (IMTLHeap heap, MTLRenderStages stages);
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[TV(13,0), Mac (10,15), iOS (13,0)]
+		[TV(13,0), NoMac, iOS (13,0)]
 		[Export ("useHeaps:count:stages:")]
 		void UseHeaps (IMTLHeap[] heaps, nuint count, MTLRenderStages stages);
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[iOS (14,0), TV (14,0), Mac (10,15)]
+		[iOS (14,0), TV (14,0), NoMac]
 		[Export ("sampleCountersInBuffer:atSampleIndex:withBarrier:")]
 		void SampleCounters (MTLCounterSampleBuffer sampleBuffer, nuint sampleIndex, bool barrier);
 	}
@@ -3387,7 +3387,7 @@ namespace Metal {
 		[Export ("tileHeight")]
 		nuint TileHeight { get; set; }
 
-		[iOS (11, 0), NoTV, NoWatch, Mac (10,15)]
+		[iOS (11, 0), NoTV, NoWatch, NoMac]
 		[Export ("defaultRasterSampleCount")]
 		nuint DefaultRasterSampleCount { get; set; }
 
@@ -3395,7 +3395,7 @@ namespace Metal {
 		[Export ("renderTargetWidth")]
 		nuint RenderTargetWidth { get; set; }
 
-		[iOS (11, 0), NoTV, NoWatch, Mac (10,15)]
+		[iOS (11, 0), NoTV, NoWatch, NoMac]
 		[Export ("renderTargetHeight")]
 		nuint RenderTargetHeight { get; set; }
 
@@ -3433,15 +3433,15 @@ namespace Metal {
 		MTLCpuCacheMode CpuCacheMode { get; set; }
 
 /* Selectors missing reported by introspection: https://github.com/xamarin/maccore/issues/1978
-		[Mac (10, 15), iOS (13, 0)]
+		[NoMac, iOS (13, 0)]
 		[Export ("hazardTrackingMode", ArgumentSemantic.Assign)]
 		MTLHazardTrackingMode HazardTrackingMode { get; set; }
 
-		[Mac (10, 15), iOS (13, 0)]
+		[NoMac, iOS (13, 0)]
 		[Export ("resourceOptions", ArgumentSemantic.Assign)]
 		MTLResourceOptions ResourceOptions { get; set; }
 
-		[Mac (10, 15), iOS (13, 0)]
+		[NoMac, iOS (13, 0)]
 		[Export ("type", ArgumentSemantic.Assign)]
 		MTLHeapType Type { get; set; }
  */
@@ -3502,28 +3502,28 @@ namespace Metal {
 		[Export ("currentAllocatedSize")]
 		nuint CurrentAllocatedSize { get; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
 		[Export ("hazardTrackingMode")]
 		MTLHazardTrackingMode HazardTrackingMode { get; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
 		[Export ("resourceOptions")]
 		MTLResourceOptions ResourceOptions { get; }
 
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
 		[Export ("type")]
 		MTLHeapType Type { get; }
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
@@ -3531,7 +3531,7 @@ namespace Metal {
 		[return: NullAllowed]
 		IMTLBuffer CreateBuffer (nuint length, MTLResourceOptions options, nuint offset);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 #if XAMCORE_4_0
 		[Abstract]
 #endif
@@ -3596,21 +3596,21 @@ namespace Metal {
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Export ("resourceOptions")]
 		MTLResourceOptions ResourceOptions { get; }
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Export ("heapOffset")]
 		nuint HeapOffset { get; }
 
 #if XAMCORE_4_0
 		[Abstract]
 #endif
-		[TV (13, 0), Mac (10, 15), iOS (13, 0)]
+		[TV (13, 0), NoMac, iOS (13, 0)]
 		[Export ("hazardTrackingMode")]
 		MTLHazardTrackingMode HazardTrackingMode { get; }
 	}
@@ -3820,11 +3820,11 @@ namespace Metal {
 		[Export ("isCapturing")]
 		bool IsCapturing { get; }
 
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Export ("supportsDestination:")]
 		bool SupportsDestination (MTLCaptureDestination destination);
 
-		[Mac (10,15), iOS (13,0), TV (13,0)]
+		[NoMac, iOS (13,0), TV (13,0)]
 		[Export ("startCaptureWithDescriptor:error:")]
 		bool StartCapture (MTLCaptureDescriptor descriptor, [NullAllowed] out NSError error);
 	}
@@ -4453,7 +4453,7 @@ namespace Metal {
 		void Wait (IMTLFence fence);
 	}
 
-	[Mac (10,15), iOS (13,0), TV (13,0)]
+	[NoMac, iOS (13,0), TV (13,0)]
 	[BaseType (typeof(NSObject))]
 	interface MTLCaptureDescriptor : NSCopying {
 		[NullAllowed, Export ("captureObject", ArgumentSemantic.Strong)]
@@ -4517,7 +4517,7 @@ namespace Metal {
 
 	interface IMTLCounter {}
 
-	[iOS (14,0), TV (14,0), Mac (10,15)]
+	[iOS (14,0), TV (14,0), NoMac]
 	[Protocol]
 #if !XAMCORE_4_0
 	[BaseType (typeof(NSObject))]
@@ -4530,7 +4530,7 @@ namespace Metal {
 
 	interface IMTLCounterSet {}
 
-	[iOS (14,0), TV (14,0), Mac (10,15)]
+	[iOS (14,0), TV (14,0), NoMac]
 	[Protocol]
 #if !XAMCORE_4_0
 	[BaseType (typeof(NSObject))]
@@ -4547,7 +4547,7 @@ namespace Metal {
 
 	interface IMTLCounterSampleBuffer {}
 
-	[iOS (14,0), TV (14,0), Mac (10,15)]
+	[iOS (14,0), TV (14,0), NoMac]
 	[Protocol]
 #if !XAMCORE_4_0
 	[BaseType (typeof (NSObject))]
@@ -4571,24 +4571,24 @@ namespace Metal {
 		NSData ResolveCounterRange (NSRange range);
 	}
 
-	[iOS (14,0), TV (14,0), Mac (10,15)]
+	[iOS (14,0), TV (14,0), NoMac]
 	[BaseType (typeof (NSObject))]
 	interface MTLCounterSampleBufferDescriptor : NSCopying
 	{
-		[Mac (10, 15)]
+		[NoMac]
 		[NullAllowed]
 		[Export ("counterSet", ArgumentSemantic.Retain)]
 		IMTLCounterSet CounterSet { get; set; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("label")]
 		string Label { get; set; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("storageMode", ArgumentSemantic.Assign)]
 		MTLStorageMode StorageMode { get; set; }
 
-		[Mac (10, 15)]
+		[NoMac]
 		[Export ("sampleCount")]
 		nuint SampleCount { get; set; }
 	}

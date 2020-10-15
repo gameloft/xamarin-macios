@@ -210,7 +210,7 @@ namespace CoreData {
 		TransactionsAndChanges = 5
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	public enum NSBatchInsertRequestResultType : ulong {
 		StatusOnly = 0,
@@ -218,7 +218,7 @@ namespace CoreData {
 		Count = 2,
 	}
 
-	[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+	[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 	[Flags]
 	[Native]
 	public enum NSPersistentCloudKitContainerSchemaInitializationOptions : ulong {

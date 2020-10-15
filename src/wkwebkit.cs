@@ -157,7 +157,7 @@ namespace WebKit
 	[BaseType (typeof (NSObject))]
 	interface WKNavigation {
 
-		[Mac (10,15)]
+		[NoMac]
 		[iOS (13,0)]
 		[Export ("effectiveContentMode")]
 		WKContentMode EffectiveContentMode { get; }
@@ -199,7 +199,7 @@ namespace WebKit
 		[Export ("webView:decidePolicyForNavigationResponse:decisionHandler:")]
 		void DecidePolicy (WKWebView webView, WKNavigationResponse navigationResponse, Action<WKNavigationResponsePolicy> decisionHandler);
 
-		[Mac (10,15)]
+		[NoMac]
 		[iOS (13,0)]
 		[Export ("webView:decidePolicyForNavigationAction:preferences:decisionHandler:")]
 		void DecidePolicy (WKWebView webView, WKNavigationAction navigationAction, WKWebpagePreferences preferences, Action<WKNavigationActionPolicy, WKWebpagePreferences> decisionHandler);
@@ -277,7 +277,7 @@ namespace WebKit
 		bool TabFocusesLinks { get; set; }
 #endif
 
-		[Mac (10, 15), iOS (13, 0)]
+		[NoMac, iOS (13, 0)]
 		[Export ("fraudulentWebsiteWarningEnabled")]
 		bool FraudulentWebsiteWarningEnabled { [Bind ("isFraudulentWebsiteWarningEnabled")] get; set; }
 	}
@@ -341,7 +341,7 @@ namespace WebKit
 		[Export ("snapshotWidth")]
 		NSNumber SnapshotWidth { get; set; }
 
-		[Mac (10,15)]
+		[NoMac]
 		[iOS (13,0)]
 		[Export ("afterScreenUpdates")]
 		bool AfterScreenUpdates { get; set; }
@@ -900,7 +900,7 @@ namespace WebKit
 		[return: NullAllowed]
 		IWKUrlSchemeHandler GetUrlSchemeHandler (string urlScheme);
 
-		[Mac (10,15)]
+		[NoMac]
 		[iOS (13,0)]
 		[Export ("defaultWebpagePreferences", ArgumentSemantic.Copy)]
 		WKWebpagePreferences DefaultWebpagePreferences { get; set; }
@@ -986,7 +986,7 @@ namespace WebKit
 		NSUrl LinkUrl { get; }
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[iOS (13,0)]
 	[Native]
 	public enum WKContentMode : long {
@@ -995,7 +995,7 @@ namespace WebKit
 		Desktop,
 	}
 
-	[Mac (10,15)]
+	[NoMac]
 	[iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	interface WKWebpagePreferences {

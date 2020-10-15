@@ -1018,7 +1018,7 @@ namespace Metal {
 		Unmap = 0x1,
 	}
 
-	[Mac (10,15), iOS (13,0)]
+	[NoMac, iOS (13,0)]
 	[Native]
 	public enum MTLHazardTrackingMode : ulong {
 		Default = 0,
@@ -1026,7 +1026,7 @@ namespace Metal {
 		Tracked = 2,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	[ErrorDomain ("MTLCaptureErrorDomain")]
 	public enum MTLCaptureError : long {
@@ -1035,7 +1035,7 @@ namespace Metal {
 		InvalidDescriptor,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	public enum MTLGpuFamily : long {
 		Apple1 = 1001,
@@ -1056,21 +1056,21 @@ namespace Metal {
 		iOSMac2 = 4002,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	public enum MTLHeapType : long {
 		Automatic = 0,
 		Placement = 1,
 	}
 
-	[Mac (10,15), iOS (13,0), TV (13,0)]
+	[NoMac, iOS (13,0), TV (13,0)]
 	[Native]
 	public enum MTLCaptureDestination : long {
 		DeveloperTools = 1,
 		GpuTraceDocument,
 	}
 
-	[NoiOS, NoTV, Mac (10,15)]
+	[NoiOS, NoTV, NoMac]
 	[Native]
 	public enum MTLDeviceLocation : ulong {
 		BuiltIn = 0,
@@ -1079,7 +1079,7 @@ namespace Metal {
 		Unspecified = ulong.MaxValue,
 	}
 
-	[iOS (14,0), TV (14,0), Mac (10,15)]
+	[iOS (14,0), TV (14,0), NoMac]
 	[Native]
 	[ErrorDomain ("MTLCounterErrorDomain")]
 	public enum MTLCounterSampleBufferError : long {
@@ -1087,7 +1087,7 @@ namespace Metal {
 		Internal,
 	}
 
-	[iOS (14,0), TV (14,0), Mac (10,15)]
+	[iOS (14,0), TV (14,0), NoMac]
 	public enum MTLCommonCounter {
 		[Field ("MTLCommonCounterTimestamp")]
 		Timestamp,

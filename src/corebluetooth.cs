@@ -58,7 +58,7 @@ namespace CoreBluetooth {
 		[Export ("authorization", ArgumentSemantic.Assign)]
 		CBManagerAuthorization _SAuthorization { get; }
 #else
-		[TV (13,0), Mac (10, 15)]
+		[TV (13,0), NoMac]
 		[Static]
 		[Export ("authorization", ArgumentSemantic.Assign)]
 		CBManagerAuthorization Authorization { get; }

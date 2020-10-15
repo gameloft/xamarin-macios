@@ -626,7 +626,7 @@ namespace AVFoundation {
 
 #endif
 
-	[iOS (9,0), Mac (10,15)]
+	[iOS (9,0), NoMac]
 	[Native]
 	public enum AVSpeechSynthesisVoiceQuality : long {
 		Default = 1,
@@ -705,7 +705,7 @@ namespace AVFoundation {
 		Scheduled,
 	}
 
-	[NoTV, NoWatch, Mac (10,15), iOS (10,0)]
+	[NoTV, NoWatch, NoMac, iOS (10,0)]
 	[Native]
 	public enum AVCaptureColorSpace : long
 	{
@@ -729,7 +729,7 @@ namespace AVFoundation {
 		Playing
 	}
 
-	[NoWatch, NoTV, iOS (10,0), Mac (10,15)]
+	[NoWatch, NoTV, iOS (10,0), NoMac]
 	[Native]
 	public enum AVAudioSessionIOType : long
 	{
@@ -795,7 +795,7 @@ namespace AVFoundation {
 		[Obsolete ("Use 'AVContentKeySystem.SystemClearKey' instead.")]
 		AVContentKeySystemClearKey = ClearKey,
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Field ("AVContentKeySystemAuthorizationToken")]
 		AuthorizationToken = 2,
 	}
@@ -870,11 +870,11 @@ namespace AVFoundation {
 		[Field ("AVOutputSettingsPresetHEVC3840x2160")]
 		PresetHevc3840x2160 = 12, // we added the wrong value in the export enum, we use the same so that they can be swap
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Field ("AVOutputSettingsPresetHEVC1920x1080WithAlpha")]
 		PresetHevc1920x1080WithAlpha = 13,
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Field ("AVOutputSettingsPresetHEVC3840x2160WithAlpha")]
 		PresetHevc3840x2160WithAlpha = 14,
 	}
@@ -997,19 +997,19 @@ namespace AVFoundation {
 		[Field ("AVVideoCodecTypeHEVC")]
 		Hevc = 5,
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Field ("AVVideoCodecTypeAppleProRes422HQ")]
 		AppleProRes422HQ = 6,
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Field ("AVVideoCodecTypeAppleProRes422LT")]
 		AppleProRes422LT = 7,
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Field ("AVVideoCodecTypeAppleProRes422Proxy")]
 		AppleProRes422Proxy = 8,
 
-		[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 		[Field ("AVVideoCodecTypeHEVCWithAlpha")]
 		HevcWithAlpha = 9,
 	}
@@ -1043,7 +1043,7 @@ namespace AVFoundation {
 
 	[Flags]
 	[Native]
-	[Watch (5,0), TV (12,0), iOS (12,0), Mac (10,15)]
+	[Watch (5,0), TV (12,0), iOS (12,0), NoMac]
 	public enum AVAudioSessionActivationOptions : ulong
 	{
 		None = 0x0,
@@ -1057,7 +1057,7 @@ namespace AVFoundation {
 		Normal = 0x6e726d6c, //1852992876 - 'nrml'
 	}
 
-	[Watch (6,0), iOS (13,0), TV (13,0), Mac (10,15)]
+	[Watch (6,0), iOS (13,0), TV (13,0), NoMac]
 	[Native]
 	public enum AVSpeechSynthesisVoiceGender : long {
 		Unspecified,
@@ -1073,7 +1073,7 @@ namespace AVFoundation {
 		Quality = 3,
 	}
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[Native]
 	public enum AVAudioEnvironmentOutputType : long {
 		Auto = 0,
@@ -1082,7 +1082,7 @@ namespace AVFoundation {
 		ExternalSpeakers = 3,
 	}
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[Native]
 	public enum AVAudio3DMixingSourceMode : long {
 		SpatializeIfMono = 0,
@@ -1091,7 +1091,7 @@ namespace AVFoundation {
 		AmbienceBed = 3,
 	}
 
-	[TV (13,0), NoWatch, Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoWatch, NoMac, iOS (13,0)]
 	[Native]
 	public enum AVAudio3DMixingPointSourceInHeadMode : long {
 		Mono = 0,

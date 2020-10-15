@@ -116,19 +116,19 @@ namespace MetalKit {
 		[NullAllowed, Export ("colorspace", ArgumentSemantic.Assign)]
 		CGColorSpace ColorSpace { get; set; }
 
-		[iOS (13,0)][TV (13,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][NoMac]
 		[NullAllowed, Export ("preferredDevice")]
 		IMTLDevice PreferredDevice { get; }
 
-		[iOS (13,0)][TV (13,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][NoMac]
 		[Export ("preferredDrawableSize")]
 		CGSize PreferredDrawableSize { get; }
 
-		[iOS (13,0)][TV (13,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][NoMac]
 		[Export ("depthStencilAttachmentTextureUsage", ArgumentSemantic.Assign)]
 		MTLTextureUsage DepthStencilAttachmentTextureUsage { get; set; }
 
-		[iOS (13,0)][TV (13,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][NoMac]
 		[Export ("multisampleColorAttachmentTextureUsage", ArgumentSemantic.Assign)]
 		MTLTextureUsage MultisampleColorAttachmentTextureUsage { get; set; }
 	}

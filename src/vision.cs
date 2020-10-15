@@ -147,7 +147,7 @@ namespace Vision {
 		Unspecified = 0,
 		One = 1,
 		Two = 2,
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		Three = 3,
 	}
 
@@ -199,7 +199,7 @@ namespace Vision {
 	enum VNTrackObjectRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		Two = 2,
 	}
 
@@ -258,14 +258,14 @@ namespace Vision {
 		Two = 2,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum VNClassifyImageRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum VNDetectFaceCaptureQualityRequestRevision : ulong {
 		Unspecified = 0,
@@ -274,7 +274,7 @@ namespace Vision {
 		Two = 2,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum VNRequestFaceLandmarksConstellation : ulong {
 		NotDefined = 0,
@@ -282,49 +282,49 @@ namespace Vision {
 		SeventySixPoints,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum VNDetectHumanRectanglesRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum VNGenerateAttentionBasedSaliencyImageRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum VNGenerateImageFeaturePrintRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum VNGenerateObjectnessBasedSaliencyImageRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum VNRecognizeAnimalsRequestRevision : ulong {
 		Unspecified = 0,
 		One = 1,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum VNRequestTextRecognitionLevel : long {
 		Accurate = 0,
 		Fast,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum VNRecognizeTextRequestRevision : ulong {
 		Unspecified = 0,
@@ -333,7 +333,7 @@ namespace Vision {
 		Two = 2,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Native]
 	enum VNElementType : ulong {
 		Unknown = 0,
@@ -589,11 +589,11 @@ namespace Vision {
 		[return: NullAllowed]
 		VNCoreMLModel FromMLModel (MLModel model, out NSError error);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("inputImageFeatureName")]
 		string InputImageFeatureName { get; set; }
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[NullAllowed, Export ("featureProvider", ArgumentSemantic.Strong)]
 		IMLFeatureProvider FeatureProvider { get; set; }
 	}
@@ -712,12 +712,12 @@ namespace Vision {
 		[DesignatedInitializer]
 		IntPtr Constructor ([NullAllowed] VNRequestCompletionHandler completionHandler);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Static]
 		[Export ("revision:supportsConstellation:")]
 		bool SupportsConstellation (VNDetectFaceLandmarksRequestRevision revision, VNRequestFaceLandmarksConstellation constellation);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("constellation", ArgumentSemantic.Assign)]
 		VNRequestFaceLandmarksConstellation Constellation { get; set; }
 
@@ -946,7 +946,7 @@ namespace Vision {
 		[Export ("pointsInImageOfSize:")]
 		IntPtr _GetPointsInImage (CGSize imageSize);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[BindAs (typeof (nfloat []))]
 		[NullAllowed, Export ("precisionEstimatesPerPoint")]
 		NSNumber [] PrecisionEstimatesPerPoint { get; }
@@ -1507,7 +1507,7 @@ namespace Vision {
 		[Export ("faceObservationWithRequestRevision:boundingBox:roll:yaw:")]
 		VNFaceObservation FromBoundingBox (VNFaceObservationRequestRevision requestRevision, CGRect boundingBox, [NullAllowed] [BindAs (typeof (nfloat?))] NSNumber roll, [NullAllowed] [BindAs (typeof (nfloat?))] NSNumber yaw);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[BindAs (typeof (float?))]
 		[NullAllowed, Export ("faceCaptureQuality", ArgumentSemantic.Strong)]
 		NSNumber FaceCaptureQuality { get; }
@@ -1551,15 +1551,15 @@ namespace Vision {
 
 		// From interface VNClassificationObservation
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("hasPrecisionRecallCurve")]
 		bool HasPrecisionRecallCurve { get; }
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("hasMinimumRecall:forPrecision:")]
 		bool HasMinimumRecall (float minimumRecall, float precision);
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("hasMinimumPrecision:forRecall:")]
 		bool HasMinimumPrecision (float minimumPrecision, float recall);
 	}
@@ -1572,7 +1572,7 @@ namespace Vision {
 		[Export ("featureValue", ArgumentSemantic.Copy)]
 		MLFeatureValue FeatureValue { get; }
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("featureName")]
 		string FeatureName { get; }
 	}
@@ -1585,7 +1585,7 @@ namespace Vision {
 		[Export ("pixelBuffer")]
 		CVPixelBuffer PixelBuffer { get; }
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[NullAllowed, Export ("featureName")]
 		string FeatureName { get; }
 	}
@@ -1595,7 +1595,7 @@ namespace Vision {
 	[BaseType (typeof (VNDetectedObjectObservation))]
 	interface VNRectangleObservation {
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Static]
 		[Export ("rectangleObservationWithRequestRevision:topLeft:bottomLeft:bottomRight:topRight:")]
 		VNRectangleObservation GetRectangleObservation (VNRectangleObservationRequestRevision requestRevision, CGPoint topLeft, CGPoint bottomLeft, CGPoint bottomRight, CGPoint topRight);
@@ -1738,7 +1738,7 @@ namespace Vision {
 		[Export ("usesCPUOnly")]
 		bool UsesCpuOnly { get; set; }
 
-		[TV (13,0), Mac (10,15), iOS (13,0)]
+		[TV (13,0), NoMac, iOS (13,0)]
 		[Export ("cancel")]
 		void Cancel ();
 
@@ -2222,7 +2222,7 @@ namespace Vision {
 		VNRequestRevision RequestRevision { get; }
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (VNImageBasedRequest))]
 	[DisableDefaultCtor]
 	interface VNClassifyImageRequest {
@@ -2260,7 +2260,7 @@ namespace Vision {
 		VNClassifyImageRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (VNImageBasedRequest))]
 	[DisableDefaultCtor]
 	interface VNDetectFaceCaptureQualityRequest : VNFaceObservationAccepting {
@@ -2293,7 +2293,7 @@ namespace Vision {
 		VNDetectFaceCaptureQualityRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (VNImageBasedRequest))]
 	[DisableDefaultCtor]
 	interface VNDetectHumanRectanglesRequest {
@@ -2326,7 +2326,7 @@ namespace Vision {
 		VNDetectHumanRectanglesRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (VNImageBasedRequest))]
 	[DisableDefaultCtor]
 	interface VNGenerateAttentionBasedSaliencyImageRequest {
@@ -2359,7 +2359,7 @@ namespace Vision {
 		VNGenerateAttentionBasedSaliencyImageRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (VNImageBasedRequest))]
 	[DisableDefaultCtor]
 	interface VNGenerateImageFeaturePrintRequest {
@@ -2395,7 +2395,7 @@ namespace Vision {
 		VNGenerateImageFeaturePrintRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (VNImageBasedRequest))]
 	[DisableDefaultCtor]
 	interface VNGenerateObjectnessBasedSaliencyImageRequest {
@@ -2428,7 +2428,7 @@ namespace Vision {
 		VNGenerateObjectnessBasedSaliencyImageRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface VNRecognizedText : NSCopying, NSSecureCoding {
@@ -2444,7 +2444,7 @@ namespace Vision {
 		VNRectangleObservation GetBoundingBox (NSRange range, [NullAllowed] out NSError error);
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (VNRectangleObservation))]
 	[DisableDefaultCtor]
 	interface VNRecognizedTextObservation {
@@ -2457,7 +2457,7 @@ namespace Vision {
 		VNRecognizedTextObservation Create (CGRect boundingBox);
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[DisableDefaultCtor]
 	[BaseType (typeof (VNPixelBufferObservation))]
 	interface VNSaliencyImageObservation {
@@ -2466,7 +2466,7 @@ namespace Vision {
 		VNRectangleObservation [] SalientObjects { get; }
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (VNObservation))]
 	[DisableDefaultCtor]
 	interface VNFeaturePrintObservation {
@@ -2485,7 +2485,7 @@ namespace Vision {
 		bool _ComputeDistance (IntPtr outDistance, VNFeaturePrintObservation featurePrint, [NullAllowed] out NSError error);
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	enum VNAnimalIdentifier {
 
 		[DefaultEnumValue]
@@ -2499,7 +2499,7 @@ namespace Vision {
 		Cat,
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (VNImageBasedRequest))]
 	[DisableDefaultCtor]
 	interface VNRecognizeAnimalsRequest {
@@ -2538,7 +2538,7 @@ namespace Vision {
 		VNRecognizeAnimalsRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof (VNImageBasedRequest))]
 	[DisableDefaultCtor]
 	interface VNRecognizeTextRequest : VNRequestProgressProviding {
@@ -2591,11 +2591,11 @@ namespace Vision {
 		VNRecognizeTextRequestRevision CurrentRevision { get; }
 	}
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	delegate void VNRequestProgressHandler (VNRequest request, double fractionCompleted, [NullAllowed] NSError error);
 	interface IVNRequestProgressProviding { }
 
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	[Protocol]
 	interface VNRequestProgressProviding {
 

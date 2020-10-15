@@ -570,19 +570,19 @@ namespace CoreAnimation {
 
 		[BindAs (typeof (CACornerCurve))]
 		[NoWatch] // headers not updated
-		[TV (13,0)][Mac (10, 15)][iOS (13, 0)]
+		[TV (13,0)][NoMac][iOS (13, 0)]
 		[Export ("cornerCurve")]
 		NSString CornerCurve { get; set; }
 
 		[NoWatch] // headers not updated
-		[TV (13,0)][Mac (10, 15)][iOS (13, 0)]
+		[TV (13,0)][NoMac][iOS (13, 0)]
 		[Static]
 		[Export ("cornerCurveExpansionFactor:")]
 		nfloat GetCornerCurveExpansionFactor ([BindAs (typeof (CACornerCurve))] NSString curve);
 	}
 
 	[NoWatch] // headers not updated
-	[TV (13,0)][Mac (10, 15)][iOS (13, 0)]
+	[TV (13,0)][NoMac][iOS (13, 0)]
 	enum CACornerCurve {
 		[DefaultEnumValue]
 		[Field ("kCACornerCurveCircular")]
@@ -643,17 +643,17 @@ namespace CoreAnimation {
 		nuint MaximumDrawableCount { get; set; }
 
 		[NoWatch] // headers not updated
-		[TV (13,0)][Mac (10, 15)][iOS (13, 0)]
+		[TV (13,0)][NoMac][iOS (13, 0)]
 		[NullAllowed, Export ("colorspace", ArgumentSemantic.Assign)]
 		CGColorSpace ColorSpace { get; set; }
 
 		[NoWatch] // headers not updated
-		[TV (13,0)][Mac (10, 15)][iOS (13, 0)]
+		[TV (13,0)][NoMac][iOS (13, 0)]
 		[NullAllowed, Export ("preferredDevice")]
 		IMTLDevice PreferredDevice { get; }
 
 		[NoWatch][NoiOS][NoTV]
-		[Mac (10,15)]
+		[NoMac]
 		[NullAllowed, Export ("EDRMetadata", ArgumentSemantic.Strong)]
 		CAEdrMetadata EdrMetadata { get; set; }
 	}
@@ -1867,7 +1867,7 @@ namespace CoreAnimation {
 	}
 
 	[NoWatch][NoiOS][NoTV]
-	[Mac (10,15)]
+	[NoMac]
 	[BaseType (typeof (NSObject), Name = "CAEDRMetadata")]
 	[DisableDefaultCtor]
 	interface CAEdrMetadata {

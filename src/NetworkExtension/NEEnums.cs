@@ -44,7 +44,7 @@ namespace NetworkExtension {
 		AES128GCM = 5,
 		[iOS (8,3)][Mac (10,11)]
 		AES256GCM = 6,
-		[Mac (10,15)][iOS (13,0)]
+		[NoMac][iOS (13,0)]
 		ChaCha20Poly1305 = 7,
 	}
 
@@ -83,7 +83,7 @@ namespace NetworkExtension {
 		Group19 = 19,
 		Group20 = 20,
 		Group21 = 21,
-		[Mac (10,15)][iOS (13,0)]
+		[NoMac][iOS (13,0)]
 		Group31 = 31,
 	}
 
@@ -119,7 +119,7 @@ namespace NetworkExtension {
 		ECDSA256 = 2,
 		ECDSA384 = 3,
 		ECDSA521 = 4,
-		[Mac (10,15)][iOS (13,0)]
+		[NoMac][iOS (13,0)]
 		Ed25519 = 5,
 	}
 
@@ -225,7 +225,7 @@ namespace NetworkExtension {
 	public enum NETunnelProviderRoutingMethod : long {
 		DestinationIP = 1,
 		SourceApplication = 2,
-		[Mac (10,15)][NoiOS]
+		[NoMac][NoiOS]
 		NetworkRule = 3,
 	}
 

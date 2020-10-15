@@ -195,7 +195,7 @@ namespace CoreVideo {
 	} 
 
 #if !WATCH
-	[TV (13,0), Mac (10,15), iOS (13,0)]
+	[TV (13,0), NoMac, iOS (13,0)]
 	public enum CVImageBufferAlphaChannelMode {
 		[Field ("kCVImageBufferAlphaChannelMode_StraightAlpha")]
 		Straight,

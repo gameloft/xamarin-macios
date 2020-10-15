@@ -19,7 +19,7 @@ using OS_nw_browse_descriptor=System.IntPtr;
 
 namespace Network {
 
-	[TV (13,0), Mac (10,15), iOS (13,0), Watch (6,0)]
+	[TV (13,0), NoMac, iOS (13,0), Watch (6,0)]
 	public class NWBrowserDescriptor: NativeObject {
 
 		internal NWBrowserDescriptor (IntPtr handle, bool owns) : base (handle, owns) {}

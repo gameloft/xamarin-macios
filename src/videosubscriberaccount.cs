@@ -250,7 +250,7 @@ namespace VideoSubscriberAccount {
 		[Export ("supportedAuthenticationSchemes", ArgumentSemantic.Copy)]
 		NSString[] SupportedAuthenticationSchemesString { get; set; }
 
-		[iOS (13,0)][TV (13,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][NoMac]
 		[NullAllowed, Export ("accountProviderAuthenticationToken")]
 		string AccountProviderAuthenticationToken { get; set; }
 	}
@@ -284,7 +284,7 @@ namespace VideoSubscriberAccount {
 		[Field ("VSAccountProviderAuthenticationSchemeSAML")]
 		Saml,
 
-		[iOS (13,0)][TV (13,0)][Mac (10,15)]
+		[iOS (13,0)][TV (13,0)][NoMac]
 		[Field ("VSAccountProviderAuthenticationSchemeAPI")]
 		Api,
 	}

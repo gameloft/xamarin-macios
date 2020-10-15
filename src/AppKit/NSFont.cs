@@ -186,7 +186,7 @@ namespace AppKit {
 			return ptr == IntPtr.Zero ? null : new NSFont (ptr);
 		}
 
-		[Mac (10,15)]
+		[NoMac]
 		public static NSFont MonospacedSystemFont (nfloat fontSize, nfloat weight)
 		{
 			var ptr = _MonospacedSystemFont (fontSize, weight);

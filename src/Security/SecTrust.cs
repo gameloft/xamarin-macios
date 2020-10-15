@@ -167,7 +167,7 @@ namespace Security {
 			}
 		}
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		[DllImport (Constants.SecurityLibrary)]
 		static extern SecStatusCode SecTrustEvaluateAsyncWithError (IntPtr /* SecTrustRef */ trust, IntPtr /* dispatch_queue_t */ queue, ref BlockLiteral block);
 
@@ -185,7 +185,7 @@ namespace Security {
 			}
 		}
 
-		[Watch (6,0), TV (13,0), Mac (10,15), iOS (13,0)]
+		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		// not always async (so suffix is removed)
 		[BindingImpl (BindingImplOptions.Optimizable)]
 		public SecStatusCode Evaluate (DispatchQueue queue, SecTrustWithErrorCallback handler)

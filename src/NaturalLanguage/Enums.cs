@@ -201,7 +201,7 @@ namespace NaturalLanguage {
 		Language,
 		[Field ("NLTagSchemeScript")]
 		Script,
-		[iOS (13,0), Mac (10,15), TV (13,0), Watch (6,0)]
+		[iOS (13,0), NoMac, TV (13,0), Watch (6,0)]
 		[Field ("NLTagSchemeSentimentScore")]
 		SentimentScore,
 	}
