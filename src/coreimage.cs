@@ -9137,6 +9137,6 @@ namespace CoreImage {
 	[BaseType (typeof (CIFilter))]
 	interface CIColorThresholdOtsu : CIColorThresholdOtsuProtocol {
 	}
-#endif
     #endregion
+#endif
 }
