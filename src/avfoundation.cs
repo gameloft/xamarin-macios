@@ -4088,10 +4088,10 @@ namespace AVFoundation {
 		[BindAs (typeof (AVFileTypeProfile))]
 		NSString OutputFileTypeProfile { get; set; }
 
-		[Wrap ("WeakDelegate")]
+#if !MONOMAC
+        [Wrap ("WeakDelegate")]
 		IAVAssetWriterDelegate Delegate { get; set; }
 
-#if !MONOMAC
         [TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
 		NSObject WeakDelegate { get; set; }
