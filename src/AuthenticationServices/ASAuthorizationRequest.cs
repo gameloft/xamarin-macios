@@ -11,7 +11,9 @@ using Foundation;
 using ObjCRuntime;
 
 namespace AuthenticationServices {
-	public partial class ASAuthorizationRequest {
+#if !MONOMAC
+    public partial class ASAuthorizationRequest {
 			public T GetProvider<T> () where T : NSObject, IASAuthorizationProvider => Runtime.GetINativeObject<T> (_Provider, false);
 	}
+#endif
 }

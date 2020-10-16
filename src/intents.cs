@@ -4404,15 +4404,16 @@ namespace Intents {
 		[NullAllowed, Export ("aliases", ArgumentSemantic.Copy)]
 		INPersonHandle [] Aliases { get; }
 
-		[Export ("suggestionType")]
+#if !MONOMAC
+        [Export ("suggestionType")]
 		INPersonSuggestionType SuggestionType { get; }
 
-		[Export ("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:aliases:suggestionType:")]
+        [Export ("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:aliases:suggestionType:")]
 		IntPtr Constructor (INPersonHandle personHandle, [NullAllowed] NSPersonNameComponents nameComponents, [NullAllowed] string displayName, [NullAllowed] INImage image, [NullAllowed] string contactIdentifier, [NullAllowed] string customIdentifier, [NullAllowed] INPersonHandle [] aliases, INPersonSuggestionType suggestionType);
+#endif
+        // Inlined from INInteraction (INPerson) Category
 
-		// Inlined from INInteraction (INPerson) Category
-
-		[iOS (10, 3)]
+        [iOS (10, 3)]
 		[Unavailable (PlatformName.MacOSX)]
 		[Export ("siriMatches", ArgumentSemantic.Copy), NullAllowed]
 		INPerson [] SiriMatches { get; }
