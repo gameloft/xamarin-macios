@@ -856,7 +856,7 @@ namespace GameController {
 
 	interface IGCDevice {}
 
-	[TV (14,0), NoMac, iOS (14,0)]
+	[TV (14,0), Mac(10,15), iOS (14,0)]
 	[Protocol]
 	interface GCDevice
 	{

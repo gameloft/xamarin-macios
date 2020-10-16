@@ -8,8 +8,8 @@ namespace Metal {
 
 	// add some extension methods to make the API of the protocol nicer
 	public static class MTLIntersectionFunctionTableExtensions {
-
-		[NoMac, iOS (14,0), NoTV]
+#if !MONOMAC
+        [NoMac, iOS (14,0), NoTV]
 		public static void SetBuffers (this IMTLIntersectionFunctionTable table, IMTLBuffer[] buffers, nuint[] offsets, NSRange range)
 		{
 			if (buffers == null)
@@ -31,6 +31,7 @@ namespace Metal {
 			}
 			GC.KeepAlive (buffers);
 		}
-	}
+#endif
+    }
 }
 #endif
