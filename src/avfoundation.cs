@@ -13873,7 +13873,7 @@ namespace AVFoundation {
 		bool IsSyncSample { get; }
 	}
 
-	[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
+	[TV (14, 0), NoWatch, Mac(10,15), iOS (14, 0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface AVAssetSegmentTrackReport {
