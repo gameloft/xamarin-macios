@@ -2773,7 +2773,8 @@ namespace CoreImage {
 		bool OutputIsOpaque { get; }
 	}
 
-	[CoreImageFilter]
+#if !MONOMAC
+    [CoreImageFilter]
 	[iOS (8,0)]
 	[Mac (10,10)]
 	[BaseType (typeof (CIFilter))]
@@ -2785,8 +2786,9 @@ namespace CoreImage {
 		int NumberOfFolds { get; set; }
 #endif
 	}
+#endif
 
-	[CoreImageFilter (IntPtrCtorVisibility = MethodAttributes.Family)] // was already protected in classic
+    [CoreImageFilter (IntPtrCtorVisibility = MethodAttributes.Family)] // was already protected in classic
 	[Abstract]
 	[BaseType (typeof (CIFilter))]
 	interface CICompositingFilter {
@@ -5265,8 +5267,8 @@ namespace CoreImage {
 	[TV (11,0)]
 	[BaseType (typeof (CIBlendWithMask))]
 	interface CIBlendWithRedMask {}
-
-	[iOS (11,0)]
+#endif
+    [iOS (11,0)]
 	[Mac (10,13)]
 	[TV (11,0)]
 	[Abstract]
@@ -5383,7 +5385,9 @@ namespace CoreImage {
 		CIDataMatrixCodeDescriptor CreateDescriptor (NSData errorCorrectedPayload, nint rowCount, nint columnCount, CIDataMatrixCodeEccVersion eccVersion);
 	}
 
-	[iOS (11,0)]
+#if !MONOMAC
+
+    [iOS (11,0)]
 	[Mac (10,13)]
 	[TV (11,0)]
 	[BaseType (typeof (CIColorKernel))]
@@ -5720,8 +5724,8 @@ namespace CoreImage {
 		[Field ("kCIImageRepresentationSemanticSegmentationTeethMatteImage")]
 		NSString SemanticSegmentationTeethMatteImageKey { get; }
 	}
-
-	[iOS (11,0)]
+#endif
+    [iOS (11,0)]
 	[TV (11,0)]
 	[Mac (10,13)]
 	[StrongDictionary ("CIImageRepresentationKeys")]
@@ -5754,7 +5758,9 @@ namespace CoreImage {
 		CIImage SemanticSegmentationTeethMatteImage { get; set; }
 	}
 
-	[iOS (14,0)]
+#if !MONOMAC
+
+    [iOS (14,0)]
 	[TV (14,0)]
 	[NoMac]
 	[Protocol (Name="CIAreaMinMax")]
