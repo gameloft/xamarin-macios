@@ -13,6 +13,7 @@ namespace AppKit {
 		Fractional,
 	}
 
+	[NoMac]
 	public partial class NSCollectionLayoutAnchor {
 		public static NSCollectionLayoutAnchor Create (NSDirectionalRectEdge edges, NSCollectionLayoutAnchorOffsetType offsetType, CGPoint offset) =>
 		    offsetType switch

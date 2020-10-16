@@ -1871,7 +1871,6 @@ MAC_FRAMEWORKS =            \
 	CoreAnimation           \
 	CoreAudioKit            \
 	CoreGraphics            \
-	CoreImage               \
 	CoreLocation            \
 	CoreMidi                \
 	CoreMotion		\

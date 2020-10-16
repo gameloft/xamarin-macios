@@ -753,6 +753,7 @@ namespace Photos
 		IntPtr Constructor (PHContentEditingInput contentEditingInput);
 
 		[Export ("initWithPlaceholderForCreatedAsset:")]
+		[NoMac]
 		IntPtr Constructor (PHObjectPlaceholder placeholderForCreatedAsset);
 
 		[NullAllowed] // by default this property is null
