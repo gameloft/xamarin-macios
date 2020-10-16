@@ -87,8 +87,9 @@ namespace CoreServices {
                 // HTTP 3.0 requires OS X 10.16 or later.
                 if (_HTTPVersion3_0 != IntPtr.Zero)
 					return _HTTPVersion3_0;
+                else
 #endif
-                else if (_HTTPVersion2_0 != IntPtr.Zero)
+                if (_HTTPVersion2_0 != IntPtr.Zero)
 					return _HTTPVersion2_0;
 				else 
 					return _HTTPVersion1_1;
