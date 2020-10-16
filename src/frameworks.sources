@@ -1870,6 +1870,7 @@ MAC_FRAMEWORKS =            \
 	ContactsUI              \
 	CoreAnimation           \
 	CoreAudioKit            \
+	CoreImage               \
 	CoreGraphics            \
 	CoreLocation            \
 	CoreMidi                \

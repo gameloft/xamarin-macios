@@ -2803,7 +2803,8 @@ namespace CoreImage {
 	interface CIAdditionCompositing {
 	}
 
-	[CoreImageFilter (IntPtrCtorVisibility = MethodAttributes.Family)] // was already protected in classic
+#if !MONOMAC
+    [CoreImageFilter (IntPtrCtorVisibility = MethodAttributes.Family)] // was already protected in classic
 	[Abstract]
 	[BaseType (typeof (CIFilter))]
 	interface CIAffineFilter : CIFilterProtocol {
@@ -9136,5 +9137,6 @@ namespace CoreImage {
 	[BaseType (typeof (CIFilter))]
 	interface CIColorThresholdOtsu : CIColorThresholdOtsuProtocol {
 	}
-#endregion
+#endif
+    #endregion
 }
