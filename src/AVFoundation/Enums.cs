@@ -1098,7 +1098,7 @@ namespace AVFoundation {
 		Bypass = 1,
 	}
 
-	[TV (14,0), NoWatch, NoMac, iOS (14,0)]
+	[TV (14,0), NoWatch, Mac(10,15), iOS (14,0)]
 	[Native]
 	public enum AVAssetSegmentType : long {
 		Initialization = 1,
