@@ -1859,14 +1859,12 @@ MAC_FRAMEWORKS =            \
 	Accounts                \
 	AdSupport               \
 	AppKit XKit             \
-	AppTrackingTransparency \
 	AudioToolbox            \
 	AudioUnit               \
 	AutomaticAssessmentConfiguration \
 	AVKit                   \
 	BusinessChat            \
 	CFNetwork               \
-	ClassKit                \
 	CloudKit                \
 	Contacts                \
 	ContactsUI              \
@@ -1908,15 +1906,12 @@ MAC_FRAMEWORKS =            \
 	Metal                   \
 	MetalKit                \
 	MetalPerformanceShaders \
-	MLCompute               \
 	MobileCoreServices      \
 	ModelIO                 \
 	MultipeerConnectivity	\
-	NearbyInteraction		\
 	NetworkExtension        \
 	NotificationCenter 	\
 	OpenGL                  \
-	PassKit                 \
 	PdfKit                  \
 	PencilKit               \
 	Photos                  \
@@ -1928,9 +1923,7 @@ MAC_FRAMEWORKS =            \
 	QuickLook               \
 	QuickLookThumbnailing	\
 	QuickLookUI             \
-	ReplayKit               \
 	SafariServices          \
-	ScreenTime              \
 	ScriptingBridge         \
 	SearchKit               \
 	Security                \
@@ -1938,7 +1931,6 @@ MAC_FRAMEWORKS =            \
 	Speech                  \
 	SystemConfiguration     \
 	UserNotifications       \
-	UserNotificationsUI		\
 	VideoSubscriberAccount  \
 	VideoToolbox            \
 	Vision                  \
