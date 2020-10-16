@@ -2032,7 +2032,7 @@ namespace MapKit {
 		bool ExcludesCategory ([BindAs (typeof (MKPointOfInterestCategory))] NSString category);
 	}
 
-	[TV (13, 0), NoWatch, NoMac, iOS (13, 0)]
+	[TV (13, 0), NoWatch, Mac(10, 15), iOS (13, 0)]
 	[Protocol (Name = "MKGeoJSONObject")]
 	interface MKGeoJsonObject {}
 

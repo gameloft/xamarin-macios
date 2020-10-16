@@ -28002,7 +28002,7 @@ namespace AppKit {
 		NSTableViewAnimationOptions DefaultRowAnimation { get; set; }
 	}
 
-	[NoMac]
+	[Mac(10,15)]
 	[Protocol]
 	interface NSTextContent
 	{

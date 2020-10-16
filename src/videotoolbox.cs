@@ -198,7 +198,7 @@ namespace VideoToolbox {
 		NSString PrioritizeEncodingSpeedOverQuality { get; }
 	}
 
-	[NoMac, iOS (13,0), TV (13,0)]
+	[Mac(10,15), iOS (13,0), TV (13,0)]
 	enum VTAlphaChannelMode {
 		[Field ("kVTAlphaChannelMode_StraightAlpha")]
 		StraightAlpha,

@@ -6295,15 +6295,18 @@ namespace MetalPerformanceShaders {
 
 	interface IMPSNDArrayAllocator { }
 
-	[Protocol]
+#if !MONOMAC
+	[NoMac]
+    [Protocol]
 	interface MPSNDArrayAllocator : NSCoding, NSCopying, NSSecureCoding
 	{
 		[Abstract]
 		[Export ("arrayForCommandBuffer:arrayDescriptor:kernel:")]
 		MPSNDArray AllocateArray (IMTLCommandBuffer cmdBuf, MPSNDArrayDescriptor descriptor, MPSKernel kernel);
 	}
+#endif
 
-	[Introduced (PlatformName.MacCatalyst, 13, 0)]
+    [Introduced (PlatformName.MacCatalyst, 13, 0)]
 	[TV (13,0), NoMac, iOS (13,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
