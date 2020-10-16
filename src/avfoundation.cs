@@ -4091,11 +4091,13 @@ namespace AVFoundation {
 		[Wrap ("WeakDelegate")]
 		IAVAssetWriterDelegate Delegate { get; set; }
 
-		[TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
+#if !MONOMAC
+        [TV (14, 0), NoWatch, NoMac, iOS (14, 0)]
 		[NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
 		NSObject WeakDelegate { get; set; }
+#endif
 
-		[TV (14,0), NoWatch, NoMac, iOS (14,0)]
+        [TV (14,0), NoWatch, NoMac, iOS (14,0)]
 		[Export ("flushSegment")]
 		void FlushSegment ();
 

@@ -278,7 +278,7 @@ namespace Foundation {
 			}
 		}
 #endif
-#if !COREBUILD && !TVOS && !WATCH
+#if !COREBUILD && !TVOS && !WATCH && !MONOMAC
 		// documentation is unclear if an NSString or an NSUrl should be used...
 		// but providing an `NSString` throws a `NSInvalidArgumentException Reason: (null) is not a file URL`
 		[NoMac, iOS (13, 0)]

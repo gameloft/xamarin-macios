@@ -25,7 +25,8 @@ using Quaternion = global::OpenTK.Quaternion;
 using Quaterniond = global::OpenTK.Quaterniond;
 
 namespace ModelIO {
-	public partial class MDLAnimatedQuaternion {
+#if !MONOMAC
+    public partial class MDLAnimatedQuaternion {
 		public virtual void Reset (Quaternion [] values, double [] times)
 		{
 			if (values == null)
@@ -89,4 +90,5 @@ namespace ModelIO {
 			return timesArr;
 		}
 	}
+#endif
 }

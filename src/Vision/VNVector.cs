@@ -12,7 +12,8 @@ using Foundation;
 using ObjCRuntime;
 
 namespace Vision {
-	public partial class VNVector {
+#if !MONOMAC
+    public partial class VNVector {
 
 		public static VNVector Create (double r, double theta)
 		{
@@ -21,4 +22,5 @@ namespace Vision {
 			return Runtime.GetNSObject<VNVector> (handle, true);
 		}
 	}
+#endif
 }

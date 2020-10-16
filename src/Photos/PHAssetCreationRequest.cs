@@ -10,8 +10,8 @@ using System;
 using Foundation;
 
 namespace Photos {
-
-	partial class PHAssetCreationRequest {
+#if !MONOMAC
+    partial class PHAssetCreationRequest {
 		public bool SupportsAssetResourceTypes (params PHAssetResourceType [] resourceTypes)
 		{
 			var l = resourceTypes.Length;
@@ -23,4 +23,5 @@ namespace Photos {
 			return _SupportsAssetResourceTypes (a);
 		}
 	}
+#endif
 }

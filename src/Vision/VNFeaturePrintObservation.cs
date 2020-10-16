@@ -12,7 +12,8 @@ using Foundation;
 using ObjCRuntime;
 
 namespace Vision {
-	public partial class VNFeaturePrintObservation {
+#if !MONOMAC
+    public partial class VNFeaturePrintObservation {
 
 		public bool ComputeDistance (out float [] distance, VNFeaturePrintObservation featurePrint, out NSError error)
 		{
@@ -23,4 +24,5 @@ namespace Vision {
 			}
 		}
 	}
+#endif
 }

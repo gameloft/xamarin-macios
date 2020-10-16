@@ -28,9 +28,11 @@ namespace AVFoundation {
 		[TV (10,2), Mac (10,12,4), iOS (10,3), NoWatch]
 		public static AVContentKeyResponse Create (NSData data, AVContentKeyResponseDataType dataType = AVContentKeyResponseDataType.FairPlayStreamingKeyResponseData) {
 			switch (dataType) {
-			case AVContentKeyResponseDataType.AuthorizationTokenData:
+#if !MONOMAC
+                case AVContentKeyResponseDataType.AuthorizationTokenData:
 				return AVContentKeyResponse._InitWithAuthorizationToken (data);
-			default:
+#endif
+                default:
 				return AVContentKeyResponse._InitWithFairPlayStreamingKeyResponseData (data);
 			}
 		}

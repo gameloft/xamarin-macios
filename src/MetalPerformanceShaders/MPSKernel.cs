@@ -40,7 +40,8 @@ namespace MetalPerformanceShaders {
 			return new float [3] { t [0], t [1], t [2] };
 		}
 
-		[Field ("MPSRectNoClip", "MetalPerformanceShaders")]
+#if !MONOMAC
+        [Field ("MPSRectNoClip", "MetalPerformanceShaders")]
 		public unsafe static MTLRegion RectNoClip {
 			get {
 				var p = Dlfcn.dlsym (Libraries.MetalPerformanceShaders.Handle, "MPSRectNoClip");
@@ -52,8 +53,9 @@ namespace MetalPerformanceShaders {
 				}
 			}
 		}
+#endif
 
-		[DllImport (Constants.MetalPerformanceShadersLibrary)]
+        [DllImport (Constants.MetalPerformanceShadersLibrary)]
 		[TV (12,0), Mac (10,14), iOS (12,0)]
 		static extern void MPSHintTemporaryMemoryHighWaterMark (IntPtr commandBuffer, nuint bytes);
 

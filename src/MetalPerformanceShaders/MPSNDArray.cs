@@ -3,7 +3,8 @@ using Metal;
 using Foundation;
 
 namespace MetalPerformanceShaders {
-	public partial class MPSNDArray {
+#if !MONOMAC
+    public partial class MPSNDArray {
 
 		public void ExportData (IMTLCommandBuffer cmdBuf, IMTLBuffer buffer, MPSDataType sourceDataType, nuint offset)
 		{
@@ -49,4 +50,5 @@ namespace MetalPerformanceShaders {
 			}
 		}
 	}
+#endif
 }

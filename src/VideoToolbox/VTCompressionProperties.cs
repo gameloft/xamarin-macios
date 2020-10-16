@@ -489,15 +489,16 @@ namespace VideoToolbox {
 				SetNativeValue (VTCompressionPropertyKey.MultiPassStorage, value);
 			}
 		}
-
-		[Introduced (PlatformName.MacOSX, 10,15)]
+#if !MONOMAC
+        [Introduced (PlatformName.MacOSX, 10,15)]
 		[Introduced (PlatformName.iOS, 13,0)]
 		[Introduced (PlatformName.TvOS, 13,0)]
 		public VTAlphaChannelMode AlphaChannelMode {
 			get => VTAlphaChannelModeExtensions.GetValue (GetNSStringValue (VTCompressionPropertyKey.AlphaChannelMode));
 			set => SetStringValue (VTCompressionPropertyKey.AlphaChannelMode, value.GetConstant ());
 		}
+#endif
 
-	}
+    }
 }
 

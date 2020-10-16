@@ -75,7 +75,8 @@ namespace Vision {
 #endif
     }
 
-	public partial class VNGeometryUtils {
+#if !MONOMAC
+    public partial class VNGeometryUtils {
 
 		public static VNCircle CreateBoundingCircle (Vector2 [] points, out NSError error)
 		{
@@ -90,4 +91,5 @@ namespace Vision {
 			}
 		}
 	}
+#endif
 }

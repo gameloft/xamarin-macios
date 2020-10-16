@@ -12,7 +12,8 @@ using Foundation;
 using ObjCRuntime;
 
 namespace Vision {
-	public partial class VNRecognizedPointsObservation {
+#if !MONOMAC
+    public partial class VNRecognizedPointsObservation {
 
 		public T [] GetAvailableKeys<T> () where T : Enum
 		{
@@ -54,4 +55,5 @@ namespace Vision {
 			return null;
 		}
 	}
+#endif
 }

@@ -109,7 +109,8 @@ namespace UIKit {
 		}
 #endif // !XAMCORE_4_0
 
-		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
+#if !MONOMAC
+        [Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		public unsafe void ShowGlyphs (
 			short [] /* const CGGlyph* = CGFontIndex* = unsigned short* */ glyphs,
 			CGPoint [] /* const CGPoint* */ positions,
@@ -125,10 +126,11 @@ namespace UIKit {
 				}
 			}
 		}
+#endif
 
 #if !XAMCORE_4_0 && !MONOMAC
-		// TextContainerForGlyphAtIndex
-		[Obsolete ("Use 'GetTextContainer' instead.")]
+        // TextContainerForGlyphAtIndex
+        [Obsolete ("Use 'GetTextContainer' instead.")]
 		public NSTextContainer TextContainerForGlyphAtIndex (nuint glyphIndex)
 		{
 			return GetTextContainer (glyphIndex);
