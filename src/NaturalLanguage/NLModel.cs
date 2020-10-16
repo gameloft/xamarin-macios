@@ -6,8 +6,8 @@ using Foundation;
 namespace NaturalLanguage {
 
 	public partial class NLModel {
-
-		public Dictionary<NLLanguage, double> GetPredictedLabelHypotheses (string @string, nuint maximumCount)
+#if !MONOMAC
+        public Dictionary<NLLanguage, double> GetPredictedLabelHypotheses (string @string, nuint maximumCount)
 		{
 			using (var hypo = GetNativePredictedLabelHypotheses (@string, maximumCount))
 				return NLLanguageExtensions.Convert (hypo);
@@ -21,5 +21,6 @@ namespace NaturalLanguage {
 				result [i] = NLLanguageExtensions.Convert (hypos [i]);
 			return result;
 		}
-	}
+#endif
+    }
 }

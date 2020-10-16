@@ -117,17 +117,19 @@ namespace CoreGraphics {
 				ret.LowlevelSetObject (CFBoolean.FalseHandle, kCGPDFContextAllowsCopying);
 			if (AccessPermissions.HasValue)
 				ret.LowlevelSetObject (NSNumber.FromInt32 ((int) AccessPermissions.Value), kCGPDFContextAccessPermissions);
-			// only set the keys if they exists in the current OS version
-			if ((kCGPDFContextCreateLinearizedPDF != IntPtr.Zero) && CreateLinearizedPdf.HasValue)
+#if !MONOMAC
+            // only set the keys if they exists in the current OS version
+            if ((kCGPDFContextCreateLinearizedPDF != IntPtr.Zero) && CreateLinearizedPdf.HasValue)
 				ret.LowlevelSetObject (CFBoolean.ToHandle (CreateLinearizedPdf.Value), kCGPDFContextCreateLinearizedPDF);
 			// default to kCFBooleanFalse
 			if ((kCGPDFContextCreatePDFA != IntPtr.Zero) && CreatePdfA2u.HasValue && CreatePdfA2u == true)
 				ret.LowlevelSetObject (CFBoolean.TrueHandle, kCGPDFContextCreatePDFA);
-			return ret;
+#endif
+            return ret;
 		}
 	}
-	
-	public class CGContextPDF : CGContext {
+
+    public class CGContextPDF : CGContext {
 		bool closed;
 		
 		[DllImport (Constants.CoreGraphicsLibrary)]

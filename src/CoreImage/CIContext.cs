@@ -120,7 +120,8 @@ namespace CoreImage {
 			}
 		}
 
-		[iOS (13,0)][TV (13,0)][NoMac]
+#if !MONOMAC
+        [iOS (13,0)][TV (13,0)][NoMac]
 		public bool? AllowLowPower {
 			get {
 				return GetBoolValue (CIContext.AllowLowPower);
@@ -129,8 +130,10 @@ namespace CoreImage {
 				SetBooleanValue (CIContext.AllowLowPower, value);
 			}
 		}
+#endif
 
-		[iOS (14,0)][TV (14,0)][NoMac]
+#if !MONOMAC
+        [iOS (14,0)][TV (14,0)][NoMac]
 		public string Name {
 			get {
 				return GetStringValue (CIContext.Name);
@@ -139,7 +142,8 @@ namespace CoreImage {
 				SetStringValue (CIContext.Name, value);
 			}
 		}
-	}
+#endif
+    }
 	
 	public partial class CIContext {
 

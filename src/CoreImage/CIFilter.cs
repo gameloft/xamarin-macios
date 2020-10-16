@@ -284,7 +284,8 @@ namespace CoreImage {
 		internal static CIFilter FromName (string filterName, IntPtr handle)
 		{
 			switch (filterName){
-			case "CIAdditionCompositing":
+#if !MONOMAC
+                case "CIAdditionCompositing":
 				return new CIAdditionCompositing (handle);
 			case "CIAffineTransform":
 				return new CIAffineTransform (handle);
@@ -672,7 +673,8 @@ namespace CoreImage {
 				return new CIBlendWithBlueMask (handle);
 			case "CIBlendWithRedMask":
 				return new CIBlendWithRedMask (handle);
-			default:
+#endif
+                default:
 				throw new NotImplementedException (String.Format ("Unknown filter type returned: `{0}', returning a default CIFilter", filterName));
 			}
 		}

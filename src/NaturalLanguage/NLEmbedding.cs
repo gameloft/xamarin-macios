@@ -6,8 +6,8 @@ using Foundation;
 namespace NaturalLanguage {
 
 	public partial class NLEmbedding {
-
-		unsafe public bool TryGetVector (string @string, out float[] vector)
+#if !MONOMAC
+        unsafe public bool TryGetVector (string @string, out float[] vector)
 		{
 			var result = false;
 			vector = new float [Dimension];
@@ -18,5 +18,6 @@ namespace NaturalLanguage {
 				vector = null; // to be consistent with GetVector API
 			return result;
 		}
-	}
+#endif
+    }
 }

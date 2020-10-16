@@ -230,14 +230,16 @@ namespace CoreText {
 			set {Adapter.SetNativeValue (Dictionary, CTStringAttributeKey.StrokeColor, value);}
 		}
 
-		[Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
+#if !MONOMAC
+        [Watch (6,0), TV (13,0), NoMac, iOS (13,0)]
 		public float? TrackingAdjustment {
 			get {return Adapter.GetSingleValue (Dictionary, CTStringAttributeKey.TrackingAttributeName);}
 			set {Adapter.SetValue (Dictionary, CTStringAttributeKey.TrackingAttributeName, value);}
 		}
+#endif
 
-		// Documentation says this must be 'CFNumber', doesn't specify exact type
-		public int? UnderlineStyleValue {
+        // Documentation says this must be 'CFNumber', doesn't specify exact type
+        public int? UnderlineStyleValue {
 			get {return Adapter.GetInt32Value (Dictionary, CTStringAttributeKey.UnderlineStyle);}
 			set {Adapter.SetValue (Dictionary, CTStringAttributeKey.UnderlineStyle, value);}
 		}

@@ -37,7 +37,7 @@ namespace StoreKit {
 
 	public partial class StoreProductParameters : DictionaryContainer
 	{
-#if !COREBUILD
+#if !COREBUILD && !MONOMAC
 		public StoreProductParameters (int iTunesItemIdentifier)
 			: this ()
 		{

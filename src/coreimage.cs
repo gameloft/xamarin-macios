@@ -5679,9 +5679,10 @@ namespace CoreImage {
 		[Export ("startTaskToClear:error:")]
 		[return: NullAllowed]
 		CIRenderTask StartTaskToClear (CIRenderDestination destination, [NullAllowed] out NSError error);
-	}
+    }
+#endif
 
-	[iOS (11,0)]
+    [iOS (11,0)]
 	[TV (11,0)]
 	[Mac (10,13)]
 	[Static]
@@ -5724,7 +5725,6 @@ namespace CoreImage {
 		[Field ("kCIImageRepresentationSemanticSegmentationTeethMatteImage")]
 		NSString SemanticSegmentationTeethMatteImageKey { get; }
 	}
-#endif
     [iOS (11,0)]
 	[TV (11,0)]
 	[Mac (10,13)]
