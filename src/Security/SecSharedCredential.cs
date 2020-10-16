@@ -101,6 +101,7 @@ namespace Security {
 		}
 #endif
 
+#if !MONOMAC
 		[iOS (8,0)]
 		[NoMac]
 		[Introduced (PlatformName.MacCatalyst, 14,0)]
@@ -143,6 +144,7 @@ namespace Security {
 					nsAccount.Dispose ();
 			}
 		}
+#endif
 
 		[iOS (8,0)]
 		[NoMac]

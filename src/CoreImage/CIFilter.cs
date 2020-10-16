@@ -704,12 +704,4 @@ namespace CoreImage {
 		}
 #endif
 	}
-
-#if MONOMAC && !XAMCORE_3_0
-	[Obsolete ("This type has been renamed to CICmykHalftone.")]
-	public class CICMYKHalftone : CICmykHalftone {
-		public CICMYKHalftone () {}
-		public CICMYKHalftone (IntPtr handle) : base (handle) {}
-	}
-#endif
 }

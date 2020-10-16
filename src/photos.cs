@@ -428,7 +428,7 @@ namespace Photos
 	[iOS (8,0)] // This class is introduced in iOS (13,0) but is decorated with iOS(8,0) since PHCollectionListChangeRequest 
 				// supports iOS (8,0) and iOS (13,0) only supports 64 bits, not 32 bits
 	[TV (13,0)]
-	[NoMac]
+	[Mac(10,15)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	// include the availability attributes to any new member (and don't trust the type-level ones)

@@ -276,7 +276,8 @@ namespace CoreGraphics {
 			CGPDFContextBeginTag (Handle, tagType, tagProperties.GetHandle ());
 		}
 
-		[NoMac]
+#if !MONOMAC
+        [NoMac]
 		[iOS (13,0)]
 		[TV (13,0)]
 		[Watch (6,0)]
@@ -285,8 +286,9 @@ namespace CoreGraphics {
 			var d = tagProperties?.Dictionary;
 			CGPDFContextBeginTag (Handle, tagType, d.GetHandle ());
 		}
+#endif
 
-		[NoMac]
+        [NoMac]
 		[iOS (13,0)]
 		[TV (13,0)]
 		[Watch (6,0)]
