@@ -21,7 +21,7 @@ namespace ImageIO
     {
 
         public delegate void CGImageSourceAnimationHandler (nint index, CGImage image, out bool stop);
-
+#if !MONOMAC
         [Introduced (PlatformName.MacOSX, 10, 15, PlatformArchitecture.All)]
         [Introduced (PlatformName.iOS, 13, 0, PlatformArchitecture.All)]
         [Introduced (PlatformName.TvOS, 13, 0, PlatformArchitecture.All)]
@@ -87,6 +87,8 @@ namespace ImageIO
             }
 #endif
         }
+
+#endif
 
         //
         // This class bridges native block invocations that call into C#

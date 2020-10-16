@@ -69,9 +69,11 @@ namespace Vision {
 		[DllImport (Constants.VisionLibrary)]
 		static extern nuint VNElementTypeSize (nuint elementType);
 
-		[TV (13,0), NoMac, iOS (13,0)]
+#if !MONOMAC
+        [TV (13,0), NoMac, iOS (13,0)]
 		public static nuint GetElementTypeSize (VNElementType elementType) => VNElementTypeSize ((nuint) (ulong) elementType);
-	}
+#endif
+    }
 
 	public partial class VNGeometryUtils {
 

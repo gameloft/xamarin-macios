@@ -13,7 +13,8 @@ namespace AppKit {
 		Fractional,
 	}
 
-	[NoMac]
+#if !MONOMAC
+    [NoMac]
 	public partial class NSCollectionLayoutAnchor {
 		public static NSCollectionLayoutAnchor Create (NSDirectionalRectEdge edges, NSCollectionLayoutAnchorOffsetType offsetType, CGPoint offset) =>
 		    offsetType switch
@@ -23,4 +24,5 @@ namespace AppKit {
 			    _                                             => throw new ArgumentException (message: "Invalid enum value", paramName: nameof (offsetType)),
 		    };
 	}
+#endif
 }
