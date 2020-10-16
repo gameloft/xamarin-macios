@@ -877,7 +877,7 @@ namespace GameController {
 		GCPhysicalInputProfile PhysicalInputProfile { get; }
 	}
 
-	[TV (14,0), NoMac, iOS (14,0)]
+	[TV (14,0), Mac(10,15), iOS (14,0)]
 	[BaseType (typeof (NSObject))]
 	[DisableDefaultCtor]
 	interface GCPhysicalInputProfile

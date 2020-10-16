@@ -14,7 +14,8 @@ using ObjCRuntime;
 namespace Vision {
 	public partial class VNCircle {
 
-		[NoMac]
+#if !MONOMAC
+        [NoMac]
 		public static VNCircle CreateUsingRadius (VNPoint center, double radius)
 		{
 			var handle = Messaging.IntPtr_objc_msgSend (class_ptr, Selector.GetHandle ("alloc"));
@@ -29,5 +30,6 @@ namespace Vision {
 			handle = Messaging.IntPtr_objc_msgSend_IntPtr_Double (handle, Selector.GetHandle ("initWithCenter:diameter:"), center.Handle, diameter);
 			return Runtime.GetNSObject<VNCircle> (handle, true);
 		}
-	}
+#endif
+    }
 }
