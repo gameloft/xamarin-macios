@@ -1,5 +1,5 @@
-NEEDED_MONO_VERSION := be2226b5a1c57df065efc4c1cf008d581e5cec7d
-NEEDED_MONO_BRANCH := 2020-02
+NEEDED_MONO_VERSION := 5e159a438565222cb58631cbf92e9f38b20e6386
+NEEDED_MONO_BRANCH := fix/apple-silicon-support
 
 MONO_DIRECTORY := mono
-MONO_MODULE    := https://github.com/mono/mono
+MONO_MODULE    := https://github.com/mathieubourgeois/mono
