@@ -683,6 +683,7 @@ namespace Xamarin.Bundler {
 				break;
 			case ApplePlatform.MacOSX:
 				validAbis.Add (Abi.x86_64);
+				validAbis.Add (Abi.ARM64);
 				break;
 			default:
 				throw ErrorHelper.CreateError (71, Errors.MX0071, Platform, ProductName);

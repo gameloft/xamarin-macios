@@ -46,21 +46,32 @@ $(MMP_DIRECTORIES):
 # Partial static registrar libraries
 #
 
-GENERATE_PART_REGISTRAR = $(Q_GEN) $(LOCAL_MMP_COMMAND) --xamarin-framework-directory=$(MAC_DESTDIR)$(MAC_FRAMEWORK_CURRENT_DIR) -q --runregistrar:$(abspath $@) --sdkroot $(XCODE_DEVELOPER_ROOT) --sdk $(OSX_SDK_VERSION) $(abspath $<) --registrar:static --arch=x86_64 --nolink
+GENERATE_PART_REGISTRAR = $(Q_GEN) $(LOCAL_MMP_COMMAND) --xamarin-framework-directory=$(MAC_DESTDIR)$(MAC_FRAMEWORK_CURRENT_DIR) -q --runregistrar:$(abspath $@) --sdkroot $(XCODE_DEVELOPER_ROOT) --sdk $(OSX_SDK_VERSION) $(abspath $<) --registrar:static --nolink
 
 Xamarin.Mac.registrar.mobile.x86_64.m: $(TOP)/src/build/mac/mobile-64/Xamarin.Mac.dll $(LOCAL_MMP)
-	$(GENERATE_PART_REGISTRAR) --target-framework Xamarin.Mac,Version=v2.0,Profile=Mobile -a:$(MOBILE_BCL_DIR)/mscorlib.dll
+	$(GENERATE_PART_REGISTRAR) --arch=x86_64 --target-framework Xamarin.Mac,Version=v2.0,Profile=Mobile -a:$(MOBILE_BCL_DIR)/mscorlib.dll
 	$(Q) touch Xamarin.Mac.registrar.mobile.x86_64.m Xamarin.Mac.registrar.mobile.x86_64.h
 
+Xamarin.Mac.registrar.mobile.arm64.m: $(TOP)/src/build/mac/mobile-64/Xamarin.Mac.dll $(LOCAL_MMP)
+	$(GENERATE_PART_REGISTRAR) --arch=arm64 --target-framework Xamarin.Mac,Version=v2.0,Profile=Mobile -a:$(MOBILE_BCL_DIR)/mscorlib.dll
+	$(Q) touch Xamarin.Mac.registrar.mobile.arm64.m Xamarin.Mac.registrar.mobile.arm64.h
+
 Xamarin.Mac.registrar.full.x86_64.m:   $(TOP)/src/build/mac/full-64/Xamarin.Mac.dll $(LOCAL_MMP)
-	$(GENERATE_PART_REGISTRAR) --target-framework Xamarin.Mac,Version=v4.5,Profile=Full -a:$(FULL_BCL_DIR)/mscorlib.dll
+	$(GENERATE_PART_REGISTRAR) --arch=x86_64 --target-framework Xamarin.Mac,Version=v4.5,Profile=Full -a:$(FULL_BCL_DIR)/mscorlib.dll
 	$(Q) touch Xamarin.Mac.registrar.full.x86_64.m Xamarin.Mac.registrar.full.x86_64.h
+
+Xamarin.Mac.registrar.full.arm64.m:   $(TOP)/src/build/mac/full-64/Xamarin.Mac.dll $(LOCAL_MMP)
+	$(GENERATE_PART_REGISTRAR) --arch=arm64 --target-framework Xamarin.Mac,Version=v4.5,Profile=Full -a:$(FULL_BCL_DIR)/mscorlib.dll
+	$(Q) touch Xamarin.Mac.registrar.full.arm64.m Xamarin.Mac.registrar.full.arm64.h
 
 Xamarin.Mac.registrar.%.x86_64.a: Xamarin.Mac.registrar.%.x86_64.m
 	$(Q_CC) $(MAC_CC) -DDEBUG -g -gdwarf-2 -x objective-c++ -std=c++14 -o $@ -c -arch x86_64 $< -Wall -Wno-unguarded-availability-new -I$(MAC_DESTDIR)$(XAMARIN_MACOS_SDK)/include -mmacosx-version-min=$(MIN_OSX_SDK_VERSION) -fobjc-runtime=macosx
 
-Xamarin.Mac.registrar.%.a: Xamarin.Mac.registrar.%.x86_64.a
-	$(Q) $(CP) $< $@
+Xamarin.Mac.registrar.%.arm64.a: Xamarin.Mac.registrar.%.arm64.m
+	$(Q_CC) $(MAC_CC) -DDEBUG -g -gdwarf-2 -x objective-c++ -std=c++14 -o $@ -c -arch arm64 $< -Wall -Wno-unguarded-availability-new -I$(MAC_DESTDIR)$(XAMARIN_MACOS_SDK)/include -mmacosx-version-min=$(MIN_OSX_SDK_VERSION) -fobjc-runtime=macosx
+
+Xamarin.Mac.registrar.%.a: Xamarin.Mac.registrar.%.x86_64.a Xamarin.Mac.registrar.%.arm64.a
+	$(Q_LIPO) $(DEVICE_BIN_PATH)/lipo -create -output $@ $^
 
 ifdef INCLUDE_MAC
 install-local:: $(MMP_TARGETS)
@@ -81,5 +92,5 @@ run::
 
 # make will automatically consider files created in chained implicit rules as temporary files, and delete them afterwards
 # marking those files as .SECONDARY will prevent that deletion.
-.SECONDARY: $(foreach ext,h m a,Xamarin.Mac.registrar.mobile.x86_64.$(ext) Xamarin.Mac.registrar.full.x86_64.$(ext))
+.SECONDARY: $(foreach ext,h m a,Xamarin.Mac.registrar.mobile.x86_64.$(ext) Xamarin.Mac.registrar.mobile.arm64.$(ext) Xamarin.Mac.registrar.full.x86_64.$(ext) Xamarin.Mac.registrar.full.arm64.$(ext))
 .SECONDARY: Xamarin.Mac.registrar.mobile.a Xamarin.Mac.registrar.full.a

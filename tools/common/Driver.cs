@@ -86,7 +86,7 @@ namespace Xamarin.Bundler {
 			});
 			options.Add ("target-framework=", "Specify target framework to use. Currently supported: '" + string.Join ("', '", TargetFramework.ValidFrameworks.Select ((v) => v.ToString ())) + "'.", v => SetTargetFramework (v));
 #if MMP
-			options.Add ("abi=", "Comma-separated list of ABIs to target. x86_64", v => app.ParseAbi (v));
+			options.Add ("abi=", "Comma-separated list of ABIs to target. x86_64/arm64", v => app.ParseAbi (v));
 #else
 			options.Add ("abi=", "Comma-separated list of ABIs to target. Currently supported: armv7, armv7+llvm, armv7+llvm+thumb2, armv7s, armv7s+llvm, armv7s+llvm+thumb2, arm64, arm64+llvm, arm64_32, arm64_32+llvm, i386, x86_64", v => app.ParseAbi (v));
 #endif
