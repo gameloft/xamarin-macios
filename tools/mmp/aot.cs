@@ -265,21 +265,6 @@ namespace Xamarin.Bundler {
 						throw ErrorHelper.CreateError (3001, Errors.MX3001, "strip", file);
 				});
 			}
-
-			if (IsRelease) {
-				// mono --aot creates .dll.dylib.dSYM directories for each assembly AOTed
-				// There isn't an easy was to disable this behavior
-				// We move them (cheap) so they can be archived for release builds
-				foreach (var file in filesToAOT) {
-					var source = file + ".dylib.dSYM/";
-					if (Directory.Exists (source)) {
-						var dest = Path.GetFullPath (Path.Combine (source, "..", "..", "..", "..", Path.GetFileName (file) + ".dylib.dSYM/"));
-						if (Directory.Exists (dest))
-							Directory.Delete (dest, true);
-						Directory.Move (source, dest);
-					}
-				}
-			}
 		}
 
 		List<string> GetFilesToAOT (IFileEnumerator files)
